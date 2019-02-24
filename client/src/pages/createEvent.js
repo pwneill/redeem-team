@@ -14,7 +14,7 @@ class createEvent extends Component {
       <Container fluid>
         <Jumbotron id={"eventsJumbotron"}>
           <h1><strong>Gamers United</strong></h1>
-          <h3>Add a New Event</h3>
+          <h3 id="eventsbanner">Add a New Event</h3>
         </Jumbotron>
         <Row fluid>
           <Col size="md-9" offset="md-3">

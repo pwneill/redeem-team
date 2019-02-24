@@ -11,14 +11,14 @@ import { Card, CardHeader, CardBody } from "../components/Card";
 
 class Events extends Component {
     state = {
-        Event: []
+        Events: []
     };
     componentDidMount(){
         this.loadEvents ();
     }
     loadEvents = () => {
         API.getEvents()
-        .then(res => this.setState({Event: res.data}))
+        .then(res => this.setState({Events: res.data}))
         .catch(err => console.log(err));
     };
     render() {
@@ -28,36 +28,28 @@ class Events extends Component {
                     <h1><strong>Gamers United</strong></h1>
                     <h3 id="eventsbanner">Events in your Area</h3>
                 </Jumbotron>
-                {this.state.Event.length ? (
-                    <List>
-                    <Row fluid>
-                    <Col size="md-2" offset="md-1">
-                        <Card>
-                            <img src="https://via.placeholder.com/150"></img>
+                <Row fluid>
+                <Col size="md-10" offset="md-1">
+                {this.state.Events.length ? (
+                    <Card>
+                        {this.state.Events.map(event => (
+                            <CardBody key={event.id}>
+                            <strong>
+                                {event.name} on {event.date}
+                                {event.address1}
+                                {event.console}
+                                </strong>
+                                </CardBody>
+
+                        ))}
                         </Card>
-                    </Col>
-                    <Col size="md-6" offset="md-1">
-                        <Card key={Event.id}>
-                            <h1>{Event.name}</h1>
-                            <h2>{Event.address1}</h2>
-                            <h3>{Event.console}</h3>
-                        </Card>
-                    </Col>
-                    <Col size="md-2" offset="md-1" style="inline-block">
-                    <img src="https://via.placeholder.com/150"></img>
-                    </Col>
-                    <Card size="md-11" offset="md-1">
-                <h1 className="text-center">{Event.description}</h1>
-                </Card>
-                    
+                ) : (
+                    <Card>
+                    <h3 id="eventsbanner">No Results to Display</h3>
+                    </Card>
+                )};
+                </Col>
                 </Row>
-                </List>
-                
-               
-                
-                ): (
-                    <h3>No Results to display</h3>
-                )}
                 
             </Container>
         )
