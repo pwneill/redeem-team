@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Input } from "../components/Form";
+import { Input, FormBtn } from "../components/Form";
 import { Col, Row, Container } from "../components/Grid";
 import fieldNames from "./newEvent.json";
 import Jumbotron from "../components/Jumbotron";
@@ -26,6 +26,7 @@ class createEvent extends Component {
                   name={question.name}
                 />
               ))}
+              <FormBtn>Submit</FormBtn>
             </form>
           </Col>
         </Row>
