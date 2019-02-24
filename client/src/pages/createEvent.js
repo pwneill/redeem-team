@@ -13,7 +13,7 @@ class createEvent extends Component {
     return (
       <Container fluid>
         <Jumbotron id={"eventsJumbotron"}>
-          <h1>App Name</h1>
+          <h1><strong>Gamers United</strong></h1>
           <h3>Add a New Event</h3>
         </Jumbotron>
         <Row fluid>

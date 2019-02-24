@@ -13,4 +13,8 @@ router
   .put(booksController.update)
   .delete(booksController.remove);
 
+router 
+  .route("/events")
+  .get(eventsController.findAll);
+
 module.exports = router;

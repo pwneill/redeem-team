@@ -7,21 +7,41 @@ import Jumbotron from "../components/Jumbotron";
 import { Col, Row, Container } from "../components/Grid";
 // import { List, ListItem } from "../components/List";
 // import { Input, FormBtn } from "../components/Form";
-// import { Card, CardHeader, CardBody } from "../components/Card";
+import { Card, CardHeader, CardBody } from "../components/Card";
 
 class Events extends Component {
     render() {
         return (
             <Container fluid>
-              <Jumbotron id={"eventsJumbotron"}>
-              <h1>App Name</h1>
-              <h3>Events in your Area</h3>
-              </Jumbotron>
-              <Row fluid>
-              <Col size="md-9" offset="md-3">
-              </Col>
-              </Row>
-              </Container>
+                <Jumbotron id={"eventsJumbotron"}>
+                    <h1><strong>Gamers United</strong></h1>
+                    <h3>Events in your Area</h3>
+                </Jumbotron>
+                {/* Might experiment here with List */}
+                <Row fluid>
+                    <Col size="md-2" offset="md-1">
+                        <Card>
+                            <img src="https://via.placeholder.com/150"></img>
+                        </Card>
+                    </Col>
+                    <Col size="md-6" offset="md-1">
+                        <Card>
+                            <h1>Name of event</h1>
+                            <h2>Location</h2>
+                            <h3>Console</h3>
+                        </Card>
+                    </Col>
+                    <Col size="md-2" offset="md-1" style="inline-block">
+                    <img src="https://via.placeholder.com/150"></img>
+                    </Col>
+                    
+                </Row>
+                <Row fluid>
+                <Card size="md-11" offset="md-1">
+                <h1 className="text-center">Event Description</h1>
+                </Card>
+                </Row>
+            </Container>
         )
     }
 }
