@@ -1,34 +1,33 @@
 import React, { Component } from "react";
 import { Input } from "../components/Form";
 import { Col, Row, Container } from "../components/Grid";
-import { Card, CardHeader, CardBody } from "../components/Card";
-
-const foo = [
-  {
-    id: 1,
-    name: "Phelan"
-  },
-  {
-    id: 2,
-    name: "Rich"
-  }
-];
+import fieldNames from "./newEvent.json";
+import Jumbotron from "../components/Jumbotron";
 
 class createEvent extends Component {
   state = {
-    foo
+    fieldNames
   };
 
   render() {
     return (
       <Container fluid>
-        <h1>Create Event Page</h1>
-        <Row>
-          <form>
-            {this.state.foo.map(people => (
-              <Input key={people.id} id={people.id} name={people.name} />
-            ))}
-          </form>
+        <Jumbotron id={"eventsJumbotron"}>
+          <h1>App Name</h1>
+          <h3>Add a New Event</h3>
+        </Jumbotron>
+        <Row fluid>
+          <Col size="md-9" offset="md-3">
+            <form className="mb-5">
+              {this.state.fieldNames.map(question => (
+                <Input
+                  key={question.id}
+                  id={question.id}
+                  name={question.name}
+                />
+              ))}
+            </form>
+          </Col>
         </Row>
       </Container>
     );
