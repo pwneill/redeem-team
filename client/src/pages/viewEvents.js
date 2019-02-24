@@ -5,7 +5,7 @@ import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 // import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
-// import { List, ListItem } from "../components/List";
+import { List, ListItem } from "../components/List";
 // import { Input, FormBtn } from "../components/Form";
 import { Card, CardHeader, CardBody } from "../components/Card";
 
@@ -26,10 +26,11 @@ class Events extends Component {
             <Container fluid>
                 <Jumbotron id={"eventsJumbotron"}>
                     <h1><strong>Gamers United</strong></h1>
-                    <h3>Events in your Area</h3>
+                    <h3 id="eventsbanner">Events in your Area</h3>
                 </Jumbotron>
-                {/* Might experiment here with List */}
-                <Row fluid>
+                {this.state.Event.length ? (
+                    <List>
+                    <Row fluid>
                     <Col size="md-2" offset="md-1">
                         <Card>
                             <img src="https://via.placeholder.com/150"></img>
@@ -45,13 +46,19 @@ class Events extends Component {
                     <Col size="md-2" offset="md-1" style="inline-block">
                     <img src="https://via.placeholder.com/150"></img>
                     </Col>
-                    
-                </Row>
-                <Row fluid>
-                <Card size="md-11" offset="md-1">
+                    <Card size="md-11" offset="md-1">
                 <h1 className="text-center">{Event.description}</h1>
                 </Card>
+                    
                 </Row>
+                </List>
+                
+               
+                
+                ): (
+                    <h3>No Results to display</h3>
+                )}
+                
             </Container>
         )
     }
