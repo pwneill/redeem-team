@@ -1,19 +1,38 @@
 import React, { Component } from "react";
-// import DeleteBtn from "../components/DeleteBtn";
-// import Jumbotron from "../components/Jumbotron";
-// import API from "../utils/API";
-// import { Link } from "react-router-dom";
-// import { Col, Row, Container } from "../components/Grid";
-// import { List, ListItem } from "../components/List";
-// import { Input, FormBtn } from "../components/Form";
-// import { Card, CardHeader, CardBody } from "../components/Card";
+import { Input } from "../components/Form";
+import { Col, Row, Container } from "../components/Grid";
+import { Card, CardHeader, CardBody } from "../components/Card";
+
+const foo = [
+  {
+    id: 1,
+    name: "Phelan"
+  },
+  {
+    id: 2,
+    name: "Rich"
+  }
+];
 
 class createEvent extends Component {
-    render() {
-        return (
-            <h1>Create Event Page</h1>
-        )
-    }
+  state = {
+    foo
+  };
+
+  render() {
+    return (
+      <Container fluid>
+        <h1>Create Event Page</h1>
+        <Row>
+          <form>
+            {this.state.foo.map(people => (
+              <Input key={people.id} id={people.id} name={people.name} />
+            ))}
+          </form>
+        </Row>
+      </Container>
+    );
+  }
 }
 
 export default createEvent;
