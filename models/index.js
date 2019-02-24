@@ -1,4 +1,4 @@
 module.exports = {
-    Book: require("./book")
+    Event: require("./events")
   };
   

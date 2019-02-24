@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Jumbotron from "../components/Jumbotron";
 // import DeleteBtn from "../components/DeleteBtn";
 // import Jumbotron from "../components/Jumbotron";
-// import API from "../utils/API";
+import API from "../utils/API";
 // import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 // import { List, ListItem } from "../components/List";
@@ -10,6 +10,17 @@ import { Col, Row, Container } from "../components/Grid";
 import { Card, CardHeader, CardBody } from "../components/Card";
 
 class Events extends Component {
+    state = {
+        Event: []
+    };
+    componentDidMount(){
+        this.loadEvents ();
+    }
+    loadEvents = () => {
+        API.getEvents()
+        .then(res => this.setState({Event: res.data}))
+        .catch(err => console.log(err));
+    };
     render() {
         return (
             <Container fluid>
@@ -25,10 +36,10 @@ class Events extends Component {
                         </Card>
                     </Col>
                     <Col size="md-6" offset="md-1">
-                        <Card>
-                            <h1>Name of event</h1>
-                            <h2>Location</h2>
-                            <h3>Console</h3>
+                        <Card key={Event.id}>
+                            <h1>{Event.name}</h1>
+                            <h2>{Event.address1}</h2>
+                            <h3>{Event.console}</h3>
                         </Card>
                     </Col>
                     <Col size="md-2" offset="md-1" style="inline-block">
@@ -38,7 +49,7 @@ class Events extends Component {
                 </Row>
                 <Row fluid>
                 <Card size="md-11" offset="md-1">
-                <h1 className="text-center">Event Description</h1>
+                <h1 className="text-center">{Event.description}</h1>
                 </Card>
                 </Row>
             </Container>

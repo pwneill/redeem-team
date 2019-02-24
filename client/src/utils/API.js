@@ -2,8 +2,8 @@ import axios from "axios";
 
 export default {
   // Gets all books
-  getBooks: function() {
-    return axios.get("https://obscure-harbor-14924.herokuapp.com/api/books");
+  getEvents: function() {
+    return axios.get("https://localhost:3000/events");
   },
   // Gets the book with the given id
   getBook: function(id) {
