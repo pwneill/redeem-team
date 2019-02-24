@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "name": "Name",
+        "Placeholder": "Name"
+
+    },
+    {
+        "id": 2,
+        "name": "AddressLine1",
+        "Placeholder": "Address Line 1"
+
+    },
+    {
+        "id": 3,
+        "name": "AddressLine2",
+        "Placeholder": "Address Line 2"
+    },
+    {
+        "id": 4,
+        "name": "City",
+        "Placeholder": "City"
+    },
+    {
+        "id": 5,
+        "name": "State",
+        "Placeholder": "State"
+    },
+    {
+        "id": 6,
+        "name": "Game",
+        "Placeholder": "Game"
+
+    },
+    {
+        "id": 7,
+        "name": "Console",
+        "Placeholder": "Console"
+    },
+    {
+        "id": 8,
+        "name": "Description",
+        "Placeholder": "Description"
+    },
+    {
+        "id": 9,
+        "name": "Image Source",
+        "Placeholder": "ImgSrc"
+    },
+    {
+        "id": 10,
+        "name": "(Optional) Question 1",
+        "Placeholder": "Q1"
+    },
+    {
+        "id": 11,
+        "name": "(Optional) Question 2",
+        "Placeholder": "Q2"
+    },
+    {
+        "id": 12,
+        "name": "(Optional) Attendance Limit",
+        "Placeholder": "Limit"
+    }
+]
