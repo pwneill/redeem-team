@@ -14,6 +14,10 @@ function Nav() {
           <a className="nav-item nav-link" href="/events">Find Events</a>
           <a className="nav-item nav-link" href="/create_event">Create Event</a>
           <a className="nav-item nav-link" href="/news">News</a>
+          <div className="navbar-nav signInLinks">
+          <a className="nav-item nav-link" href="/newUser">Create New User</a>
+          <a className="nav-item nav-link" href="/signIn">Sign In</a>  
+          </div>
         </div>
       </div>
     </nav>
