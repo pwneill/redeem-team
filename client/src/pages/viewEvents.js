@@ -11,15 +11,15 @@ import { Card, CardHeader, CardBody } from "../components/Card";
 
 class Events extends Component {
     state = {
-        Events: []
+        events: []
     };
-    componentDidMount(){
-        this.loadEvents ();
+    componentDidMount() {
+        this.loadEvents();
     }
     loadEvents = () => {
         API.getEvents()
-        .then(res => this.setState({Events: res.data}))
-        .catch(err => console.log(err));
+            .then(res => this.setState({ events: res.data }))
+            .catch(err => console.log(err));
     };
     render() {
         return (
@@ -29,28 +29,28 @@ class Events extends Component {
                     <h3 id="eventsbanner">Events in your Area</h3>
                 </Jumbotron>
                 <Row fluid>
-                <Col size="md-10" offset="md-1">
-                {this.state.Events.length ? (
-                    <Card>
-                        {this.state.Events.map(event => (
-                            <CardBody key={event.id}>
-                            <strong>
-                                {event.name} on {event.date}
-                                {event.address1}
-                                {event.console}
-                                </strong>
-                                </CardBody>
+                    <Col size="md-10" offset="md-1">
+                        {this.state.events.length ? (
+                            <Card id="maineventsCard">
+                                {this.state.events.map(event => (
+                                    <CardBody key={event._id}>
+                                        <strong>
+                                            {event.name} on {event.date}
+                                            {event.address1}
+                                            {event.game}  / {event.console}
+                                        </strong>
+                                    </CardBody>
 
-                        ))}
-                        </Card>
-                ) : (
-                    <Card>
-                    <h3 id="eventsbanner">No Results to Display</h3>
-                    </Card>
-                )};
+                                ))}
+                            </Card>
+                        ) : (
+                                <Card>
+                                    <h3 id="eventsbanner">No Results to Display</h3>
+                                </Card>
+                            )};
                 </Col>
                 </Row>
-                
+
             </Container>
         )
     }
