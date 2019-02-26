@@ -19,10 +19,8 @@ export function Col({ size, offset, children }) {
     <div
       className={size
         .split(" ")
-        .map(size => "col-" + size)
-        .join(" ") + offset.split(" ")
-        .map(size => " offset-" + size)
-        .join(" ")}
+        .map(size => "col-" + size) + " offset-" + offset
+      }
         
     >
       {children}

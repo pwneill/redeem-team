@@ -3,7 +3,7 @@ import { Col, Row, Container } from "../components/Grid";
 import fieldNames from "../utils/newEvent.json";
 import Jumbotron from "../components/Jumbotron";
 import Form from "react-jsonschema-form";
-import API from "../../../routes/api"
+import API from "../utils/API"
 
 const schema = fieldNames;
 
@@ -11,7 +11,7 @@ class createEvent extends Component {
   log = type => console.log.bind(console, type);
 
   onSubmit = ({formData}, e) => {
-    API.post("/events", formData);
+    API.saveEvent(formData);
     console.log("Data submitted: ",  formData)
   };
 
@@ -22,6 +22,7 @@ class createEvent extends Component {
           <h1>App Name</h1>
           <h3>Add a New Event</h3>
         </Jumbotron>
+        <div className="mb-5">
         <Row fluid>
           <Col size="md-6" offset="md-3">
             <Form
@@ -31,6 +32,7 @@ class createEvent extends Component {
             />
           </Col>
         </Row>
+        </div>
       </Container>
     );
   }

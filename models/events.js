@@ -2,62 +2,72 @@ var mongoose = require("mongoose");
 
 var Schema = mongoose.Schema;
 
-var EventSchema = new Schema ({
-	name: {
-		type: String,
-        required: true,
-        unique: true
-
+var EventSchema = new Schema({
+  Name: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  Date: {
+    type: String,
+    required: false
+  },
+  AddressLine1: {
+    type: String,
+    required: false
+  },
+  AddressLine2: {
+    type: String,
+    required: false
+  },
+  City: {
+    type: String,
+    required: false
+  },
+  State: {
+    type: String,
+		required: false,
+		maxlength: 2
+  },
+  Zip: {
+    type: Number,
+		required: false,
+		maxLength: 5
+  },
+  Game: {
+    type: String,
+    required: false
+  },
+  Console: {
+    type: String,
+    required: false
+  },
+  Description: {
+    type: String,
+    required: false
+  },
+  ImgSrc: {
+    type: String,
+    required: false
+  },
+  Q1: {
+    type: String,
+    required: false
 	},
-	address1: {
-		type: String,
-		required: true,
-    },
-    address2: {
-		type: String,
-		required: true,
-    },
-    city: {
-		type: String,
-		required: true,
-    },
-    state: {
-		type: String,
-        required: true,
-        maxlength: 2,
-    },
-    game: {
-		type: String,
-		required: true,
-    },
-    console: {
-		type: String,
-		required: true,
-    },
-    description: {
-		type: String,
-		required: false,
-    },
-    imgSrc: {
-		type: String,
-		required: false,
-    },
-    optional1: {
-		type: String,
-		required: false,
-    },
-    optional2: {
-		type: String,
-		required: false,
-    },
-    attendanceLimit: {
-		type: Number,
-		required: false,
-    },
-	comment: [{ 
-		type : Schema.Types.ObjectId, 
-		ref: "Comment" 
-	}]
+	Q2: {
+    type: String,
+    required: false
+	},
+	Limit: {
+    type: Number,
+    required: false
+  },
+  comment: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Comment"
+    }
+  ]
 });
 
 var Event = mongoose.model("Event", EventSchema);

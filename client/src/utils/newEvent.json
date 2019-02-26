@@ -1,7 +1,7 @@
 {
     "title": "Create an Event",
     "type": "object",
-    "required": ["Name", "Date", "LocationName", "AddressLine1", "AddressLine2", "City", "State", "Zip", "Game", "Console", "Description"],
+    "required": ["Name"],
     "properties": {
         "Name": {
             "type": "string", "title": "Event Name"
