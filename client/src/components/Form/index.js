@@ -25,11 +25,3 @@ export function FormBtn(props) {
     </button>
   );
 }
-
-export function SaveBtn(props) {
-  return (
-    <button {...props}  className="btn btn-dark">
-      {props.children}
-    </button>
-  );
-}
