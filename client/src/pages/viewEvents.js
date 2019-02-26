@@ -37,11 +37,29 @@ class Events extends Component {
                             <Card id="maineventsCard">
                                 {this.state.events.map(event => (
                                     <CardBody key={event._id}>
-                                        <strong>
-                                            {event.Name} on {event.date}
-                                            {event.address1}
-                                            {event.game}  / {event.console}
-                                        </strong>
+                                        <Row>
+                                            <Col size="md-3">
+                                                img
+                                    </Col>
+                                            <Col size="md-6">
+                                            <div className="text-center">
+                                                <strong>
+                                                    {event.Name}<br />
+                                                    on {event.date}<br />
+                                                    {event.address1}<br />
+                                                    {event.game}<br /> 
+                                                    / {event.console}<br />
+                                                </strong>
+                                                </div>
+                                            </Col>
+                                            <Col size="md-3">map</Col>
+                                        </Row>
+                                        <Row fluid>
+                                        <Col>
+                                        foo
+                                        {event.description}
+                                        </Col>
+                                        </Row>
                                     </CardBody>
 
                                 ))}
@@ -51,7 +69,7 @@ class Events extends Component {
                                     <h3 id="eventsbanner">No Results to Display</h3>
                                 </Card>
                             )}
-                </Col>
+                    </Col>
                 </Row>
 
             </Container>

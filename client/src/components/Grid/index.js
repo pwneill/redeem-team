@@ -17,13 +17,8 @@ export function Row({ fluid, children }) {
 export function Col({ size, offset, children }) {
   return (
     <div
-      className={size
-        .split(" ")
-        .map(size => "col-" + size)
-        .join(" ") + offset.split(" ")
-        .map(size => " offset-" + size)
-        .join(" ")}
-        
+      className={"col-" + size + " offset-" + offset
+      } 
     >
       {children}
     </div>
