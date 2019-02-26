@@ -6,7 +6,7 @@ import React, { Component } from "react";
 import { Col, Row, Container } from "../components/Grid";
 // import { List, ListItem } from "../components/List";
 // import { Input, FormBtn } from "../components/Form";
-import { Card, CardHeader, CardBody } from "../components/Card";
+import { Card, CardBody } from "../components/Card";
 
 class Launch extends Component {
     render() {

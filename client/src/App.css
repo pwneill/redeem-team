@@ -19,7 +19,7 @@ a:link {
   text-align: center;
   padding-top: 20vh;
   background-image: url("https://i.imgur.com/Zri3Udn.gif");
-  background-size: contain;
+  background-size: cover;
   color: #eeeeee;
   box-shadow: 5px 5px 30px #ffffff;
   transition: all 0.5s ease-in-out; 
@@ -36,7 +36,7 @@ a:link {
   padding-top: 20vh;
   background-image: url("https://i.imgur.com/Q9CcHGs.gif");
   background-size: cover;
-  background-position-x: -100px;
+  background-position-x: -200px;
   color: #eeeeee;
   box-shadow: 5px 5px 30px #ffffff;
   transition: all 0.5s ease-in-out; 
@@ -60,4 +60,98 @@ a:link {
 
 #newsCard:hover {
   box-shadow: 5px 5px 30px #373538;
+}
+
+.newsImg {
+  width: 100%;
+}
+
+.articleSave {
+text-align: center;
+margin-top: 20px;
+  
+}
+
+.btn {
+  width: 100%
+}
+
+#dropdownCard {
+  margin: 20px;
+  background-color: #eeeeee54;
+}
+
+#genreCard {
+  margin: 20px;
+  text-align: center;
+  background-image: url("https://i.imgur.com/JP3yOzm.gif");
+  background-size: cover;
+  background-position-y: -250px;
+  color: #eeeeee;
+}
+
+#upcomingCard {
+  margin: 20px;
+  text-align: center;
+  background-image: url("https://i.imgur.com/XuIpkbN.gif");
+  background-size: cover;
+  color: #eeeeee;
+}
+
+#newsMainContainer {
+  margin: 20px;
+  background-color: #eeeeee54;
+}
+
+.list-overflow-container {
+  background-image: url("https://i.imgur.com/kwUTHrJ.gif");
+  background-size: cover;
+}
+
+.list-group-item {
+  background-color: #eeeeee00;
+  padding: 40px;
+}
+
+.list-group {
+  background-color: #eeeeee54;
+}
+
+#articleCardBody {
+  background-color: #eeeeee54;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+.dropdown-toggle {
+  color: #eeeeee;
+}
+
+.btn:focus,.btn:active {
+  outline: none !important;
+  box-shadow: none;
+}
+
+.dropdown-menu {
+  width: 100%;
+  margin-top: 14px;
+  background-color: #eeeeeede;
+}
+
+.dropdown-item {
+
 }
