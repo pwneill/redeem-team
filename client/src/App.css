@@ -71,4 +71,66 @@ h3{
   color: black;
 }
 
+#dropdownCard {
+  margin: 20px;
+  background-color: #eeeeee54;
+}
+
+#newsMainContainer {
+  margin: 20px;
+  background-color: #eeeeee54;
+}
+
+#genreCard {
+  margin: 20px;
+  text-align: center;
+  background-image: url("https://i.imgur.com/JP3yOzm.gif");
+  background-size: cover;
+  background-position-y: -250px;
+}
+
+#upcomingCard {
+  margin: 20px;
+  text-align: center;
+  background-image: url("https://i.imgur.com/XuIpkbN.gif");
+  background-size: cover;
+}
+
+#dropdownMenuButton {
+  color: #eeeeee;
+}
+
+.list-overflow-container {
+  background-image: url("https://i.imgur.com/kwUTHrJ.gif");
+  background-size: cover;
+}
+
+.list-group-item {
+  background-color: #eeeeee50;
+}
+
+.newsImg {
+  width: 100%;
+}
+
+.articleCards {
+  margin: 20px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
 

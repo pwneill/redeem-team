@@ -16,6 +16,17 @@ export default {
   // Saves a book to the database
    saveEvent: function(eventData) {
     return axios.post("http://localhost:3001/api/events", eventData);
+  },
+  espnScrape: function() {
+    return axios({
+      method: "GET",
+      url: "http://www.espn.com/esports/"
+    })
+  },
+  theScoreScrape: function() {
+    return axios({
+      method: "GET",
+      url: "https://www.thescoreesports.com/culture"
+    })
   }
-
 };

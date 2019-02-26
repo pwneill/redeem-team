@@ -26,3 +26,11 @@ export function FormBtn(props) {
     </button>
   );
 }
+
+export function SaveBtn(props) {
+  return (
+    <button {...props} className="saveBtn btn btn-dark">
+      {props.children}
+    </button>
+  );
+}

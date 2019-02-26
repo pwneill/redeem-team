@@ -49,7 +49,7 @@ class News extends Component {
                         .children("picture")
                         .children("img")
                         .attr("data-default-src");
-                    result.link = $(this)
+                    result.link = "https://www.espn.com" + $(this)
                         .parent("div")
                         .parent("div")
                         .parent("a")
@@ -80,8 +80,6 @@ class News extends Component {
 
     espnTrending = event => {
         event.preventDefault();
-
-        this.setState({ news: []})
 
         this.espnInitial()
     }
@@ -122,7 +120,7 @@ class News extends Component {
                     .children("div")
                     .children("img")
                     .attr("src");
-                    result.link = $(this)
+                    result.link = "https://www.thescoreesports.com/culture" + $(this)
                     .children("div")
                     .children("a")
                     .attr("href");
@@ -203,7 +201,7 @@ class News extends Component {
                                             {this.state.news.map(news => (
                                                 <ListItem key={news.id}>
                                                     <Card className={"articleCards"}>
-                                                        <a href={"https://www.espn.com" + news.link} target={"_blank"}><CardHeader>
+                                                        <a href={news.link} target={"_blank"}><CardHeader>
                                                             <h4>{news.title}</h4>
                                                         </CardHeader></a>
                                                         <CardBody id={"articleCardBody"}>
