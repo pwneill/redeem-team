@@ -12,4 +12,12 @@ router.route("/:id")
   .put(eventsController.update)
   .delete(eventsController.remove);
 
+router 
+  .route("/")
+  .get(eventsController.findAll);
+
+router
+.route("/create_event")
+.post(eventsController.create)
+
 module.exports = router;

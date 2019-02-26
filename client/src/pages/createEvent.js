@@ -19,8 +19,8 @@ class createEvent extends Component {
     return (
       <Container fluid>
         <Jumbotron id={"eventsJumbotron"}>
-          <h1>App Name</h1>
-          <h3>Add a New Event</h3>
+          <h1><strong>Gamers United</strong></h1>
+          <h3 id="eventsbanner">Add a New Event</h3>
         </Jumbotron>
         <div className="mb-5">
         <Row fluid>
