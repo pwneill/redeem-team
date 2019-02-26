@@ -18,7 +18,10 @@ class Events extends Component {
     }
     loadEvents = () => {
         API.getEvents()
-            .then(res => this.setState({ events: res.data }))
+            .then(res => {
+                console.log(res)
+                this.setState({ events: res.data })
+            })
             .catch(err => console.log(err));
     };
     render() {
@@ -35,7 +38,7 @@ class Events extends Component {
                                 {this.state.events.map(event => (
                                     <CardBody key={event._id}>
                                         <strong>
-                                            {event.name} on {event.date}
+                                            {event.Name} on {event.date}
                                             {event.address1}
                                             {event.game}  / {event.console}
                                         </strong>
@@ -47,7 +50,7 @@ class Events extends Component {
                                 <Card>
                                     <h3 id="eventsbanner">No Results to Display</h3>
                                 </Card>
-                            )};
+                            )}
                 </Col>
                 </Row>
 

@@ -14,7 +14,7 @@ const eventsController = require("../../controllers/eventsController");
 //   .delete(booksController.remove);
 
 router 
-  .route("/events")
+  .route("/")
   .get(eventsController.findAll);
 
 router
