@@ -48,7 +48,7 @@ class Events extends Component {
                                                     on {event.date}<br />
                                                     {event.address1}<br />
                                                     {event.game}<br /> 
-                                                    / {event.console}<br />
+                                                    {event.console}<br />
                                                 </strong>
                                                 </div>
                                             </Col>
