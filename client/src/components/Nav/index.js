@@ -5,7 +5,7 @@ import "./style.css"
 function Nav() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark">
-      <h3 className="navbar-brand" ><p>Gamers</p> United</h3>
+      <a href="/"><h3 className="navbar-brand" >Gamers United</h3></a>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
