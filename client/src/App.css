@@ -98,6 +98,17 @@ h3{
 
 #dropdownMenuButton {
   color: #eeeeee;
+  width: 100%;
+}
+
+.dropdown-menu {
+  width: 100%;
+  background-color: #eeeeeede;
+  margin-top: 14px;
+}
+
+.dropdown-item {
+  font-size: 15px;
 }
 
 .list-overflow-container {
@@ -113,8 +124,33 @@ h3{
   width: 100%;
 }
 
+.vidsImg {
+  width: 100%;
+}
+
+i.fa-play {
+  font-size: 100px;
+  vertical-align: 20vh;
+}
+
+.playBtn {
+  text-align: center;
+  position: relative;
+  top: 16vh;
+}
+
+.playText {
+  text-align: center
+}
+
 .articleCards {
   margin: 20px;
+  background-color: #eeeeeea1;
+  color: #000000;
+}
+
+h4 {
+  color: #000000;
 }
 
 ::-webkit-scrollbar {

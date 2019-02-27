@@ -26,6 +26,6 @@ export function DropdownMenu({ children }) {
 
 export function DropdownItem(props) {
     return (
-        <a {...props} className="dropdown-item" href="/news">{props.children}</a>
+        <a {...props} className="dropdown-item" href="/news"><p>{props.children}</p></a>
     )
 }

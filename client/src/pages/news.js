@@ -14,7 +14,7 @@ class News extends Component {
 
     state = {
         news: [],
-        culture: []
+        vids: []
     };
 
     componentDidMount = () => {
@@ -99,31 +99,31 @@ class News extends Component {
 
                     console.log($(this))
 
-                    // x++
+                    x++
 
                     result.id = x;
                     result.title = $(this)
-                    .children("div")
-                    .children("a")
-                    .children("div")
-                    .children("div.NewsCard__title--37vMp")
-                    .text();
+                        .children("div")
+                        .children("a")
+                        .children("div")
+                        .children("div.NewsCard__title--37vMp")
+                        .text();
                     result.body = $(this)
-                    .children("div")
-                    .children("a")
-                    .children("div")
-                    .children("div.NewsCard__content--1VLID")
-                    .text();
+                        .children("div")
+                        .children("a")
+                        .children("div")
+                        .children("div.NewsCard__content--1VLID")
+                        .text();
                     result.img = $(this)
-                    .children("div")
-                    .children("a")
-                    .children("div")
-                    .children("img")
-                    .attr("src");
+                        .children("div")
+                        .children("a")
+                        .children("div")
+                        .children("img")
+                        .attr("src");
                     result.link = "https://www.thescoreesports.com/culture" + $(this)
-                    .children("div")
-                    .children("a")
-                    .attr("href");
+                        .children("div")
+                        .children("a")
+                        .attr("href");
 
 
                     resultArr.push(result);
@@ -151,6 +151,423 @@ class News extends Component {
 
     }
 
+    LoLVids = event => {
+        event.preventDefault();
+
+        let resultArr = [];
+        let x = 0;
+
+        API.LoLScrape()
+            .then(response => {
+                let $ = cheerio.load(response.data);
+
+                $("div.col-sm-6.col-md-4").each(function (i, element) {
+                    let result = {};
+
+                    console.log($(this))
+
+                    x++
+
+                    result.id = x;
+                    result.title = $(this)
+                        .children("div")
+                        .children("div")
+                        .children("span")
+                        .children("button")
+                        .children("div")
+                        .text();
+                    result.img = $(this)
+                        .children("div")
+                        .children("img")
+                        .attr("src");
+
+                    let link = result.img.replace("https://i.ytimg.com/vi/", "")
+                    link = link.replace("/hqdefault.jpg", "")
+
+                    result.link = "https://www.thescoreesports.com/lol/videos/" + link
+
+                    console.log(result);
+
+
+                    resultArr.push(result);
+
+                });
+
+                this.setState({ news: [], vids: resultArr })
+
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
+    }
+
+    DotaVids = event => {
+        event.preventDefault();
+
+        let resultArr = [];
+        let x = 0;
+
+        API.DotaScrape()
+            .then(response => {
+                let $ = cheerio.load(response.data);
+
+                $("div.col-sm-6.col-md-4").each(function (i, element) {
+                    let result = {};
+
+                    console.log($(this))
+
+                    x++
+
+                    result.id = x;
+                    result.title = $(this)
+                        .children("div")
+                        .children("div")
+                        .children("span")
+                        .children("button")
+                        .children("div")
+                        .text();
+                    result.img = $(this)
+                        .children("div")
+                        .children("img")
+                        .attr("src");
+
+                    let link = result.img.replace("https://i.ytimg.com/vi/", "")
+                    link = link.replace("/hqdefault.jpg", "")
+
+                    result.link = "https://www.thescoreesports.com/lol/videos/" + link
+
+                    console.log(result);
+
+
+                    resultArr.push(result);
+
+                });
+
+                this.setState({ news: [], vids: resultArr })
+
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
+    }
+
+    CSGOVids = event => {
+        event.preventDefault();
+
+        let resultArr = [];
+        let x = 0;
+
+        API.CSGOScrape()
+            .then(response => {
+                let $ = cheerio.load(response.data);
+
+                $("div.col-sm-6.col-md-4").each(function (i, element) {
+                    let result = {};
+
+                    console.log($(this))
+
+                    x++
+
+                    result.id = x;
+                    result.title = $(this)
+                        .children("div")
+                        .children("div")
+                        .children("span")
+                        .children("button")
+                        .children("div")
+                        .text();
+                    result.img = $(this)
+                        .children("div")
+                        .children("img")
+                        .attr("src");
+
+                    let link = result.img.replace("https://i.ytimg.com/vi/", "")
+                    link = link.replace("/hqdefault.jpg", "")
+
+                    result.link = "https://www.thescoreesports.com/lol/videos/" + link
+
+                    console.log(result);
+
+
+                    resultArr.push(result);
+
+                });
+
+                this.setState({ news: [], vids: resultArr })
+
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
+    }
+
+    OverwatchVids = event => {
+        event.preventDefault();
+
+        let resultArr = [];
+        let x = 0;
+
+        API.OverwatchScrape()
+            .then(response => {
+                let $ = cheerio.load(response.data);
+
+                $("div.col-sm-6.col-md-4").each(function (i, element) {
+                    let result = {};
+
+                    console.log($(this))
+
+                    x++
+
+                    result.id = x;
+                    result.title = $(this)
+                        .children("div")
+                        .children("div")
+                        .children("span")
+                        .children("button")
+                        .children("div")
+                        .text();
+                    result.img = $(this)
+                        .children("div")
+                        .children("img")
+                        .attr("src");
+
+                    let link = result.img.replace("https://i.ytimg.com/vi/", "")
+                    link = link.replace("/hqdefault.jpg", "")
+
+                    result.link = "https://www.thescoreesports.com/lol/videos/" + link
+
+                    console.log(result);
+
+
+                    resultArr.push(result);
+
+                });
+
+                this.setState({ news: [], vids: resultArr })
+
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
+    }
+
+    OverwatchVids = event => {
+        event.preventDefault();
+
+        let resultArr = [];
+        let x = 0;
+
+        API.OverwatchScrape()
+            .then(response => {
+                let $ = cheerio.load(response.data);
+
+                $("div.col-sm-6.col-md-4").each(function (i, element) {
+                    let result = {};
+
+                    console.log($(this))
+
+                    x++
+
+                    result.id = x;
+                    result.title = $(this)
+                        .children("div")
+                        .children("div")
+                        .children("span")
+                        .children("button")
+                        .children("div")
+                        .text();
+                    result.img = $(this)
+                        .children("div")
+                        .children("img")
+                        .attr("src");
+
+                    let link = result.img.replace("https://i.ytimg.com/vi/", "")
+                    link = link.replace("/hqdefault.jpg", "")
+
+                    result.link = "https://www.thescoreesports.com/lol/videos/" + link
+
+                    console.log(result);
+
+
+                    resultArr.push(result);
+
+                });
+
+                this.setState({ news: [], vids: resultArr })
+
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
+    }
+
+    SmashVids = event => {
+        event.preventDefault();
+
+        let resultArr = [];
+        let x = 0;
+
+        API.SmashScrape()
+            .then(response => {
+                let $ = cheerio.load(response.data);
+
+                $("div.col-sm-6.col-md-4").each(function (i, element) {
+                    let result = {};
+
+                    console.log($(this))
+
+                    x++
+
+                    result.id = x;
+                    result.title = $(this)
+                        .children("div")
+                        .children("div")
+                        .children("span")
+                        .children("button")
+                        .children("div")
+                        .text();
+                    result.img = $(this)
+                        .children("div")
+                        .children("img")
+                        .attr("src");
+
+                    let link = result.img.replace("https://i.ytimg.com/vi/", "")
+                    link = link.replace("/hqdefault.jpg", "")
+
+                    result.link = "https://www.thescoreesports.com/lol/videos/" + link
+
+                    console.log(result);
+
+
+                    resultArr.push(result);
+
+                });
+
+                this.setState({ news: [], vids: resultArr })
+
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
+    }
+
+    StreetFighterVids = event => {
+        event.preventDefault();
+
+        let resultArr = [];
+        let x = 0;
+
+        API.StreetFighterScrape()
+            .then(response => {
+                let $ = cheerio.load(response.data);
+
+                $("div.col-sm-6.col-md-4").each(function (i, element) {
+                    let result = {};
+
+                    console.log($(this))
+
+                    x++
+
+                    result.id = x;
+                    result.title = $(this)
+                        .children("div")
+                        .children("div")
+                        .children("span")
+                        .children("button")
+                        .children("div")
+                        .text();
+                    result.img = $(this)
+                        .children("div")
+                        .children("img")
+                        .attr("src");
+
+                    let link = result.img.replace("https://i.ytimg.com/vi/", "")
+                    link = link.replace("/hqdefault.jpg", "")
+
+                    result.link = "https://www.thescoreesports.com/lol/videos/" + link
+
+                    console.log(result);
+
+
+                    resultArr.push(result);
+
+                });
+
+                this.setState({ news: [], vids: resultArr })
+
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
+    }
+
+    displayBox = () => {
+        if (this.state.news.length) {
+            return (
+                <List id={"overflow"}>
+                    {this.state.news.map(news => (
+                        <ListItem key={news.id}>
+                            <Card className={"articleCards"}>
+                                <a href={news.link} target={"_blank"}><CardHeader>
+                                    <h4>{news.title}</h4>
+                                </CardHeader></a>
+                                <CardBody id={"articleCardBody"}>
+                                    <Container>
+                                        <Row>
+                                            <Col size={"md-4"}>
+                                                <img className={"newsImg"} src={news.img} alt={news.img}></img>
+                                                <div className={"articleSave"}>
+                                                    <SaveBtn onClick={this.saveBtn}>Save</SaveBtn>
+                                                </div>
+                                            </Col>
+                                            <Col size={"md-8"}>
+                                                <p>{news.body}</p>
+                                            </Col>
+                                        </Row>
+                                    </Container>
+                                </CardBody>
+                            </Card>
+                        </ListItem>
+                    ))}
+                </List>
+            )
+        } else if (this.state.vids.length) {
+            return (
+                <List id={"overflow"}>
+                    {this.state.vids.map(vids => (
+                        <ListItem key={vids.id}>
+                            <Card className={"articleCards"}>
+                                <a href={vids.link} target={"_blank"}><CardHeader>
+                                    <h4>{vids.title}</h4>
+                                </CardHeader></a>
+                                <CardBody id={"articleCardBody"}>
+                                    <Container>
+                                        <Row>
+                                            <Col size={"md-8"}>
+                                                <img className={"vidsImg"} src={vids.img} alt={vids.img}></img>
+                                                <div className={"articleSave"}>
+                                                    <SaveBtn onClick={this.saveBtn}>Save</SaveBtn>
+                                                </div>
+                                            </Col>
+                                            <Col size={"md-4"}>
+                                            <div className="playBtn"><a href={vids.link} target={"_blank"} ><i className="fas fa-play" ></i></a></div>
+                                            <h5 className="playText">Watch Video!</h5>
+                                            </Col>
+                                        </Row>
+                                    </Container>
+                                </CardBody>
+                            </Card>
+                        </ListItem>
+                    ))}
+                </List>
+            )
+        } else {
+            return (
+                <h3 style={{ textAlign: "center" }}>No Results to Display</h3>
+            )
+        }
+    }
+
 
     render() {
         return (
@@ -166,10 +583,14 @@ class News extends Component {
                                                 <Dropdown>
                                                     <DropdownBtn>Genres</DropdownBtn>
                                                     <DropdownMenu>
-                                                        <DropdownItem id={"this"} data-state={true} onClick={this.espnTrending}>Trending</DropdownItem>
+                                                        <DropdownItem onClick={this.espnTrending}>Trending</DropdownItem>
                                                         <DropdownItem onClick={this.theScoreTrending}>Culture</DropdownItem>
-                                                        <DropdownItem>genre3</DropdownItem>
-                                                        <DropdownItem>genre4</DropdownItem>
+                                                        <DropdownItem onClick={this.LoLVids}>LoL vids</DropdownItem>
+                                                        <DropdownItem onClick={this.DotaVids}>Dota 2 vids</DropdownItem>
+                                                        <DropdownItem onClick={this.CSGOVids}>CS:GO vids</DropdownItem>
+                                                        <DropdownItem onClick={this.OverwatchVids}>Overwatch vids</DropdownItem>
+                                                        <DropdownItem onClick={this.SmashVids}>Super Smash Bros vids</DropdownItem>
+                                                        <DropdownItem onClick={this.StreetFighterVids}>Street Fighter vids</DropdownItem>
                                                     </DropdownMenu>
                                                 </Dropdown>
                                             </CardHeader>
@@ -196,42 +617,15 @@ class News extends Component {
                         <Card id={"newsMainContainer"}>
                             <CardBody>
                                 <Col size={"md-12"}>
-                                    {this.state.news.length ? (
-                                        <List id={"overflow"}>
-                                            {this.state.news.map(news => (
-                                                <ListItem key={news.id}>
-                                                    <Card className={"articleCards"}>
-                                                        <a href={news.link} target={"_blank"}><CardHeader>
-                                                            <h4>{news.title}</h4>
-                                                        </CardHeader></a>
-                                                        <CardBody id={"articleCardBody"}>
-                                                            <Container>
-                                                                <Row>
-                                                                    <Col size={"md-4"}>
-                                                                        <img className={"newsImg"} src={news.img} alt={news.img}></img>
-                                                                        <div className={"articleSave"}>
-                                                                            <SaveBtn onClick={this.saveBtn}>Save</SaveBtn>
-                                                                        </div>
-                                                                    </Col>
-                                                                    <Col size={"md-8"}>
-                                                                        <p>{news.body}</p>
-                                                                    </Col>
-                                                                </Row>
-                                                            </Container>
-                                                        </CardBody>
-                                                    </Card>
-                                                </ListItem>
-                                            ))}
-                                        </List>
-                                    ) : (
-                                            <h3 style={{ textAlign: "center" }}>No Results to Display</h3>
-                                        )}
+                                    <this.displayBox>
+
+                                    </this.displayBox>
                                 </Col>
                             </CardBody>
                         </Card>
                     </Col>
                 </Row>
-            </Container>
+            </Container >
         );
     };
 };

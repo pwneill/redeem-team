@@ -28,5 +28,41 @@ export default {
       method: "GET",
       url: "https://www.thescoreesports.com/culture"
     })
+  },
+  LoLScrape: function() {
+    return axios({
+      method: "GET",
+      url: "https://www.thescoreesports.com/lol/videos"
+    })
+  },
+  DotaScrape: function() {
+    return axios({
+      method: "GET",
+      url: "https://www.thescoreesports.com/dota2/videos"
+    })
+  },
+  CSGOScrape: function() {
+    return axios({
+      method: "GET",
+      url: "https://www.thescoreesports.com/csgo/videos"
+    })
+  },
+  OverwatchScrape: function() {
+    return axios({
+      method: "GET",
+      url: "https://www.thescoreesports.com/overwatch/videos"
+    })
+  },
+  SmashScrape: function() {
+    return axios({
+      method: "GET",
+      url: "https://www.thescoreesports.com/smash/videos"
+    })
+  },
+  StreetFighterScrape: function() {
+    return axios({
+      method: "GET",
+      url: "https://www.thescoreesports.com/streetfighter/videos"
+    })
   }
 };
