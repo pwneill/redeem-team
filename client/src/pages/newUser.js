@@ -17,12 +17,22 @@ class newUser extends Component {
             "width": "975px"
         }
 
+        const headerStyle = {
+            "color": "#a9a9a9"
+        }
+
         return (
             <div>
                 <h1>New User</h1>
                 <br />
-                <br />
                 <div className="container">
+                    <div className="row">
+                        <div className="col-md-12 center-block text-center">
+                            <h2 style={headerStyle} className="text-center">Create New User</h2>
+                        </div>
+                    </div>
+                    <br />
+
                     <div className="row">
                         <div style={inputStyle} ClassName="col-md-6">
                             <input style={regularInputWidth} type="text" aria-label="First Name" className="form-control" placeholder="First Name"></input>

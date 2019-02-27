@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Launch from "./pages/launch";
 import News from "./pages/news";
@@ -8,14 +8,15 @@ import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import newUser from "./pages/newUser"
 import login from "./pages/login"
+import signIn from "./pages/signin"
 import Auth0Lock from "auth0-lock"
 import "./App.css"
 
-var App = React.createClass({
+class App extends Component {
 
-  componentWillMount: function () {
-    this.lock = new Auth0Lock('YOUR_CLIENT_ID', 'YOUR_CLIENT_DOMAIN');
-  },
+  componentWillMount() {
+    this.lock = new Auth0Lock('LHI8LEPW14lgTw6syHhIXfMhxMPPpRGU', 'C9n7DAJuAmBfxvzpoRjWbpohSNDMcVF-qfmq5A0pQKVGHwcFUpyVbSfsPwvUZ9bt')
+  }
 
   render() {
 
@@ -30,6 +31,7 @@ var App = React.createClass({
             <Route exact path="/events" component={Events} />
             <Route exact path="/newUser" component={newUser} />
             <Route exact path="/login" component={login} />
+            <Route exact path ="/signIn" component={signIn} />
             <Route component={NoMatch} />
           </Switch>
         </div>
@@ -38,6 +40,6 @@ var App = React.createClass({
   }
 
 
-})
+}
 
 export default App;
