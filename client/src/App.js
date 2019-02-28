@@ -31,7 +31,7 @@ class App extends Component {
             <Route exact path="/events" component={Events} />
             <Route exact path="/newUser" component={newUser} />
             <Route exact path="/login" component={login} />
-            <Route exact path ="/signIn" component={signIn} />
+            <Route exact path ="/signIn" component={signIn} lock={this.lock} />
             <Route component={NoMatch} />
           </Switch>
         </div>
