@@ -65,13 +65,11 @@ class News extends Component {
                     for (let i = 0; i < resultArr.length; i++) {
                         if (resultArr[i].body === "" || resultArr[i].img === undefined) {
                             resultArr.splice(i, 1);
-                            console.log("removed")
                         };
                     };
                 };
 
-                this.setState({ news: resultArr })
-                console.log(this.state.news)
+                this.setState({ vids: [], upcoming: [], news: resultArr })
 
             })
             .catch(function (err) {
@@ -139,14 +137,12 @@ class News extends Component {
                     for (let i = 0; i < resultArr.length; i++) {
                         if (resultArr[i].title === "" || resultArr[i].img === undefined) {
                             resultArr.splice(i, 1);
-                            console.log("removed")
                         };
                     };
                 };
 
 
-                this.setState({ news: resultArr })
-                console.log(this.state.news)
+                this.setState({ vids: [], upcoming: [], news: resultArr })
 
             })
             .catch(function (err) {
@@ -168,8 +164,6 @@ class News extends Component {
                 $("div.col-sm-6.col-md-4").each(function (i, element) {
                     let result = {};
 
-                    console.log($(this))
-
                     x++
 
                     result.id = x;
@@ -190,14 +184,12 @@ class News extends Component {
 
                     result.link = "https://www.thescoreesports.com/lol/videos/" + link
 
-                    console.log(result);
-
 
                     resultArr.push(result);
 
                 });
 
-                this.setState({ news: [], vids: resultArr })
+                this.setState({ news: [], upcoming: [], vids: resultArr })
 
             })
             .catch(function (err) {
@@ -218,8 +210,6 @@ class News extends Component {
                 $("div.col-sm-6.col-md-4").each(function (i, element) {
                     let result = {};
 
-                    console.log($(this))
-
                     x++
 
                     result.id = x;
@@ -240,14 +230,12 @@ class News extends Component {
 
                     result.link = "https://www.thescoreesports.com/lol/videos/" + link
 
-                    console.log(result);
-
 
                     resultArr.push(result);
 
                 });
 
-                this.setState({ news: [], vids: resultArr })
+                this.setState({ news: [], upcoming: [], vids: resultArr })
 
             })
             .catch(function (err) {
@@ -268,8 +256,6 @@ class News extends Component {
                 $("div.col-sm-6.col-md-4").each(function (i, element) {
                     let result = {};
 
-                    console.log($(this))
-
                     x++
 
                     result.id = x;
@@ -290,14 +276,12 @@ class News extends Component {
 
                     result.link = "https://www.thescoreesports.com/lol/videos/" + link
 
-                    console.log(result);
-
 
                     resultArr.push(result);
 
                 });
 
-                this.setState({ news: [], vids: resultArr })
+                this.setState({ news: [], upcoming: [], vids: resultArr })
 
             })
             .catch(function (err) {
@@ -318,8 +302,6 @@ class News extends Component {
                 $("div.col-sm-6.col-md-4").each(function (i, element) {
                     let result = {};
 
-                    console.log($(this))
-
                     x++
 
                     result.id = x;
@@ -340,14 +322,12 @@ class News extends Component {
 
                     result.link = "https://www.thescoreesports.com/lol/videos/" + link
 
-                    console.log(result);
-
 
                     resultArr.push(result);
 
                 });
 
-                this.setState({ news: [], vids: resultArr })
+                this.setState({ news: [], upcoming: [], vids: resultArr })
 
             })
             .catch(function (err) {
@@ -368,8 +348,6 @@ class News extends Component {
                 $("div.col-sm-6.col-md-4").each(function (i, element) {
                     let result = {};
 
-                    console.log($(this))
-
                     x++
 
                     result.id = x;
@@ -390,14 +368,12 @@ class News extends Component {
 
                     result.link = "https://www.thescoreesports.com/lol/videos/" + link
 
-                    console.log(result);
-
 
                     resultArr.push(result);
 
                 });
 
-                this.setState({ news: [], vids: resultArr })
+                this.setState({ news: [], upcoming: [], vids: resultArr })
 
             })
             .catch(function (err) {
@@ -418,8 +394,6 @@ class News extends Component {
                 $("div.col-sm-6.col-md-4").each(function (i, element) {
                     let result = {};
 
-                    console.log($(this))
-
                     x++
 
                     result.id = x;
@@ -440,19 +414,115 @@ class News extends Component {
 
                     result.link = "https://www.thescoreesports.com/lol/videos/" + link
 
-                    console.log(result);
+
+                    resultArr.push(result);
+
+                });
+
+                this.setState({ news: [], upcoming: [], vids: resultArr })
+
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
+    }
+
+    PS4Upcoming = event => {
+        event.preventDefault();
+
+        let resultArr = [];
+        let x = 0;
+
+        API.PS4Scrape()
+            .then(response => {
+                let $ = cheerio.load(response.data);
+
+                $("li.product.game_product").each(function (i, element) {
+                    let result = {};
+
+                    x++
+
+                    result.id = x;
+                    result.title = $(this)
+                        .children("div")
+                        .children("div")
+                        .children("a")
+                        .text().trim();
+                    result.release = $(this)
+                        .children("div")
+                        .children("div.more_stats")
+                        .children("ul")
+                        .children("li.stat.release_date")
+                        .children("span.data")
+                        .text();
+                    result.link = "https://www.metacritic.com" + $(this)
+                        .children("div")
+                        .children("div")
+                        .children("a")
+                        .attr("href");
 
 
                     resultArr.push(result);
 
                 });
 
-                this.setState({ news: [], vids: resultArr })
+
+                this.setState({ vids: [], news: [], upcoming: resultArr })
 
             })
             .catch(function (err) {
                 console.log(err);
             });
+
+    }
+
+    XBoneUpcoming = event => {
+        event.preventDefault();
+
+        let resultArr = [];
+        let x = 0;
+
+        API.XBoneScrape()
+            .then(response => {
+                let $ = cheerio.load(response.data);
+
+                $("li.product.game_product").each(function (i, element) {
+                    let result = {};
+
+                    x++
+
+                    result.id = x;
+                    result.title = $(this)
+                        .children("div")
+                        .children("div")
+                        .children("a")
+                        .text().trim();
+                    result.release = $(this)
+                        .children("div")
+                        .children("div.more_stats")
+                        .children("ul")
+                        .children("li.stat.release_date")
+                        .children("span.data")
+                        .text();
+                    result.link = "https://www.metacritic.com" + $(this)
+                        .children("div")
+                        .children("div")
+                        .children("a")
+                        .attr("href");
+
+
+                    resultArr.push(result);
+
+                });
+
+
+                this.setState({ vids: [], news: [], upcoming: resultArr })
+
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
+
     }
 
     PCUpcoming = event => {
@@ -465,61 +535,104 @@ class News extends Component {
             .then(response => {
                 let $ = cheerio.load(response.data);
 
-                $("div").each(function (i, element) {
+                $("li.product.game_product").each(function (i, element) {
                     let result = {};
 
-                    console.log($(this))
+                    x++
 
-                    // x++
-
-                    // result.id = x;
-                    // result.title = $(this)
-                    //     .children("div")
-                    //     .children("a")
-                    //     .children("div")
-                    //     .children("div.NewsCard__title--37vMp")
-                    //     .text();
-                    // result.body = $(this)
-                    //     .children("div")
-                    //     .children("a")
-                    //     .children("div")
-                    //     .children("div.NewsCard__content--1VLID")
-                    //     .text();
-                    // result.img = $(this)
-                    //     .children("div")
-                    //     .children("a")
-                    //     .children("div")
-                    //     .children("img")
-                    //     .attr("src");
-                    // result.link = "https://www.thescoreesports.com/culture" + $(this)
-                    //     .children("div")
-                    //     .children("a")
-                    //     .attr("href");
+                    result.id = x;
+                    result.title = $(this)
+                        .children("div")
+                        .children("div")
+                        .children("a")
+                        .text().trim();
+                    result.release = $(this)
+                        .children("div")
+                        .children("div.more_stats")
+                        .children("ul")
+                        .children("li.stat.release_date")
+                        .children("span.data")
+                        .text();
+                    result.link = "https://www.metacritic.com" + $(this)
+                        .children("div")
+                        .children("div")
+                        .children("a")
+                        .attr("href");
 
 
-                    // resultArr.push(result);
+                    resultArr.push(result);
 
                 });
 
 
-                // for (let i = 0; i < resultArr.length; i++) {
-                //     for (let i = 0; i < resultArr.length; i++) {
-                //         if (resultArr[i].title === "" || resultArr[i].img === undefined) {
-                //             resultArr.splice(i, 1);
-                //             console.log("removed")
-                //         };
-                //     };
-                // };
-
-
-                // this.setState({ news: resultArr })
-                // console.log(this.state.news)
+                this.setState({ vids: [], news: [], upcoming: resultArr })
 
             })
             .catch(function (err) {
                 console.log(err);
             });
 
+    }
+
+    SwitchUpcoming = event => {
+        event.preventDefault();
+
+        let resultArr = [];
+        let x = 0;
+
+        API.SwitchScrape()
+            .then(response => {
+                let $ = cheerio.load(response.data);
+
+                $("li.product.game_product").each(function (i, element) {
+                    let result = {};
+
+                    x++
+
+                    result.id = x;
+                    result.title = $(this)
+                        .children("div")
+                        .children("div")
+                        .children("a")
+                        .text().trim();
+                    result.release = $(this)
+                        .children("div")
+                        .children("div.more_stats")
+                        .children("ul")
+                        .children("li.stat.release_date")
+                        .children("span.data")
+                        .text();
+                    result.link = "https://www.metacritic.com" + $(this)
+                        .children("div")
+                        .children("div")
+                        .children("a")
+                        .attr("href");
+
+
+                    resultArr.push(result);
+
+                });
+
+
+                this.setState({ vids: [], news: [], upcoming: resultArr })
+
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
+
+    }
+
+    SouljaGameUpcoming = event => {
+        event.preventDefault()
+
+        let resultArr = [{
+                title: "Just Kidding",
+                release: "April 1",
+                link: "https://www.ign.com/articles/2019/01/02/soulja-boy-stops-selling-souljagame-game-consoles"
+        }]
+
+        this.setState({ vids: [], news: [], upcoming: resultArr })
     }
 
 
@@ -583,6 +696,21 @@ class News extends Component {
                     ))}
                 </List>
             )
+        } else if (this.state.upcoming.length) {
+            return (
+                <List id={"overflow"}>
+                {this.state.upcoming.map(upcoming => (
+                    <ListItem key={upcoming.id}>
+                        <Card className={"articleCards"}>
+                            <a href={upcoming.link} target={"_blank"}><CardHeader>
+                                <h4 className={"articleTitle"} style={{ float: "left" }}>{upcoming.title}</h4>
+                                <h4 className={"articleTitle"} style={{ float: "right" }}>{upcoming.release}</h4>
+                            </CardHeader></a>
+                        </Card>
+                    </ListItem>
+                ))}
+            </List>
+            )
         } else {
             return (
                 <h3 style={{ textAlign: "center" }}>No Results to Display</h3>
@@ -624,10 +752,11 @@ class News extends Component {
                                                 <Dropdown>
                                                     <DropdownBtn>Upcoming Games</DropdownBtn>
                                                     <DropdownMenu>
+                                                        <DropdownItem onClick={this.PS4Upcoming}>PS4</DropdownItem>
+                                                        <DropdownItem onClick={this.XBoneUpcoming}>X-Box One</DropdownItem>
                                                         <DropdownItem onClick={this.PCUpcoming}>PC</DropdownItem>
-                                                        <DropdownItem>genre2</DropdownItem>
-                                                        <DropdownItem>genre3</DropdownItem>
-                                                        <DropdownItem>genre4</DropdownItem>
+                                                        <DropdownItem onClick={this.SwitchUpcoming}>Switch</DropdownItem>
+                                                        <DropdownItem onClick={this.SouljaGameUpcoming}>SouljaGame</DropdownItem>
                                                     </DropdownMenu>
                                                 </Dropdown>
                                             </CardHeader>

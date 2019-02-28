@@ -19,7 +19,7 @@ a:link {
   text-align: center;
   padding-top: 20vh;
   background-image: url("https://i.imgur.com/Zri3Udn.gif");
-  background-size: contain;
+  background-size: cover;
   color: #eeeeee;
   box-shadow: 5px 5px 30px #ffffff;
   transition: all 0.5s ease-in-out; 
@@ -86,7 +86,7 @@ h3{
   text-align: center;
   background-image: url("https://i.imgur.com/JP3yOzm.gif");
   background-size: cover;
-  background-position-y: -250px;
+  background-position-y: -400px;
   box-shadow: 5px 5px 30px #373538;
   transition: all 0.5s ease-in-out; 
 }

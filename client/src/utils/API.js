@@ -65,10 +65,28 @@ export default {
       url: "https://www.thescoreesports.com/streetfighter/videos"
     })
   },
+  PS4Scrape: function() {
+    return axios({
+      method: "GET",
+      url: "https://cors-anywhere.herokuapp.com/https://www.metacritic.com/browse/games/release-date/coming-soon/ps4/date"
+    })
+  },
+  XBoneScrape: function() {
+    return axios({
+      method: "GET",
+      url: "https://cors-anywhere.herokuapp.com/https://www.metacritic.com/browse/games/release-date/coming-soon/xboxone/date"
+    })
+  },
   PCScrape: function() {
     return axios({
       method: "GET",
-      url: "https://www.npr.org"
+      url: "https://cors-anywhere.herokuapp.com/https://www.metacritic.com/browse/games/release-date/coming-soon/pc/date"
+    })
+  },
+  SwitchScrape: function() {
+    return axios({
+      method: "GET",
+      url: "https://cors-anywhere.herokuapp.com/https://www.metacritic.com/browse/games/release-date/coming-soon/switch/date"
     })
   }
 };
