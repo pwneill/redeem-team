@@ -64,5 +64,11 @@ export default {
       method: "GET",
       url: "https://www.thescoreesports.com/streetfighter/videos"
     })
+  },
+  PCScrape: function() {
+    return axios({
+      method: "GET",
+      url: "https://www.npr.org"
+    })
   }
 };

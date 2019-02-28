@@ -14,7 +14,8 @@ class News extends Component {
 
     state = {
         news: [],
-        vids: []
+        vids: [],
+        upcoming: []
     };
 
     componentDidMount = () => {
@@ -77,6 +78,9 @@ class News extends Component {
                 console.log(err);
             });
     }
+
+
+
 
     espnTrending = event => {
         event.preventDefault();
@@ -351,56 +355,6 @@ class News extends Component {
             });
     }
 
-    OverwatchVids = event => {
-        event.preventDefault();
-
-        let resultArr = [];
-        let x = 0;
-
-        API.OverwatchScrape()
-            .then(response => {
-                let $ = cheerio.load(response.data);
-
-                $("div.col-sm-6.col-md-4").each(function (i, element) {
-                    let result = {};
-
-                    console.log($(this))
-
-                    x++
-
-                    result.id = x;
-                    result.title = $(this)
-                        .children("div")
-                        .children("div")
-                        .children("span")
-                        .children("button")
-                        .children("div")
-                        .text();
-                    result.img = $(this)
-                        .children("div")
-                        .children("img")
-                        .attr("src");
-
-                    let link = result.img.replace("https://i.ytimg.com/vi/", "")
-                    link = link.replace("/hqdefault.jpg", "")
-
-                    result.link = "https://www.thescoreesports.com/lol/videos/" + link
-
-                    console.log(result);
-
-
-                    resultArr.push(result);
-
-                });
-
-                this.setState({ news: [], vids: resultArr })
-
-            })
-            .catch(function (err) {
-                console.log(err);
-            });
-    }
-
     SmashVids = event => {
         event.preventDefault();
 
@@ -501,6 +455,74 @@ class News extends Component {
             });
     }
 
+    PCUpcoming = event => {
+        event.preventDefault();
+
+        let resultArr = [];
+        let x = 0;
+
+        API.PCScrape()
+            .then(response => {
+                let $ = cheerio.load(response.data);
+
+                $("div").each(function (i, element) {
+                    let result = {};
+
+                    console.log($(this))
+
+                    // x++
+
+                    // result.id = x;
+                    // result.title = $(this)
+                    //     .children("div")
+                    //     .children("a")
+                    //     .children("div")
+                    //     .children("div.NewsCard__title--37vMp")
+                    //     .text();
+                    // result.body = $(this)
+                    //     .children("div")
+                    //     .children("a")
+                    //     .children("div")
+                    //     .children("div.NewsCard__content--1VLID")
+                    //     .text();
+                    // result.img = $(this)
+                    //     .children("div")
+                    //     .children("a")
+                    //     .children("div")
+                    //     .children("img")
+                    //     .attr("src");
+                    // result.link = "https://www.thescoreesports.com/culture" + $(this)
+                    //     .children("div")
+                    //     .children("a")
+                    //     .attr("href");
+
+
+                    // resultArr.push(result);
+
+                });
+
+
+                // for (let i = 0; i < resultArr.length; i++) {
+                //     for (let i = 0; i < resultArr.length; i++) {
+                //         if (resultArr[i].title === "" || resultArr[i].img === undefined) {
+                //             resultArr.splice(i, 1);
+                //             console.log("removed")
+                //         };
+                //     };
+                // };
+
+
+                // this.setState({ news: resultArr })
+                // console.log(this.state.news)
+
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
+
+    }
+
+
     displayBox = () => {
         if (this.state.news.length) {
             return (
@@ -509,7 +531,7 @@ class News extends Component {
                         <ListItem key={news.id}>
                             <Card className={"articleCards"}>
                                 <a href={news.link} target={"_blank"}><CardHeader>
-                                    <h4>{news.title}</h4>
+                                    <h4 className={"articleTitle"}>{news.title}</h4>
                                 </CardHeader></a>
                                 <CardBody id={"articleCardBody"}>
                                     <Container>
@@ -538,7 +560,7 @@ class News extends Component {
                         <ListItem key={vids.id}>
                             <Card className={"articleCards"}>
                                 <a href={vids.link} target={"_blank"}><CardHeader>
-                                    <h4>{vids.title}</h4>
+                                    <h4 className={"articleTitle"}>{vids.title}</h4>
                                 </CardHeader></a>
                                 <CardBody id={"articleCardBody"}>
                                     <Container>
@@ -550,8 +572,8 @@ class News extends Component {
                                                 </div>
                                             </Col>
                                             <Col size={"md-4"}>
-                                            <div className="playBtn"><a href={vids.link} target={"_blank"} ><i className="fas fa-play" ></i></a></div>
-                                            <h5 className="playText">Watch Video!</h5>
+                                                <div className="playBtn"><a href={vids.link} target={"_blank"} ><i className="fas fa-play" ></i></a></div>
+                                                <h5 className="playText">Watch Video!</h5>
                                             </Col>
                                         </Row>
                                     </Container>
@@ -602,7 +624,7 @@ class News extends Component {
                                                 <Dropdown>
                                                     <DropdownBtn>Upcoming Games</DropdownBtn>
                                                     <DropdownMenu>
-                                                        <DropdownItem>genre1</DropdownItem>
+                                                        <DropdownItem onClick={this.PCUpcoming}>PC</DropdownItem>
                                                         <DropdownItem>genre2</DropdownItem>
                                                         <DropdownItem>genre3</DropdownItem>
                                                         <DropdownItem>genre4</DropdownItem>
