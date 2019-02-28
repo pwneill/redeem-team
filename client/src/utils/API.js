@@ -7,7 +7,7 @@ export default {
   },
   // Gets the book with the given id
   getEvent: function(id) {
-    return axios.get("http://localhost:3001/api/events" + id);
+    return axios.get("http://localhost:3001/api/events/" + id);
   },
   // Deletes the book with the given id
   deleteEvent: function(id) {

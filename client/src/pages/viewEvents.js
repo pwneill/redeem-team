@@ -1,13 +1,8 @@
 import React, { Component } from "react";
 import Jumbotron from "../components/Jumbotron";
-// import DeleteBtn from "../components/DeleteBtn";
-// import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
-// import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
-import { List, ListItem } from "../components/List";
-// import { Input, FormBtn } from "../components/Form";
-import { Card, CardHeader, CardBody } from "../components/Card";
+import { Card, CardBody } from "../components/Card";
 
 class Events extends Component {
     state = {
@@ -44,6 +39,7 @@ class Events extends Component {
                                             <Col size="md-6">
                                             <div className="text-center">
                                                 <strong>
+                                                    {event._id}<br />
                                                     {event.Name}<br />
                                                     on {event.date}<br />
                                                     {event.address1}<br />
