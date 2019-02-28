@@ -1,12 +1,18 @@
 import React, { Component } from "react";
-import { Input, FormBtn } from "../components/Form";
 import { Col, Row, Container } from "../components/Grid";
-import fieldNames from "./newEvent.json";
+import fieldNames from "../utils/newEvent.json";
 import Jumbotron from "../components/Jumbotron";
+import Form from "react-jsonschema-form";
+import API from "../utils/API"
+
+const schema = fieldNames;
 
 class createEvent extends Component {
-  state = {
-    fieldNames
+  log = type => console.log.bind(console, type);
+
+  onSubmit = ({formData}, e) => {
+    API.saveEvent(formData);
+    console.log("Data submitted: ",  formData)
   };
 
   render() {
@@ -16,20 +22,17 @@ class createEvent extends Component {
           <h1><strong>Gamers United</strong></h1>
           <h3 id="eventsbanner">Add a New Event</h3>
         </Jumbotron>
+        <div className="mb-5">
         <Row fluid>
-          <Col size="md-9" offset="md-3">
-            <form className="mb-5">
-              {this.state.fieldNames.map(question => (
-                <Input
-                  key={question.id}
-                  id={question.id}
-                  name={question.name}
-                />
-              ))}
-              <FormBtn>Submit</FormBtn>
-            </form>
+          <Col size="md-6" offset="md-3">
+            <Form
+              safeRenderCompletion={true}
+              schema={schema}
+              onSubmit={this.onSubmit}
+            />
           </Col>
         </Row>
+        </div>
       </Container>
     );
   }

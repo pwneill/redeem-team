@@ -14,13 +14,8 @@ export default {
     return axios.delete("http://localhost:3001/api/events" + id);
   },
   // Saves a book to the database
-  saveEvent: function(eventData) {
-    return axios.post("http://localhost3001/create_events", eventData);
-  },
-  // findBooks: function(name) {
-  //   return axios({
-  //       method: "GET",
-  //       url: "https://www.googleapis.com/books/v1/volumes?q=" + name + "&orderBy=relevance&key=AIzaSyAt7wN2sdvRMRkEX4NeR2nivYfLm9OevPs"
-  //   });
-  // }
+   saveEvent: function(eventData) {
+    return axios.post("http://localhost:3001/api/events", eventData);
+  }
+
 };

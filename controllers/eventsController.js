@@ -1,9 +1,8 @@
 const db = require("../models");
 
-// Defining methods for the booksController
+// Defining methods for the eventsController
 module.exports = {
   findAll: function(req, res) {
-    console.log("events are findAlling")
     db.Event
       .find(req.query)
       // .sort({ date: -1 })
