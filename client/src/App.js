@@ -6,6 +6,7 @@ import createEvent from "./pages/createEvent";
 import Events from "./pages/viewEvents";
 import NoMatch from "./pages/NoMatch";
 import viewEvent from "./pages/eventDetail";
+import Register from "./pages/register";
 import Nav from "./components/Nav";
 import "./App.css"
 
@@ -20,6 +21,7 @@ function App() {
           <Route exact path="/create_event" component={createEvent} />
           <Route exact path="/events" component={Events} />
           <Route exact path="/events/:id" component={viewEvent} />
+          <Route exact path="/events/:id/register" component={Register} />
           <Route component={NoMatch} />
         </Switch>
       </div>

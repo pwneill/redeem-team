@@ -1,0 +1,16 @@
+{
+    "title": "Sign Up",
+    "type": "object",
+    "required": ["Name"],
+    "properties": {
+        "Name": {
+            "type": "string", "title": "Player Name"
+        },
+        "Email": {
+            "type": "string", "title": "Email"
+        },
+        "Phone": {
+            "type": "integer", "title": "Phone"
+        }
+    } 
+}
