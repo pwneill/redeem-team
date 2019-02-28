@@ -39,16 +39,20 @@ class Events extends Component {
                                     <CardBody key={event._id}>
                                         <Row>
                                             <Col size="md-3">
-                                                img
+                                                <img src={event.ImgSrc} width="300" length="300" />
                                     </Col>
                                             <Col size="md-6">
                                             <div className="text-center">
                                                 <strong>
                                                     {event.Name}<br />
-                                                    on {event.date}<br />
-                                                    {event.address1}<br />
-                                                    {event.game}<br /> 
-                                                    {event.console}<br />
+                                                    on {event.Date}<br />
+                                                    {event.AddressLine1}<br />
+                                                    {event.AddressLine2}<br />
+                                                    {event.City}<br />
+                                                    {event.State}<br />
+                                                    {event.Zip}<br />
+                                                    {event.Game}<br /> 
+                                                    {event.Console}<br />
                                                 </strong>
                                                 </div>
                                             </Col>
@@ -57,7 +61,7 @@ class Events extends Component {
                                         <Row fluid>
                                         <Col>
                                         foo
-                                        {event.description}
+                                        {event.Description}
                                         </Col>
                                         </Row>
                                     </CardBody>
