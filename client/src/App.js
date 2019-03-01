@@ -9,14 +9,11 @@ import Nav from "./components/Nav";
 import newUser from "./pages/newUser"
 import login from "./pages/login"
 import signIn from "./pages/signin"
-import Auth0Lock from "auth0-lock"
+// import Profile from "./pages/Profile/profile"
 import "./App.css"
 
 class App extends Component {
 
-  componentWillMount() {
-    this.lock = new Auth0Lock('LHI8LEPW14lgTw6syHhIXfMhxMPPpRGU', 'C9n7DAJuAmBfxvzpoRjWbpohSNDMcVF-qfmq5A0pQKVGHwcFUpyVbSfsPwvUZ9bt')
-  }
 
   render() {
 
@@ -31,7 +28,8 @@ class App extends Component {
             <Route exact path="/events" component={Events} />
             <Route exact path="/newUser" component={newUser} />
             <Route exact path="/login" component={login} />
-            <Route exact path ="/signIn" component={signIn} lock={this.lock} />
+            <Route exact path ="/signIn" component={signIn} lock={this.lock}/>
+            {/* <Route exact path ="/profile" component={Profile}  /> */}
             <Route component={NoMatch} />
           </Switch>
         </div>
