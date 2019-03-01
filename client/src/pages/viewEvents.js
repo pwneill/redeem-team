@@ -32,37 +32,38 @@ class Events extends Component {
                     <h3 id="eventsbanner">Events in your Area</h3>
                 </Jumbotron>
                 <Row fluid>
+
                     <Col size="md-10" offset="md-1">
                         {this.state.events.length ? (
-                            <Card id="maineventsCard">
+                            <Card id="maineventsCard" className="mt-2">
                                 {this.state.events.map(event => (
                                     <CardBody key={event._id}>
                                         <Row>
                                             <Col size="md-3">
                                                 <img src={event.ImgSrc} width="300" length="300" />
-                                    </Col>
+                                            </Col>
                                             <Col size="md-6">
-                                            <div className="text-center">
-                                                <strong>
-                                                    {event.Name}<br />
-                                                    on {event.Date}<br />
-                                                    {event.AddressLine1}<br />
-                                                    {event.AddressLine2}<br />
-                                                    {event.City}<br />
-                                                    {event.State}<br />
-                                                    {event.Zip}<br />
-                                                    {event.Game}<br /> 
-                                                    {event.Console}<br />
-                                                </strong>
+                                                <div className="text-center">
+                                                    <strong>
+                                                        {event.Name}<br />
+                                                        on {event.Date}<br />
+                                                        {event.AddressLine1}<br />
+                                                        {event.AddressLine2}<br />
+                                                        {event.City}<br />
+                                                        {event.State}<br />
+                                                        {event.Zip}<br />
+                                                        {event.Game}<br />
+                                                        {event.Console}<br />
+                                                    </strong>
                                                 </div>
                                             </Col>
                                             <Col size="md-3">map</Col>
                                         </Row>
                                         <Row fluid>
-                                        <Col>
-                                        foo
+                                            <Col>
+                                                foo
                                         {event.Description}
-                                        </Col>
+                                            </Col>
                                         </Row>
                                     </CardBody>
 

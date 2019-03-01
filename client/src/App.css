@@ -71,4 +71,14 @@ h3{
   color: black;
 }
 
+#cardBorder{
+
+  border-left: 40px;
+  border-right:40px;
+  border-top: 40px;
+  border-bottom: 40px;
+  border-color: black;
+  
+}
+
 
