@@ -13,6 +13,7 @@
   border-radius: 0px;
   border-left: none;
   border-right: none;
+  border-bottom: 5px;
 }
 
 .list-overflow-container li * {

@@ -71,6 +71,7 @@ h3{
   color: black;
 }
 
+
 #dropdownCard {
   margin: 20px;
   background-color: #eeeeee54;
@@ -201,5 +202,16 @@ i:hover {
   outline: none !important;
   box-shadow: none;
 }
+=======
+#cardBorder{
+
+  border-left: 40px;
+  border-right:40px;
+  border-top: 40px;
+  border-bottom: 40px;
+  border-color: black;
+  
+}
+
 
 

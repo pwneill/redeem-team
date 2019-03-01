@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css";
 
+
 function Nav() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark">
@@ -14,6 +15,10 @@ function Nav() {
           <a className="nav-item nav-link" href="/events">Events</a>
           <a className="nav-item nav-link" href="/create_event">Create Event</a>
           <a className="nav-item nav-link" href="/news">News</a>
+          <div className="navbar-nav signInLinks">
+          <a className="nav-item nav-link" href="/newUser">Create New User</a>
+          <a className="nav-item nav-link" href="/signIn">Sign In</a>  
+          </div>
         </div>
       </div>
     </nav>
