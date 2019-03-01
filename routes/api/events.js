@@ -10,6 +10,7 @@ router.route("/")
 router.route("/:id")
   .get(eventsController.findById)
   .put(eventsController.update)
+  .post(eventsController.register)
   .delete(eventsController.remove);
 
 router 

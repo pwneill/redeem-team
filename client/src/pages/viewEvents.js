@@ -35,14 +35,12 @@ class Events extends Component {
             {this.state.events.length ? (
               <Card id="maineventsCard">
                 {this.state.events.map(event => (
-                  <CardBody key={event._id}>
+                  <CardBody className="mb-5" key={event._id}>
                     <Row>
                       <Col size="md-3"><img className="img-thumbnail" src={event.ImgSrc} alt={event.Name} /></Col>
                       <Col size="md-6">
                         <div className="text-center">
                           <strong>
-                            {event._id}
-                            <br />
                             {event.Name}
                             <br />
                             on {event.Date}

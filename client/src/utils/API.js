@@ -13,6 +13,9 @@ export default {
   deleteEvent: function(id) {
     return axios.delete("http://localhost:3001/api/events" + id);
   },
+  register: function(id, eventData) {
+    return axios.post("http://localhost:3001/api/events/" + id, eventData)
+  },
   // Saves a book to the database
    saveEvent: function(eventData) {
     return axios.post("http://localhost:3001/api/events", eventData);

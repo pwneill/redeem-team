@@ -12,11 +12,9 @@ class Register extends Component {
   };
   componentDidMount() {
     var id = this.props.match.params.id;
-    // console.log(id);
     this.loadEvent(id);
   }
 
-  // Schema.schema.properties.Q1.title
   loadEvent = id => {
     API.getEvent(id)
       .then(res => {
@@ -36,6 +34,11 @@ class Register extends Component {
       })
       .catch(err => console.log(err));
   };
+
+  onSubmit = (data)  => {
+    API.register(this.state.event._id, data.formData)
+    console.log(data.formData);
+  }
 
   render() {
     return (

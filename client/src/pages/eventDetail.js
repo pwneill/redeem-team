@@ -25,8 +25,8 @@ class viewEvent extends Component {
     return (
       <Container fluid>
         <Row fluid>
-          <Col offset="md-5">
-            <h2 className="eventDetail mt-5">{this.state.event.Name}</h2>
+          <Col>
+            <h3 className="eventDetail mt-5">{this.state.event.Name}</h3>
           </Col>
         </Row>
         <Row fluid>
