@@ -71,4 +71,6 @@ h3{
   color: black;
 }
 
-
+#root__title, .eventDetail, .control-label{
+  color: white;
+}

@@ -3,7 +3,7 @@ import "./style.css";
 
 export function Card(props) {
     return (
-        <div className="card" id={props.id}>
+        <div className="card mt-2" id={props.id}>
             {props.children}
         </div>
     )

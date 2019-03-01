@@ -4,26 +4,35 @@ import { Col, Row, Container } from "../components/Grid";
 import Form from "react-jsonschema-form";
 import { Card, CardBody } from "../components/Card";
 import registerFieldNames from "../utils/registration.json";
-import eventFieldNames from "../utils/newEvent.json";
-
-const schema = registerFieldNames;
-schema.properties.Q1 = eventFieldNames.properties.Q1;
-schema.properties.Q2 = eventFieldNames.properties.Q2;
 
 class Register extends Component {
   state = {
-    event: {}
+    event: {},
+    Schema: {registerFieldNames}
   };
   componentDidMount() {
     var id = this.props.match.params.id;
     // console.log(id);
     this.loadEvent(id);
   }
+
+  // Schema.schema.properties.Q1.title
   loadEvent = id => {
     API.getEvent(id)
       .then(res => {
-        console.log(res.data);
         this.setState({ event: res.data });
+
+        const newSchema = registerFieldNames;
+        newSchema.properties.Q1 = {
+          type: "string",
+          title: res.data.Q1
+        };
+        newSchema.properties.Q2 = {
+          type: "string",
+          title: res.data.Q2
+        };
+
+        this.setState({ Schema: newSchema})
       })
       .catch(err => console.log(err));
   };
@@ -32,23 +41,24 @@ class Register extends Component {
     return (
       <Container>
         <Row fluid>
-          <h3>Register for {this.state.Name}</h3>
+          <h3 className="mt-5 mb-3">Register for {this.state.event.Name}</h3>
         </Row>
         <Row fluid>
           <Card>
-            <CardBody>
-              <h5>{this.state.Name}</h5>
-              <i>{this.state.LocationName}</i>
+            <CardBody className="mt-3 mb-3">
+              <h5>{this.state.event.Name}</h5>
+              <i>{this.state.event.LocationName}</i>
               <br />
-              {this.state.Game} / {this.state.Console} <br />
+              {this.state.event.Game} / {this.state.event.Console} <br />
             </CardBody>
           </Card>
         </Row>
         <Row fluid>
           <Col>
             <Form
+              className="mt-3 mb-5"
               safeRenderCompletion={true}
-              schema={schema}
+              schema={this.state.Schema}
               onSubmit={this.onSubmit}
             />
           </Col>
