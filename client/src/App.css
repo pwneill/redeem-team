@@ -121,7 +121,7 @@ h3{
   width: 100%;
   background-color: #eeeeeede;
   margin-top: 14px;
-  z-index: 5;
+  z-index: 3;
 }
 
 .dropdown-item {
@@ -132,11 +132,13 @@ h3{
   background-image: url("https://i.imgur.com/kwUTHrJ.gif");
   background-size: cover;
   box-shadow: 5px 5px 30px #373538;
+  z-index: 0;
 }
 
 .list-group-item {
   background-color: #eeeeee50;
   border: none;
+  z-index: 1;
 }
 
 .newsImg {
@@ -167,6 +169,7 @@ i.fa-play {
   background-color: #626569da;
   color: #000000;
   box-shadow: 5px 5px 30px #373538;
+  z-index: 2;
 }
 
 .articleTitle {
