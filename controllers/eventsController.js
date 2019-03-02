@@ -25,13 +25,12 @@ module.exports = {
   },
   register: function(req, res) {
     console.log(req.params.id)
-    console.log(req.body)
     db.Register.create(req.body)
       .then(function(dbRegistration) {
-        console.log("this is running", dbRegistration)
+        console.log(dbRegistration._id)
         return db.Event.findOneAndUpdate(
           { _id: req.params.id },
-          { $push: { attendees: dbRegistration.body._id } },
+          { $push: { attendees: dbRegistration._id } },
           { new: true }
         );
       })

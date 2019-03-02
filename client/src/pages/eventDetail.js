@@ -12,11 +12,13 @@ class viewEvent extends Component {
     console.log(id);
     this.loadEvent(id);
   }
+
   loadEvent = id => {
     API.getEvent(id)
       .then(res => {
         console.log(res.data);
         this.setState({ event: res.data });
+        console.log(this.state.event.attendees.length)
       })
       .catch(err => console.log(err));
   };
@@ -46,7 +48,15 @@ class viewEvent extends Component {
         <span className="border-top" />
         <Row>
           <Col>
-            <u className="eventDetail">Attendees:</u>
+            <u className="eventDetail">
+            Attendees: </u>
+            {this.state.event.attendees ? (
+              <div>
+                {this.state.event.attendees.map(attendee => (
+                <img className="img-rounded mt-3" src='https://propertymarketersllc.com/wp-content/uploads/2018/05/profile-picture-placeholder.png' alt={attendee} key={attendee}></img>
+            ))} </div> ) : (
+             <span>none</span>
+            )}
             <br />
           </Col>
         </Row>

@@ -11,7 +11,7 @@ class Register extends Component {
     Schema: {registerFieldNames}
   };
   componentDidMount() {
-    var id = this.props.match.params.id;
+    let id = this.props.match.params.id;
     this.loadEvent(id);
   }
 

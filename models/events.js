@@ -68,9 +68,10 @@ var EventSchema = new Schema({
   attendees: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Registration"
+      ref: "Register"
     }
-  ],
+  ]
+  ,
   comment: [
     {
       type: Schema.Types.ObjectId,
