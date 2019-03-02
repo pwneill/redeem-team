@@ -19,7 +19,7 @@ a:link {
   text-align: center;
   padding-top: 20vh;
   background-image: url("https://i.imgur.com/Zri3Udn.gif");
-  background-size: contain;
+  background-size: cover;
   color: #eeeeee;
   box-shadow: 5px 5px 30px #ffffff;
   transition: all 0.5s ease-in-out; 
@@ -71,6 +71,138 @@ h3{
   color: black;
 }
 
+
+#dropdownCard {
+  margin: 20px;
+  background-color: #eeeeee54;
+}
+
+#newsMainContainer {
+  margin: 20px;
+  background-color: #eeeeee54;
+}
+
+#genreCard {
+  margin: 20px;
+  text-align: center;
+  background-image: url("https://i.imgur.com/JP3yOzm.gif");
+  background-size: cover;
+  background-position-y: -400px;
+  box-shadow: 5px 5px 30px #373538;
+  transition: all 0.5s ease-in-out; 
+}
+
+#genreCard:hover {
+  box-shadow: 5px 5px 30px #ffffff;
+}
+
+#upcomingCard {
+  margin: 20px;
+  text-align: center;
+  background-image: url("https://i.imgur.com/XuIpkbN.gif");
+  background-size: cover;
+  box-shadow: 5px 5px 30px #373538;
+  transition: all 0.5s ease-in-out; 
+}
+
+#upcomingCard:hover {
+  box-shadow: 5px 5px 30px #ffffff;
+}
+
+#dropdownMenuButton {
+  color: #eeeeee;
+  width: 100%;
+}
+
+
+.dropdown-menu {
+  width: 100%;
+  background-color: #eeeeeede;
+  margin-top: 14px;
+}
+
+.dropdown-item {
+  font-size: 15px;
+}
+
+.list-overflow-container {
+  background-image: url("https://i.imgur.com/kwUTHrJ.gif");
+  background-size: cover;
+  box-shadow: 5px 5px 30px #373538;
+}
+
+.list-group-item {
+  background-color: #eeeeee50;
+  border: none;
+}
+
+.newsImg {
+  width: 100%;
+}
+
+.vidsImg {
+  width: 100%;
+}
+
+i.fa-play {
+  font-size: 100px;
+  vertical-align: 20vh;
+}
+
+.playBtn {
+  text-align: center;
+  position: relative;
+  top: 16vh;
+}
+
+.playText {
+  text-align: center
+}
+
+.articleCards {
+  margin: 20px;
+  background-color: #626569da;
+  color: #000000;
+  box-shadow: 5px 5px 30px #373538;
+}
+
+.articleTitle {
+  color: #000000;
+}
+
+.articleTitle:hover {
+  color: #383636;
+}
+
+i {
+  color: #000000;
+}
+
+i:hover {
+  color: #383636;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffffda; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(0, 0, 0); 
+}
+
+.btn:focus,.btn:active {
+  outline: none !important;
+  box-shadow: none;
+}
+=======
 #cardBorder{
 
   border-left: 40px;
@@ -80,7 +212,6 @@ h3{
   border-color: black;
   
 }
-
 
 
 

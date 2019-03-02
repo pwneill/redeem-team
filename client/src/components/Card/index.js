@@ -1,26 +1,25 @@
 import React from "react";
-import "./style.css";
 
 export function Card(props) {
     return (
-        <div className="card" id={props.id}>
+        <div id={props.id} className={"card " + props.className}>
             {props.children}
         </div>
     )
-};
+}
 
-export function CardHeader(props) {
+export function CardHeader({children}) {
     return (
-        <div className="card-header">
-            {props.children}
+        <div className={"card-header"}>
+            {children}
         </div>
     )
-};
+}
 
-export function CardBody(props) {
+export function CardBody({children}) {
     return (
-        <div className="card-body">
-            {props.children}
+        <div className={"card-body"}>
+            {children}
         </div>
     )
 }

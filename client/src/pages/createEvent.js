@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Col, Row, Container } from "../components/Grid";
-import fieldNames from "../utils/newEvent.json";
+// import fieldNames from "../utils/newEvent.json";
 import Jumbotron from "../components/Jumbotron";
-import Form from "react-jsonschema-form";
+// import Form from "react-jsonschema-form";
 import API from "../utils/API"
 
-const schema = fieldNames;
+// const schema = fieldNames;
 
 class createEvent extends Component {
   log = type => console.log.bind(console, type);
@@ -25,11 +25,11 @@ class createEvent extends Component {
         <div className="mb-5">
         <Row fluid>
           <Col size="md-6" offset="md-3">
-            <Form
+            {/* <Form
               safeRenderCompletion={true}
               schema={schema}
               onSubmit={this.onSubmit}
-            />
+            /> */}
           </Col>
         </Row>
         </div>
