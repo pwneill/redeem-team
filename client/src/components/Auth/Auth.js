@@ -6,7 +6,7 @@ export default class Auth {
     auth0 = new auth0.WebAuth({
         domain: 'rich-donovan.auth0.com',
         clientID: 'LHI8LEPW14lgTw6syHhIXfMhxMPPpRGU',
-        redirectUri: 'http://localhost:3000/' || 'https://sheltered-island-57421.herokuapp.com/',
+        redirectUri: 'http://localhost:3000/' || 'https://powerful-beyond-98279.herokuapp.com/',
         responseType: 'token id_token',
         scope: 'openid profile'
     })
