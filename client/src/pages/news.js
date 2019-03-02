@@ -639,7 +639,7 @@ class News extends Component {
     displayBox = () => {
         if (this.state.news.length) {
             return (
-                <List id={"overflow"}>
+                <List id={"newsOverflow"}>
                     {this.state.news.map(news => (
                         <ListItem key={news.id}>
                             <Card className={"articleCards"}>
@@ -668,7 +668,7 @@ class News extends Component {
             )
         } else if (this.state.vids.length) {
             return (
-                <List id={"overflow"}>
+                <List id={"newsOverflow"}>
                     {this.state.vids.map(vids => (
                         <ListItem key={vids.id}>
                             <Card className={"articleCards"}>
@@ -698,7 +698,7 @@ class News extends Component {
             )
         } else if (this.state.upcoming.length) {
             return (
-                <List id={"overflow"}>
+                <List id={"newsOverflow"}>
                 {this.state.upcoming.map(upcoming => (
                     <ListItem key={upcoming.id}>
                         <Card className={"articleCards"}>

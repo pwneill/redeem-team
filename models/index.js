@@ -1,4 +1,5 @@
 module.exports = {
-  Event: require("./events"),
-  Scrape: require("./scrape.js")
-};
+    Event: require("./events"),
+    Scrape: require("./scrape.js")
+  };
+  
