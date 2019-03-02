@@ -121,6 +121,7 @@ h3{
   width: 100%;
   background-color: #eeeeeede;
   margin-top: 14px;
+  z-index: 5;
 }
 
 .dropdown-item {
