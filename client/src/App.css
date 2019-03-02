@@ -125,7 +125,7 @@ h3{
   font-size: 15px;
 }
 
-.list-overflow-container {
+#newsOverflow {
   background-image: url("https://i.imgur.com/kwUTHrJ.gif");
   background-size: cover;
   box-shadow: 5px 5px 30px #373538;
@@ -202,7 +202,7 @@ i:hover {
   outline: none !important;
   box-shadow: none;
 }
-=======
+
 #cardBorder{
 
   border-left: 40px;
@@ -211,6 +211,120 @@ i:hover {
   border-bottom: 40px;
   border-color: black;
   
+}
+
+#viewHeaderCard {
+  margin: 20px;
+  background-color: #eeeeee54;
+}
+
+#viewWordsCard {
+  margin: 20px;
+  text-align: center;
+  background-image: url("https://i.imgur.com/RwG0QIj.gif");
+  background-size: cover;
+  background-position-y: -400px;
+  box-shadow: 5px 5px 30px #373538;
+  color: #eeeeee;
+}
+
+#eventsbanner {
+  color: #eeeeee;
+}
+
+#maineventsCard {
+  background-color: #eeeeee00
+}
+
+#viewOverflow {
+  background-image: url("https://i.imgur.com/V5GDPlA.gif");
+  background-size: cover;
+  background-position-y: -500px;
+  box-shadow: 5px 5px 30px #373538;
+}
+
+#maineventsCard {
+  margin: 20px;
+  background-color: #626569da;
+  color: #000000;
+  box-shadow: 5px 5px 30px #373538;
+}
+
+#viewMainContainer {
+  margin: 5px;
+  background-color: #eeeeee54;
+}
+
+#createHeaderCard {
+  margin: 20px;
+  background-color: #eeeeee54;
+}
+
+#createWordsCard {
+  margin: 20px;
+  text-align: center;
+  background-image: url("https://i.imgur.com/QJX7A6a.gif");
+  background-size: cover;
+  background-position-y: -300px;
+  box-shadow: 5px 5px 30px #373538;
+  color: #eeeeee;
+}
+
+#eventsbanner {
+  color: #eeeeee;
+}
+
+#createEventsCard {
+  background-color: #eeeeee00
+}
+
+#createOverflow {
+  background-image: url("https://i.imgur.com/YXPFhim.gif");
+  background-size: cover;
+  background-position-y: -400px;
+  box-shadow: 5px 5px 30px #373538;
+}
+
+#createEventsCard {
+  margin: 20px;
+  background-color: #626569da;
+  color: #000000;
+  box-shadow: 5px 5px 30px #373538;
+}
+
+#createMainContainer {
+  margin: 5px;
+  background-color: #eeeeee54;
+}
+
+#userEventsCard {
+  background-color: #eeeeee00
+}
+
+#userOverflow {
+  background-image: url("https://i.imgur.com/PLPP7I8.gif");
+  background-size: cover;
+  box-shadow: 5px 5px 30px #373538;
+}
+
+#userEventsCard {
+  margin: 20px;
+  background-color: #626569da;
+  color: #000000;
+  box-shadow: 5px 5px 30px #373538;
+}
+
+#userMainContainer {
+  margin: 20px;
+  background-color: #eeeeee54;
+}
+
+input {
+  margin: 10px;
+}
+
+#userButton {
+  width: 100%
 }
 
 
