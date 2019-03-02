@@ -2,8 +2,11 @@
 <html lang="en">
 
 <head>
+  <!-- Auth0Lock script -->
+  <script src="https://cdn.auth0.com/js/lock/11.x/lock.min.js"></script>
+  <!-- Setting the right viewport -->
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no" />
   <meta name="theme-color" content="#000000" />
   <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -19,6 +22,9 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+    crossorigin="anonymous">
+  <script src="https://unpkg.com/scrollreveal"></script>
   <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -35,5 +41,26 @@
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
 </body>
+
+<script>
+
+  window.sr = ScrollReveal();
+  sr.reveal(".navbar", {
+    duration: 1500,
+    origin: "top",
+    distance: "100px"
+  })
+  sr.reveal(".card", {
+    duration: 1500,
+    origin: "bottom",
+    distance: "300px"
+  })
+  sr.reveal("div#eventsCard", {
+    duration: 1500,
+    origin: "bottom",
+    distance: "300px"
+  })
+
+</script>
 
 </html>
