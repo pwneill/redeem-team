@@ -116,14 +116,6 @@ h3{
   width: 100%;
 }
 
-
-.dropdown-menu {
-  width: 100%;
-  background-color: #eeeeeede;
-  margin-top: 14px;
-  z-index: 3;
-}
-
 .dropdown-item {
   font-size: 15px;
 }
@@ -170,6 +162,13 @@ i.fa-play {
   color: #000000;
   box-shadow: 5px 5px 30px #373538;
   z-index: 2;
+}
+
+.dropdown-menu {
+  width: 100%;
+  background-color: #eeeeeede;
+  margin-top: 14px;
+  z-index: 99;
 }
 
 .articleTitle {
