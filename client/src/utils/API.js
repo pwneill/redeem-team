@@ -3,19 +3,19 @@ import axios from "axios";
 export default {
   // Gets all events
   getEvents: function() {
-    return axios.get("https://sheltered-island-57421.herokuapp.com//api/events");
+    return axios.get("https://powerful-beyond-98279.herokuapp.com/api/events");
   },
   // Gets the book with the given id
   getEvent: function(id) {
-    return axios.get("https://sheltered-island-57421.herokuapp.com//api/events" + id);
+    return axios.get("https://powerful-beyond-98279.herokuapp.com/api/events" + id);
   },
   // Deletes the book with the given id
   deleteEvent: function(id) {
-    return axios.delete("https://sheltered-island-57421.herokuapp.com//api/events" + id);
+    return axios.delete("https://powerful-beyond-98279.herokuapp.com/api/events" + id);
   },
   // Saves a book to the database
    saveEvent: function(eventData) {
-    return axios.post("https://sheltered-island-57421.herokuapp.com//api/events", eventData);
+    return axios.post("https://powerful-beyond-98279.herokuapp.com/api/events", eventData);
   },
   espnScrape: function() {
     return axios({
