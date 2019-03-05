@@ -11,6 +11,10 @@ var EventSchema = new Schema({
     type: String,
     required: false
   },
+  LocationName : {
+    type:String,
+    required: false
+  },
   AddressLine1: {
     type: String,
     required: false

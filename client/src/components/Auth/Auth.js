@@ -1,54 +1,65 @@
 import auth0 from "auth0-js";
 
 
-export default class Auth {
 
-    auth0 = new auth0.WebAuth({
-        domain: 'rich-donovan.auth0.com',
-        clientID: 'LHI8LEPW14lgTw6syHhIXfMhxMPPpRGU',
-        redirectUri: 'https://powerful-beyond-98279.herokuapp.com/' || 'http://localhost:3000/', 
-        responseType: 'token id_token',
-        scope: 'openid profile'
-    })
-
-    login() {
-        this.auth0.authorize()
-    }
-
-    constructor() {
-        this.login = this.login.bind(this);
-        this.handleAuthentication = this.handleAuthentication.bind(this);
-        this.getAccessToken = this.getAccessToken.bind(this);
-        this.getIdToken = this.getIdToken.bind(this);
-        // this.getProfile = this.getProflie.bind(this);
-    }
-
-    handleAuthentication() {
-        this.auth0.parseHash((err, authResult) => {
-            if (authResult && authResult.accessToken && authResult.idToken) {
-                this.setSession(authResult);
-            } else if (err) {
-                console.log(err);
-                alert(`Error: ${err.error}. Check the console for further details.`);
-            }
+class Auth {
+    constructor(){
+        this.auth0 = new auth0.WebAuth({
+            domain: 'rich-donovan.auth0.com',
+            clientID: 'LHI8LEPW14lgTw6syHhIXfMhxMPPpRGU',
+            redirectUri:  'http://localhost:3000/' || 'https://powerful-beyond-98279.herokuapp.com/',
+            audience: 'https://rich-donovan.auth0.com/userinfo',
+            responseType: 'token id_token',
+            scope: 'openid profile'
         });
+
+        this.getProfile = this.getProfile.bind(this);
+        this.handleAuthentication = this.handleAuthentication.bind(this);
+        this.isAuthenticated = this.isAuthenticated.bind(this);
+        this.signIn = this.signIn.bind(this);
+        this.signOut = this.signOut.bind(this);
+    }
+    getProfile(){
+        return this.profile;
     }
 
-    // getProfile(cb) {
-    //     this.auth0.client.userInfo(this.accessToken, (err, profile) => {
-    //         if (profile) {
-    //             this.userProfile = profile;
-    //         }
-    //         cb(err, profile)
-    //     })
-    // }
-
-    getAccessToken() {
-        return this.accessToken;
-      }
-    
-      getIdToken() {
+    getIdToken(){
         return this.idToken;
-      }
+    }
 
+    isAuthenticated(){
+        let thing = new Date().getTime();
+        let response = (thing < this.expiresAt);
+        console.log("I am authenticated: ", response);
+        console.log(this.expiresAt);
+        return response;
+    }
+    signIn(){
+        this.auth0.authorize();
+    }
+    
+    handleAuthentication(){
+        return new Promise((resolve,reject)=>{
+            this.auth0.parseHash((err,authResult)=> {
+                if (err) return reject(err);
+                if (!authResult || !authResult.idToken){
+                    return reject(err);
+                }
+            this.idToken= authResult.idToken;
+            this.profile = authResult.idTokenPayload;
+            this.expiresAt = authResult.idTokenPayload.exp * 1000;
+            resolve();
+            });
+        })
+    }
+
+    signOut(){
+        this.idToken = null;
+        this.profile= null;
+        this.expiresAt = null;
+    }
 }
+
+const auth0Client = new Auth();
+
+export default auth0Client;
