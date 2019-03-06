@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import Auth from '../components/Auth/Auth';
+import auth0client from './../components/Auth/Auth';
 
 
 class signIn extends Component {
@@ -8,7 +8,7 @@ class signIn extends Component {
     render() {
 
 
-        const auth = new Auth();
+        const auth = new auth0client();
         auth.login();
 
         return (
