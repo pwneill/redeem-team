@@ -19,7 +19,7 @@ if (process.env.NODE_ENV === "production") {
 // Add routes, both API and view
 app.use(routes);
 
-var dbName = "Event";
+var dbName = "GamersUnited";
 // Connect to the Mongo DB
 var MONGODB_URI = process.env.MONGODB_URI || "`mongodb://localhost/" + dbName;
 

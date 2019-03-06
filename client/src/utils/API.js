@@ -20,49 +20,49 @@ export default {
   espnScrape: function() {
     return axios({
       method: "GET",
-      url: "http://www.espn.com/esports/"
+      url: "https://cors-anywhere.herokuapp.com/https://www.espn.com/esports/"
     })
   },
   theScoreScrape: function() {
     return axios({
       method: "GET",
-      url: "https://www.thescoreesports.com/culture"
+      url: "https://cors-anywhere.herokuapp.com/https://www.thescoreesports.com/culture"
     })
   },
   LoLScrape: function() {
     return axios({
       method: "GET",
-      url: "https://www.thescoreesports.com/lol/videos"
+      url: "https://cors-anywhere.herokuapp.com/https://www.thescoreesports.com/lol/videos"
     })
   },
   DotaScrape: function() {
     return axios({
       method: "GET",
-      url: "https://www.thescoreesports.com/dota2/videos"
+      url: "https://cors-anywhere.herokuapp.com/https://www.thescoreesports.com/dota2/videos"
     })
   },
   CSGOScrape: function() {
     return axios({
       method: "GET",
-      url: "https://www.thescoreesports.com/csgo/videos"
+      url: "https://cors-anywhere.herokuapp.com/https://www.thescoreesports.com/csgo/videos"
     })
   },
   OverwatchScrape: function() {
     return axios({
       method: "GET",
-      url: "https://www.thescoreesports.com/overwatch/videos"
+      url: "https://cors-anywhere.herokuapp.com/https://www.thescoreesports.com/overwatch/videos"
     })
   },
   SmashScrape: function() {
     return axios({
       method: "GET",
-      url: "https://www.thescoreesports.com/smash/videos"
+      url: "https://cors-anywhere.herokuapp.com/https://www.thescoreesports.com/smash/videos"
     })
   },
   StreetFighterScrape: function() {
     return axios({
       method: "GET",
-      url: "https://www.thescoreesports.com/streetfighter/videos"
+      url: "https://cors-anywhere.herokuapp.com/https://www.thescoreesports.com/streetfighter/videos"
     })
   },
   PS4Scrape: function() {
