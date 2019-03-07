@@ -1,0 +1,28 @@
+{
+    "title": "Register for this Event",
+    "type": "object",
+    "required": ["Name"],
+    "properties": {
+        "Name": {
+            "type": "string", "title": "Your Name"
+        },
+        "Email": {
+            "type": "string", "title": "Email Address (optional)"
+        },
+        "Phone": {
+            "type": "integer", "title": "Phone Number (optional)"
+        },
+        "HaveController": {
+            "type": "boolean", "title": "Can you bring your own controller?"
+        },
+        "BringController": {
+            "type": "boolean", "title": "Would you be willing to bring extra controllers?"
+        },
+        "HaveConsole": {
+            "type": "boolean", "title": "Can you bring your own console?"
+        },
+        "HaveGame": {
+            "type": "boolean", "title": "Can you bring your own copy of the game?"
+        }
+    } 
+}
