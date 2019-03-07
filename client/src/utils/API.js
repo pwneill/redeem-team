@@ -14,8 +14,18 @@ export default {
     return axios.delete("http://localhost:3001/api/events" + id);
   },
   // Saves a book to the database
-   saveEvent: function(eventData) {
+  saveEvent: function(eventData) {
     return axios.post("http://localhost:3001/api/events", eventData);
+  },
+  saveArticle: function(articleData) {
+    return axios.post("http://localhost:3001/api/scrape", articleData);
+  },
+  saveRegister: function(registerData) {
+    return axios.post("http://localhost:3001/api/register", registerData);
+  },
+  getRegisters: function(id) {
+    return axios.get("http://localhost:3001/api/register/");
+
   },
   espnScrape: function() {
     return axios({

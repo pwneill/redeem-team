@@ -344,4 +344,45 @@ input {
   background-color: #888
 }
 
+#artistRouteLink {
+  color:white;
+  text-align: center;
+}
 
+.artistImages {
+  width: 100%;
+  margin: 10px;
+}
+
+#artistsMainContainer {
+  margin: 20px;
+  background-color: #eeeeee54;
+}
+
+#artistsOverflow {
+  background-color: #626569da;
+  box-shadow: 5px 5px 30px #373538;
+}
+
+.artistsCard {
+  margin: 20px;
+  background-color: #626569da;
+  color: #000000;
+  box-shadow: 5px 5px 30px #373538;
+}
+
+.artistHeader {
+  text-align: center;
+}
+
+.artistLink {
+  color: #eeeeee;
+}
+
+.artistLink:hover {
+  color: #000000da;
+}
+
+.atendeeWords {
+  font-size: 12px;
+}

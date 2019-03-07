@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Jumbotron from "../components/Jumbotron";
 // import DeleteBtn from "../components/DeleteBtn";
 import API from "../utils/API";
 // import { Link } from "react-router-dom";
@@ -88,8 +87,8 @@ class Events extends Component {
                                                                                 <br />
                                                                             </Col>
                                                                             <Col>
-                                                                                <Button href={`events/${event._id}`} className="float-left btn btn-dark">See More Details</Button>
-                                                                                <Button href={`events/${event._id}/register`} className="float-right btn btn-dark">Register Here</Button>
+                                                                                <Button href={`/details/${event._id}`} className="float-left btn btn-dark">See More Details</Button>
+                                                                                <Button href={`/register/${event._id}`} className="float-right btn btn-dark">Register Here</Button>
                                                                             </Col>
                                                                         </Row>
                                                                     </CardBody>

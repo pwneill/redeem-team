@@ -3,10 +3,10 @@ const Schema = mongoose.Schema;
 
 const scrapeSchema = new Schema({
   title: { type: String, required: true },
-  author: String,
-  synopsis: String,
-  thumbnail: String,
+  body: String,
+  img: String,
   link: String,
+  origin: String,
   date: { type: Date, default: Date.now }
 });
 
