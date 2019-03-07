@@ -34,7 +34,7 @@
             "type": "string", "title": "Console"
         },
         "Description": {
-            "type": "string", "title": "Game"
+            "type": "string", "title": "Description"
         },
         "ImgSrc": {
             "type": "string", "title": "Image Source"

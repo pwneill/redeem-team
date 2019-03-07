@@ -1,7 +1,14 @@
 import React from "react";
 import "./style.css";
+import {withRouter} from 'react-router-dom';
+import auth0Client from '../Auth/Auth';
 
-function Nav() {
+
+function Nav(props) {
+  const signOut = () => {
+    auth0Client.signOut();
+    props.history.replace('/');
+  }
   return (
     <nav className="navbar navbar-expand-lg navbar-dark">
       <a href="/"><h3 className="navbar-brand" >Gamers United</h3></a>
@@ -14,9 +21,26 @@ function Nav() {
           <a className="nav-item nav-link" href="/events">Events</a>
           <a className="nav-item nav-link" href="/create_event">Create Event</a>
           <a className="nav-item nav-link" href="/news">News</a>
+           
+          
           <div className="navbar-nav signInLinks">
-          <a className="nav-item nav-link" href="/newUser">Create New User</a>
-          <a className="nav-item nav-link" href="/signIn">Sign In</a>  
+          {
+            !auth0Client.isAuthenticated() &&
+            <div>
+            <button className="btn btn-dark" onClick={auth0Client.signIn}>Sign In</button>
+            <button className="btn btn-dark" onClick={auth0Client.signOut}>Sign Out</button>
+            </div>
+          }
+          {
+            auth0Client.isAuthenticated() && 
+            <div>
+              <label className="mr-2 text-white">{auth0Client.getProfile().name}</label>
+              <a className="nav-item nav-link" href="/" onClick={() => {signOut()}}>Sign Out</a>
+              </div>
+          }
+
+          
+          
           </div>
         </div>
       </div>
@@ -24,4 +48,4 @@ function Nav() {
   );
 }
 
-export default Nav;
+export default withRouter(Nav);
