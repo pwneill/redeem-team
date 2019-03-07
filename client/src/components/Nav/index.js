@@ -5,8 +5,8 @@ import auth0Client from '../Auth/Auth';
 
 
 function Nav(props) {
-  const signOut = () => {
-    auth0Client.signOut();
+  const logout = () => {
+    auth0Client.logout();
     props.history.replace('/');
   }
   return (
@@ -34,7 +34,7 @@ function Nav(props) {
             auth0Client.isAuthenticated() && 
             <div>
               <label className="mr-2 text-white">{auth0Client.getProfile().name}</label>
-              <a className="nav-item nav-link" href="/" onClick={() => {signOut()}}>Sign Out</a>
+              <a className="nav-item nav-link" href="/" onClick={() => {logout()}}>Sign Out</a>
               </div>
           }
 
