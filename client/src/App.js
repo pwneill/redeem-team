@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, withRouter } from "react-router-dom";
 import Launch from "./pages/launch";
 import News from "./pages/news";
 import createEvent from "./pages/createEvent";
@@ -19,9 +19,10 @@ import login from "./pages/login"
 import Callback from "./callback.js"
 // import Profile from "./pages/Profile/profile"
 import "./App.css"
+import auth0Client from "./components/Auth/Auth"
+
 
 class App extends Component {
-
 
   render() {
 
