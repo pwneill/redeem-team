@@ -36,6 +36,7 @@ class News extends Component {
                     x++
 
                     result.id = x;
+                    result.origin = "news";
                     result.title = $(this)
                         .text();
                     result.body = $(this)
@@ -104,6 +105,7 @@ class News extends Component {
                     x++
 
                     result.id = x;
+                    result.origin = "news";
                     result.title = $(this)
                         .children("div")
                         .children("a")
@@ -167,6 +169,7 @@ class News extends Component {
                     x++
 
                     result.id = x;
+                    result.origin = "vids";
                     result.title = $(this)
                         .children("div")
                         .children("div")
@@ -213,6 +216,7 @@ class News extends Component {
                     x++
 
                     result.id = x;
+                    result.origin = "vids";
                     result.title = $(this)
                         .children("div")
                         .children("div")
@@ -259,6 +263,7 @@ class News extends Component {
                     x++
 
                     result.id = x;
+                    result.origin = "vids";
                     result.title = $(this)
                         .children("div")
                         .children("div")
@@ -305,6 +310,7 @@ class News extends Component {
                     x++
 
                     result.id = x;
+                    result.origin = "vids";
                     result.title = $(this)
                         .children("div")
                         .children("div")
@@ -351,6 +357,7 @@ class News extends Component {
                     x++
 
                     result.id = x;
+                    result.origin = "vids";
                     result.title = $(this)
                         .children("div")
                         .children("div")
@@ -397,6 +404,7 @@ class News extends Component {
                     x++
 
                     result.id = x;
+                    result.origin = "vids";
                     result.title = $(this)
                         .children("div")
                         .children("div")
@@ -635,6 +643,38 @@ class News extends Component {
         this.setState({ vids: [], news: [], upcoming: resultArr })
     }
 
+    saveBtn = event => {
+        event.preventDefault();
+
+        let incoming = event.target.id;
+        incoming = incoming.split("-");
+
+        let tempNews = this.state.news;
+        let tempVids = this.state.vids;
+
+        if (incoming[1] === "news") {
+            for(let i = 0; i < tempNews.length; i++) {
+                if (tempNews[i].id === parseInt(incoming[0])) {
+                    API.saveArticle(tempNews[i]).then(function() {
+                        console.log("success");
+                    }).catch(function(err) {
+                        console.log(err);
+                    })
+                }
+            }
+        } else if (incoming[1] === "vids") {
+            for(let i = 0; i < tempVids.length; i++) {
+                if (tempVids[i].id === parseInt(incoming[0])) {
+                    API.saveArticle(tempVids[i]).then(function() {
+                        console.log("success");
+                    }).catch(function(err) {
+                        console.log(err);
+                    })
+                }
+            }
+        }
+    }
+
 
     displayBox = () => {
         if (this.state.news.length) {
@@ -652,7 +692,7 @@ class News extends Component {
                                             <Col size={"md-4"}>
                                                 <img className={"newsImg"} src={news.img} alt={news.img}></img>
                                                 <div className={"articleSave"}>
-                                                    <SaveBtn onClick={this.saveBtn}>Save</SaveBtn>
+                                                    <SaveBtn onClick={this.saveBtn} id={news.id + "-news"}>Save</SaveBtn>
                                                 </div>
                                             </Col>
                                             <Col size={"md-8"}>
@@ -681,7 +721,7 @@ class News extends Component {
                                             <Col size={"md-8"}>
                                                 <img className={"vidsImg"} src={vids.img} alt={vids.img}></img>
                                                 <div className={"articleSave"}>
-                                                    <SaveBtn onClick={this.saveBtn}>Save</SaveBtn>
+                                                    <SaveBtn onClick={this.saveBtn} id={vids.id + "-vids"}>Save</SaveBtn>
                                                 </div>
                                             </Col>
                                             <Col size={"md-4"}>
