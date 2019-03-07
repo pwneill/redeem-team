@@ -17,18 +17,6 @@ import auth0Client from "./components/Auth/Auth"
 
 class App extends Component {
 
-  // async componentDidMount() {
-  //   if (this.props.location.pathname === '/callback') return;
-  //   try {
-  //       console.log('silent hit')
-  //       await auth0Client.silentAuth();
-  //       this.forceUpdate();
-  //   } catch (err) {
-  //       if (err.error !== 'login_required') console.log(err.error)
-  //   }
-    
-
-
   render() {
 
     return (
