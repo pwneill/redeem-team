@@ -7,9 +7,9 @@ class Auth {
         this.auth0 = new auth0.WebAuth({
             domain: 'rich-donovan.auth0.com',
             clientID: 'LHI8LEPW14lgTw6syHhIXfMhxMPPpRGU',
-            redirectUri: 'http://localhost:3000/' || 'https://powerful-beyond-98279.herokuapp.com/',
+            redirectUri:  'http://localhost:3000/callback' || 'https://powerful-beyond-98279.herokuapp.com/',
             audience: 'https://rich-donovan.auth0.com/userinfo',
-            responseType: 'token id_token',
+            responseType: 'id_token',
             scope: 'openid profile'
         });
 
@@ -19,11 +19,13 @@ class Auth {
         this.signIn = this.signIn.bind(this);
         this.signOut = this.signOut.bind(this);
     }
-    getProfile() {
+    getProfile(){
+        console.log("Get profile hit")
         return this.profile;
     }
 
-    getIdToken() {
+    getIdToken(){
+        console.log(this.idToken)
         return this.idToken;
     }
 
@@ -34,34 +36,33 @@ class Auth {
         console.log(this.expiresAt);
         return response;
     }
-    signIn() {
+    signIn(){
+        console.log("sign in hit")
         this.auth0.authorize();
     }
-
-    handleAuthentication() {
-        return new Promise((resolve, reject) => {
-            this.auth0.parseHash((err, authResult) => {
+    
+    handleAuthentication(){
+        console.log("handleAuthentication Hit")
+        return new Promise((resolve,reject)=>{
+            this.auth0.parseHash((err, authResult)=> {
                 if (err) return reject(err);
                 if (!authResult || !authResult.idToken) {
                     return reject(err);
                 }
-                this.setSession(authResult);
-                resolve();
+            this.idToken= authResult.idToken;
+            this.profile = authResult.idTokenPayload;
+            this.expiresAt = authResult.idTokenPayload.exp * 1000;
+            console.log(this.expiresAt)
+            resolve();
             });
         })
     }
 
-    setSession(authResult) {
-        this.idToken = authResult.idToken;
-        this.profile = authResult.idTokenPayload;
-        this.expiresAt = authResult.idTokenPayload.exp * 1000;
-    }
-
-    signOut() {
-        this.auth0.logout({
-            returnTo: 'http://localhost:3000',
-            clientID: 'LHI8LEPW14lgTw6syHhIXfMhxMPPpRGU',
-        });
+    signOut(){
+        console.log("Sign Out was hit")
+        this.idToken = null;
+        this.profile= null;
+        this.expiresAt = null;
     }
 
     silentAuth() {

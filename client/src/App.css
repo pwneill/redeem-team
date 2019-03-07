@@ -74,10 +74,10 @@ h3{
   color: black;
 }
 
-
 #dropdownCard {
   margin: 20px;
   background-color: #eeeeee54;
+  z-index: 99;
 }
 
 #newsMainContainer {
@@ -115,13 +115,6 @@ h3{
 #dropdownMenuButton {
   color: #eeeeee;
   width: 100%;
-}
-
-
-.dropdown-menu {
-  width: 100%;
-  background-color: #eeeeeede;
-  margin-top: 14px;
 }
 
 .dropdown-item {
@@ -167,6 +160,12 @@ i.fa-play {
   background-color: #626569da;
   color: #000000;
   box-shadow: 5px 5px 30px #373538;
+}
+
+.dropdown-menu {
+  width: 100%;
+  background-color: #eeeeeede;
+  margin-top: 14px;
 }
 
 .articleTitle {
