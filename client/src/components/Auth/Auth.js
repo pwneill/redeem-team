@@ -76,6 +76,7 @@ class Auth {
         return new Promise((resolve, reject) => {
             this.auth0.checkSession({}, (err, authResult) => {
                 if (err) return reject(err);
+                console.log("I hate silent auth")
                 this.setSession(authResult);
                 resolve();
             })

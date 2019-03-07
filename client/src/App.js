@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, withRouter } from "react-router-dom";
 import Launch from "./pages/launch";
 import News from "./pages/news";
 import createEvent from "./pages/createEvent";
@@ -12,8 +12,21 @@ import login from "./pages/login"
 import Callback from "./callback.js"
 // import Profile from "./pages/Profile/profile"
 import "./App.css"
+import auth0Client from "./components/Auth/Auth"
+
 
 class App extends Component {
+
+  // async componentDidMount() {
+  //   if (this.props.location.pathname === '/callback') return;
+  //   try {
+  //       console.log('silent hit')
+  //       await auth0Client.silentAuth();
+  //       this.forceUpdate();
+  //   } catch (err) {
+  //       if (err.error !== 'login_required') console.log(err.error)
+  //   }
+    
 
 
   render() {
