@@ -4,6 +4,24 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+// const jwt = require('express-jwt')
+// const jwksRsa = require('jews-rsa')
+
+// const checkJwt = jwt({
+//     secret: jwksRsa.expressJwtSecret({
+//         cache: true,
+//         rateLimit: true,
+//         jwksRequestsPerMinute: 5,
+//         jwksUri: `https://rich-donovan.auth0.com/.well-known/jwks.json`
+//     }),
+
+//     // Validate the audience and the issuer.
+//     audience: 'https://rich-donovan.auth0.com/userinfo',
+//     issuer: `https://rich-donovan.auth0.com/`,
+//     algorithms: ['RS256']
+// });
+
+
 ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

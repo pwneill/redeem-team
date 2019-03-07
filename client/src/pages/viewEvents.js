@@ -57,13 +57,14 @@ class Events extends Component {
                                                                     <CardBody>
                                                                         <Row>
                                                                             <Col size="md-3">
-                                                                                <img src={event.ImgSrc} alt={event.ImgSrc} width="300" length="300" />
+                                                                                <img src={event.ImgSrc} alt={event.ImgSrc} width="100%" length="100%" />
                                                                             </Col>
                                                                             <Col size="md-6">
                                                                                 <div className="text-center">
                                                                                     <strong>
                                                                                         {event.Name}<br />
                                                                                         on {event.Date}<br />
+                                                                                        at {event.LocationName} <br />
                                                                                         {event.AddressLine1}<br />
                                                                                         {event.AddressLine2}<br />
                                                                                         {event.City}<br />

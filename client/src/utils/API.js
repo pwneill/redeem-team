@@ -25,6 +25,7 @@ export default {
   },
   getRegisters: function(id) {
     return axios.get("http://localhost:3001/api/register/");
+
   },
   espnScrape: function() {
     return axios({
