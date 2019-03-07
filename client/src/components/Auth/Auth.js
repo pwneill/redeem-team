@@ -7,7 +7,7 @@ class Auth {
         this.auth0 = new auth0.WebAuth({
             domain: 'rich-donovan.auth0.com',
             clientID: 'LHI8LEPW14lgTw6syHhIXfMhxMPPpRGU',
-            redirectUri:  'http://localhost:3000/' || 'https://powerful-beyond-98279.herokuapp.com/',
+            redirectUri:  'http://localhost:3000/callback' || 'https://powerful-beyond-98279.herokuapp.com/',
             audience: 'https://rich-donovan.auth0.com/userinfo',
             responseType: 'id_token',
             scope: 'openid profile'
@@ -20,6 +20,7 @@ class Auth {
         this.signOut = this.signOut.bind(this);
     }
     getProfile(){
+        console.log("Get profile hit")
         return this.profile;
     }
 
@@ -32,14 +33,16 @@ class Auth {
         let thing = new Date().getTime();
         let response = (thing < this.expiresAt);
         console.log("I am authenticated: ", response);
-        console.log(this);
+        console.log(this.expiresAt);
         return response;
     }
     signIn(){
+        console.log("sign in hit")
         this.auth0.authorize();
     }
     
     handleAuthentication(){
+        console.log("handleAuthentication Hit")
         return new Promise((resolve,reject)=>{
             this.auth0.parseHash((err, authResult)=> {
                 if (err) return reject(err);
@@ -49,7 +52,7 @@ class Auth {
             this.idToken= authResult.idToken;
             this.profile = authResult.idTokenPayload;
             this.expiresAt = authResult.idTokenPayload.exp * 1000;
-
+            console.log(this.expiresAt)
             resolve();
             });
         })
