@@ -28,7 +28,6 @@ function Nav(props) {
             !auth0Client.isAuthenticated() &&
             <div>
             <button className="btn btn-dark" onClick={auth0Client.signIn}>Sign In</button>
-            <button className="btn btn-dark" onClick={auth0Client.signOut}>Sign Out</button>
             </div>
           }
           {

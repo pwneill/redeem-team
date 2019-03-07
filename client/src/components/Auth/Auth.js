@@ -64,8 +64,14 @@ class Auth {
         this.profile= null;
         this.expiresAt = null;
     }
+
+
 }
 
 const auth0Client = new Auth();
 
 export default auth0Client;
+
+
+// CLIENT ID: 650718966515-il0kvrbsjfjcvll6dsnpu1mn78jti9ob.apps.googleusercontent.com 
+//CLIENT SECRET: 3bbhcffNMNMe46XUAsaShjUB
