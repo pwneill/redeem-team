@@ -80,11 +80,11 @@ class Details extends Component {
             <Container fluid>
                 <Row>
                     <Col size={"md-12"}>
-                        <Card id={"createHeaderCard"}>
+                        <Card id={"detailsHeaderCard"}>
                             <Container fluid>
                                 <Row>
                                     <Col size={"md-12"}>
-                                        <Card id={"createWordsCard"}>
+                                        <Card id={"detailsWordsCard"}>
                                             <CardHeader>
                                                 <h1><strong>Gamers United</strong></h1>
                                                 <h3 id="eventsbanner">Details for this Event</h3>
@@ -97,12 +97,12 @@ class Details extends Component {
                         <Container fluid>
                             <Row>
                                 <Col size={"md-12"}>
-                                    <Card id={"createMainContainer"}>
+                                    <Card id={"detailsMainContainer"}>
                                         <CardBody>
                                             <Col size={"md-12"}>
-                                                <List id={"createOverflow"}>
+                                                <List id={"detailsOverflow"}>
                                                     <ListItem key={"alsdkojfh"}>
-                                                        <Card id={"createEventsCard"}>
+                                                        <Card id={"detailsEventsCard"}>
                                                             <CardHeader>
                                                                 <h3>Event Stats:</h3>
                                                             </CardHeader>
@@ -110,64 +110,76 @@ class Details extends Component {
                                                                 <Container fluid>
                                                                     <Row>
                                                                         <Col size="md-4">
-                                                                            <Card>
-                                                                                <CardHeader>
+                                                                            <Card className={"statsTitle"}>
+                                                                                <CardBody>
                                                                                     <p className={"atendeeWords"}>How many are attending.</p>
-                                                                                </CardHeader>
+                                                                                </CardBody>
+                                                                            </Card>
+                                                                            <Card className={"statsItems"}>
                                                                                 <CardBody>
                                                                                     <p className={"atendeeWords"}>{this.state.atendees.length}</p>
                                                                                 </CardBody>
                                                                             </Card>
                                                                         </Col>
                                                                         <Col size="md-4">
-                                                                            <Card>
-                                                                                <CardHeader>
+                                                                            <Card className={"statsTitle"}>
+                                                                                <CardBody>
                                                                                     <p className={"atendeeWords"}>People bringing their own controllers.</p>
-                                                                                </CardHeader>
+                                                                                </CardBody>
+                                                                            </Card>
+                                                                            <Card className={"statsItems"}>
                                                                                 <CardBody>
                                                                                     <p className={"atendeeWords"}>{this.state.HaveController}</p>
                                                                                 </CardBody>
                                                                             </Card>
                                                                         </Col>
                                                                         <Col size="md-4">
-                                                                            <Card>
-                                                                                <CardHeader>
-                                                                                    <p className={"atendeeWords"}>Estimated extra controllers.</p>
-                                                                                </CardHeader>
+                                                                            <Card className={"statsTitle"}>
                                                                                 <CardBody>
-                                                                                        <p className={"atendeeWords"}>{this.state.BringController}</p>
+                                                                                    <p className={"atendeeWords"}>Estimated extra controllers.</p>
+                                                                                </CardBody>
+                                                                            </Card>
+                                                                            <Card className={"statsItems"}>
+                                                                                <CardBody>
+                                                                                    <p className={"atendeeWords"}>{this.state.BringController}</p>
                                                                                 </CardBody>
                                                                             </Card>
                                                                         </Col>
                                                                     </Row>
                                                                     <Row>
                                                                         <Col size="md-4">
-                                                                            <Card>
-                                                                                <CardHeader>
+                                                                            <Card className={"statsTitle"}>
+                                                                                <CardBody>
                                                                                     <p className={"atendeeWords"}>People bringing their own console.</p>
-                                                                                </CardHeader>
+                                                                                </CardBody>
+                                                                            </Card>
+                                                                            <Card className={"statsItems"}>
                                                                                 <CardBody>
-                                                                                        <p className={"atendeeWords"}>{this.state.HaveConsole}</p>
+                                                                                    <p className={"atendeeWords"}>{this.state.HaveConsole}</p>
                                                                                 </CardBody>
                                                                             </Card>
                                                                         </Col>
                                                                         <Col size="md-4">
-                                                                            <Card>
-                                                                                <CardHeader>
+                                                                            <Card className={"statsTitle"}>
+                                                                                <CardBody>
                                                                                     <p className={"atendeeWords"}>People bringing their own copy of the game.</p>
-                                                                                </CardHeader>
+                                                                                </CardBody>
+                                                                            </Card>
+                                                                            <Card className={"statsItems"}>
                                                                                 <CardBody>
-                                                                                        <p className={"atendeeWords"}>{this.state.HaveGame}</p>
+                                                                                    <p className={"atendeeWords"}>{this.state.HaveGame}</p>
                                                                                 </CardBody>
                                                                             </Card>
                                                                         </Col>
                                                                         <Col size="md-4">
-                                                                            <Card>
-                                                                                <CardHeader>
-                                                                                    <p className={"atendeeWords"}>Host of the event.</p>
-                                                                                </CardHeader>
+                                                                            <Card className={"statsTitle"}>
                                                                                 <CardBody>
-                                                                                        <p className={"atendeeWords"}>PlaceHolder</p>
+                                                                                    <p className={"atendeeWords"}>Host of the event.</p>
+                                                                                </CardBody>
+                                                                            </Card>
+                                                                            <Card className={"statsHost"}>
+                                                                                <CardBody>
+                                                                                    <p className={"atendeeWords"}>PlaceHolder</p>
                                                                                 </CardBody>
                                                                             </Card>
                                                                         </Col>
@@ -186,19 +198,19 @@ class Details extends Component {
                         <Container fluid>
                             <Row>
                                 <Col size={"md-12"}>
-                                    <Card id={"createMainContainer"}>
+                                    <Card id={"detailsMainContainer"}>
                                         <CardBody>
                                             <Col size={"md-12"}>
-                                                <List id={"createOverflow"}>
+                                                <List id={"detailsOverflow"}>
                                                     <ListItem key={"vzxo;cjkhifger"}>
-                                                        <Card id={"createEventsCard"}>
+                                                        <Card id={"detailsEventsCard"}>
                                                             <CardHeader>
                                                                 <h3>Attendees:</h3>
                                                             </CardHeader>
                                                             {this.state.atendees.length ? (
                                                                 <div>
                                                                     {this.state.atendees.map(register => (
-                                                                        <Card id="maineventsCard">
+                                                                        <Card id="mainDetailsCard">
                                                                             <CardHeader>
                                                                                 <h5>{register.Name}</h5>
                                                                             </CardHeader>
@@ -206,30 +218,36 @@ class Details extends Component {
                                                                                 <Container fluid>
                                                                                     <Row>
                                                                                         <Col size="md-4">
-                                                                                            <Card>
-                                                                                                <CardHeader>
+                                                                                            <Card className={"statsTitle"}>
+                                                                                                <CardBody>
                                                                                                     <p className={"atendeeWords"}>Email</p>
-                                                                                                </CardHeader>
+                                                                                                </CardBody>
+                                                                                            </Card>
+                                                                                            <Card className={"statsTitle"}>
                                                                                                 <CardBody>
                                                                                                     <p className={"atendeeWords"}>{register.Email}</p>
                                                                                                 </CardBody>
                                                                                             </Card>
                                                                                         </Col>
                                                                                         <Col size="md-4">
-                                                                                            <Card>
-                                                                                                <CardHeader>
+                                                                                            <Card className={"statsTitle"}>
+                                                                                                <CardBody>
                                                                                                     <p className={"atendeeWords"}>Phone</p>
-                                                                                                </CardHeader>
+                                                                                                </CardBody>
+                                                                                            </Card>
+                                                                                            <Card className={"statsTitle"}>
                                                                                                 <CardBody>
                                                                                                     <p className={"atendeeWords"}>{register.Phone}</p>
                                                                                                 </CardBody>
                                                                                             </Card>
                                                                                         </Col>
                                                                                         <Col size="md-4">
-                                                                                            <Card>
-                                                                                                <CardHeader>
+                                                                                            <Card className={"statsTitle"}>
+                                                                                                <CardBody>
                                                                                                     <p className={"atendeeWords"}>Bringing a Controller?</p>
-                                                                                                </CardHeader>
+                                                                                                </CardBody>
+                                                                                            </Card>
+                                                                                            <Card className={"statsTitle"}>
                                                                                                 <CardBody>
                                                                                                     {register.HaveController ? (
                                                                                                         <p className={"atendeeWords"}>Yes</p>
@@ -242,10 +260,12 @@ class Details extends Component {
                                                                                     </Row>
                                                                                     <Row>
                                                                                         <Col size="md-4">
-                                                                                            <Card>
-                                                                                                <CardHeader>
+                                                                                            <Card className={"statsTitle"}>
+                                                                                                <CardBody>
                                                                                                     <p className={"atendeeWords"}>Bringing extra Controllers?</p>
-                                                                                                </CardHeader>
+                                                                                                </CardBody>
+                                                                                            </Card>
+                                                                                            <Card className={"statsTitle"}>
                                                                                                 <CardBody>
                                                                                                     {register.BringController ? (
                                                                                                         <p className={"atendeeWords"}>Yes</p>
@@ -256,10 +276,12 @@ class Details extends Component {
                                                                                             </Card>
                                                                                         </Col>
                                                                                         <Col size="md-4">
-                                                                                            <Card>
-                                                                                                <CardHeader>
+                                                                                            <Card className={"statsTitle"}>
+                                                                                                <CardBody>
                                                                                                     <p className={"atendeeWords"}>Bringing a Console?</p>
-                                                                                                </CardHeader>
+                                                                                                </CardBody>
+                                                                                            </Card>
+                                                                                            <Card className={"statsTitle"}>
                                                                                                 <CardBody>
                                                                                                     {register.HaveConsole ? (
                                                                                                         <p className={"atendeeWords"}>Yes</p>
@@ -270,10 +292,12 @@ class Details extends Component {
                                                                                             </Card>
                                                                                         </Col>
                                                                                         <Col size="md-4">
-                                                                                            <Card>
-                                                                                                <CardHeader>
+                                                                                            <Card className={"statsTitle"}>
+                                                                                                <CardBody>
                                                                                                     <p className={"atendeeWords"}>Bringing Copy of Game?</p>
-                                                                                                </CardHeader>
+                                                                                                </CardBody>
+                                                                                            </Card>
+                                                                                            <Card className={"statsTitle"}>
                                                                                                 <CardBody>
                                                                                                     {register.HaveGame ? (
                                                                                                         <p className={"atendeeWords"}>Yes</p>
