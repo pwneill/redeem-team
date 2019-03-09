@@ -8,13 +8,10 @@ import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import newUser from "./pages/newUser";
-import login from "./pages/login";
 import signIn from "./pages/signin";
 import Artists from "./pages/artists";
 import Register from "./pages/register";
 import Details from "./pages/details";
-import newUser from "./pages/newUser"
-import login from "./pages/login"
 // import signIn from "./pages/signin"
 import Callback from "./callback.js"
 // import Profile from "./pages/Profile/profile"
@@ -36,7 +33,6 @@ class App extends Component {
             <Route exact path="/create_event" component={createEvent} />
             <Route exact path="/events" component={Events} />
             <Route exact path="/newUser" component={newUser} />
-            <Route exact path="/login" component={login} />
             <Route exact path="/signIn" component={signIn} lock={this.lock}/>
             {/* <Route exact path ="/profile" component={Profile}  /> */}
             <Route exact path="/artists" component={Artists} />
