@@ -8,7 +8,7 @@ import { List, ListItem } from "../components/List";
 
 let schema = fieldNames;
 let eventID = window.location.href;
-eventID = eventID.replace("http://localhost:3000/register/", "")
+eventID = eventID.replace("https://powerful-beyond-98279.herokuapp.com/register/", "")
 
 class Register extends Component {
     log = type => console.log.bind(console, type);

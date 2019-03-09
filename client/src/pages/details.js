@@ -5,7 +5,7 @@ import API from "../utils/API"
 import { List, ListItem } from "../components/List";
 
 let eventID = window.location.href;
-eventID = eventID.replace("http://localhost:3000/details/", "");
+eventID = eventID.replace("https://powerful-beyond-98279.herokuapp.com/details/", "");
 console.log(eventID);
 
 class Details extends Component {
