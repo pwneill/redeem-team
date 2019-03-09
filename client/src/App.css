@@ -385,4 +385,127 @@ input {
 
 .atendeeWords {
   font-size: 12px;
+  margin-bottom: 0px;
+}
+
+.statsTitle {
+  text-align: center;
+  border-radius: 100px;
+  margin: 10px;
+  background-color: #626569da;
+  color: #eeeeee;
+  box-shadow: 5px 5px 30px #373538;
+}
+
+.statsItems {
+  text-align: center;
+  border-radius: 100px;
+  width: 30%;
+  margin-left: 40%;
+  background-color: #626569da;
+  color: #eeeeee;
+  box-shadow: 5px 5px 30px #373538;
+  margin-bottom: 20px;
+}
+
+.statsHost {
+  text-align: center;
+  border-radius: 100px;
+  background-color: #626569da;
+  color: #eeeeee;
+  box-shadow: 5px 5px 30px #373538;
+  margin-bottom: 20px;
+}
+
+#detailsHeaderCard {
+  margin: 20px;
+  background-color: #eeeeee54;
+}
+
+#detailsWordsCard {
+  margin: 20px;
+  text-align: center;
+  background-image: url("https://66.media.tumblr.com/2b5f96777491c306267b4cab21575b4d/tumblr_phcq9rpfKz1qze3hdo1_r2_500.gif");
+  background-size: cover;
+  background-position-y: -300px;
+  box-shadow: 5px 5px 30px #373538;
+  color: #eeeeee;
+}
+
+#eventsbanner {
+  color: #eeeeee;
+}
+
+#detailsEventsCard {
+  background-color: #eeeeee00
+}
+
+#detailsOverflow {
+  background-image: url("https://66.media.tumblr.com/f6395bca7a86e8efa6807271b64fb7f4/tumblr_p4jpsnKZQu1qze3hdo1_500.gif");
+  background-size: cover;
+
+  box-shadow: 5px 5px 30px #373538;
+}
+
+#detailsEventsCard {
+  margin: 20px;
+  background-color: #62656983;
+  color: #000000;
+  box-shadow: 5px 5px 30px #373538;
+}
+
+#detailsMainContainer {
+  margin: 5px;
+  background-color: #eeeeee54;
+}
+
+#mainDetailsCard {
+  background-color: rgba(136, 136, 136, 0.473);
+  margin: 20px;
+  text-align: center;
+  color: #eeeeee;
+  box-shadow: 5px 5px 30px #373538;
+}
+
+#registerHeaderCard {
+  margin: 20px;
+  background-color: #eeeeee54;
+}
+
+#registerWordsCard {
+  margin: 20px;
+  text-align: center;
+  background-image: url("https://66.media.tumblr.com/54af19212db5e2cce51d031cb32709fd/tumblr_o7l2sq0iSy1qze3hdo1_r2_500.gif");
+  background-size: cover;
+  background-position-y: -800px;
+  box-shadow: 5px 5px 30px #373538;
+  color: #eeeeee;
+}
+
+#eventsbanner {
+  color: #eeeeee;
+}
+
+#registerEventsCard {
+  background-color: #eeeeee00
+}
+
+#registerOverflow {
+  background-image: url("https://66.media.tumblr.com/f7cd096f108d83c988169096361972fc/tumblr_otjfqziQrH1qze3hdo1_500.gif");
+  background-size: cover;
+  background-position-y: -300px;
+  box-shadow: 5px 5px 30px #373538;
+}
+
+#registerEventsCard {
+  margin: 20px;
+  background-color: #62656983;
+  color: #eeeeee;
+  text-align: center;
+  box-shadow: 5px 5px 30px #373538;
+}
+
+#registerMainContainer {
+  margin: 5px;
+  background-color: #eeeeee54;
 }

@@ -93,6 +93,10 @@ class Artists extends Component {
                                                             <Row>
                                                                 <Col size={"md-2"}>
                                                                     <img className={"artistImages"} src={"https://i.imgur.com/JP3yOzm.gif"} alt={"https://i.imgur.com/JP3yOzm.gif"}></img>
+                                                                    <img className={"artistImages"} src={"https://66.media.tumblr.com/2b5f96777491c306267b4cab21575b4d/tumblr_phcq9rpfKz1qze3hdo1_r2_500.gif"} alt={"https://66.media.tumblr.com/2b5f96777491c306267b4cab21575b4d/tumblr_phcq9rpfKz1qze3hdo1_r2_500.gif"}></img>
+                                                                    <img className={"artistImages"} src={"https://66.media.tumblr.com/f6395bca7a86e8efa6807271b64fb7f4/tumblr_p4jpsnKZQu1qze3hdo1_500.gif"} alt={"https://66.media.tumblr.com/f6395bca7a86e8efa6807271b64fb7f4/tumblr_p4jpsnKZQu1qze3hdo1_500.gif"}></img>
+                                                                    <img className={"artistImages"} src={"https://66.media.tumblr.com/54af19212db5e2cce51d031cb32709fd/tumblr_o7l2sq0iSy1qze3hdo1_r2_500.gif"} alt={"https://66.media.tumblr.com/54af19212db5e2cce51d031cb32709fd/tumblr_o7l2sq0iSy1qze3hdo1_r2_500.gif"}></img>
+                                                                    <img className={"artistImages"} src={"https://66.media.tumblr.com/f7cd096f108d83c988169096361972fc/tumblr_otjfqziQrH1qze3hdo1_500.gif"} alt={"https://66.media.tumblr.com/f7cd096f108d83c988169096361972fc/tumblr_otjfqziQrH1qze3hdo1_500.gif"}></img>
                                                                 </Col>
                                                                 <Col size={"md-10"}>
                                                                     <a href={"http://1041uuu.tumblr.com/"} target={"_blank"} alt={"http://1041uuu.tumblr.com/"}><h3 className={"artistLink"}>Link to Website</h3></a>

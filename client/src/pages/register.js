@@ -29,11 +29,11 @@ class Register extends Component {
             <Container fluid>
                 <Row>
                     <Col size={"md-12"}>
-                        <Card id={"createHeaderCard"}>
+                        <Card id={"registerHeaderCard"}>
                             <Container fluid>
                                 <Row>
                                     <Col size={"md-12"}>
-                                        <Card id={"createWordsCard"}>
+                                        <Card id={"registerWordsCard"}>
                                             <CardHeader>
                                                 <h1><strong>Gamers United</strong></h1>
                                                 <h3 id="eventsbanner">Register for this Event</h3>
@@ -46,12 +46,12 @@ class Register extends Component {
                         <Container fluid>
                             <Row>
                                 <Col size={"md-12"}>
-                                    <Card id={"createMainContainer"}>
+                                    <Card id={"registerMainContainer"}>
                                         <CardBody>
                                             <Col size={"md-12"}>
-                                                <List id={"createOverflow"}>
+                                                <List id={"registerOverflow"}>
                                                     <ListItem key={"1"}>
-                                                        <Card id={"createEventsCard"}>
+                                                        <Card id={"registerEventsCard"}>
                                                             <CardBody>
                                                                 {<div className="mb-5">
                                                                     <Row fluid>

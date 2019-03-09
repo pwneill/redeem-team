@@ -13,8 +13,6 @@ import signIn from "./pages/signin";
 import Artists from "./pages/artists";
 import Register from "./pages/register";
 import Details from "./pages/details";
-import newUser from "./pages/newUser"
-import login from "./pages/login"
 // import signIn from "./pages/signin"
 import Callback from "./callback.js"
 // import Profile from "./pages/Profile/profile"
