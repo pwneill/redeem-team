@@ -67,7 +67,7 @@ class Auth {
         console.log("Sign Out was hit")
 
         this.auth0.logout({
-            returnTo: 'http://localhost:3000',
+            returnTo: 'https://powerful-beyond-98279.herokuapp.com/',
             clientID: 'LHI8LEPW14lgTw6syHhIXfMhxMPPpRGU'
         })
     }
