@@ -5,10 +5,39 @@ import auth0Client from '../Auth/Auth';
 
 
 function Nav(props) {
-  const signOut = () => {
-    auth0Client.signOut();
+  const logout = () => {
+    auth0Client.logout();
     props.history.replace('/');
   }
+
+  const Events = withRouter(({ history }) => (
+    <a className="nav-item nav-link" href="" onClick={(e) => {
+      e.preventDefault();
+      history.push('/events');
+    }}>Events</a>
+  ))
+
+  const Home = withRouter(({ history }) => (
+    <a className="nav-item nav-link" href="" onClick={(e) => {
+      e.preventDefault();
+      history.push('/');
+    }}>Home</a>
+  ))
+
+  const Create_event = withRouter(({ history }) => (
+    <a className="nav-item nav-link" href="" onClick={(e) => {
+      e.preventDefault();
+      history.push('/create_event');
+    }}>Create Event</a>
+  ))
+
+  const News = withRouter(({ history }) => (
+    <a className="nav-item nav-link" href="" onClick={(e) => {
+      e.preventDefault();
+      history.push('/news');
+    }}>News</a>
+  ))
+  
   return (
     <nav className="navbar navbar-expand-lg navbar-dark">
       <a href="/"><h3 className="navbar-brand" >Gamers United</h3></a>
@@ -17,10 +46,10 @@ function Nav(props) {
       </button>
       <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div className="navbar-nav">
-          <a className="nav-item nav-link" href="/">Home</a>
-          <a className="nav-item nav-link" href="/events">Events</a>
-          <a className="nav-item nav-link" href="/create_event">Create Event</a>
-          <a className="nav-item nav-link" href="/news">News</a>
+          <Home></Home>
+          <Events></Events>
+          <Create_event></Create_event>
+          <News></News>
            
           
           <div className="navbar-nav signInLinks">
@@ -28,18 +57,15 @@ function Nav(props) {
             !auth0Client.isAuthenticated() &&
             <div>
             <button className="btn btn-dark" onClick={auth0Client.signIn}>Sign In</button>
-            <button className="btn btn-dark" onClick={auth0Client.signOut}>Sign Out</button>
             </div>
           }
           {
             auth0Client.isAuthenticated() && 
             <div>
               <label className="mr-2 text-white">{auth0Client.getProfile().name}</label>
-              <a className="nav-item nav-link" href="/" onClick={() => {signOut()}}>Sign Out</a>
+              <a className="nav-item nav-link" href="/" onClick={() => {logout()}}>Sign Out</a>
               </div>
           }
-
-          
           
           </div>
         </div>

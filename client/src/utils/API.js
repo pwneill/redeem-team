@@ -3,19 +3,29 @@ import axios from "axios";
 export default {
   // Gets all events
   getEvents: function() {
-    return axios.get("http://localhost:3001/api/events");
+    return axios.get("https://powerful-beyond-98279.herokuapp.com/api/events");
   },
   // Gets the book with the given id
   getEvent: function(id) {
-    return axios.get("http://localhost:3001/api/events" + id);
+    return axios.get("https://powerful-beyond-98279.herokuapp.com/api/events" + id);
   },
   // Deletes the book with the given id
   deleteEvent: function(id) {
-    return axios.delete("http://localhost:3001/api/events" + id);
+    return axios.delete("https://powerful-beyond-98279.herokuapp.com/api/events" + id);
   },
   // Saves a book to the database
-   saveEvent: function(eventData) {
-    return axios.post("http://localhost:3001/api/events", eventData);
+  saveEvent: function(eventData) {
+    return axios.post("https://powerful-beyond-98279.herokuapp.com/api/events", eventData);
+  },
+  saveArticle: function(articleData) {
+    return axios.post("https://powerful-beyond-98279.herokuapp.com/api/scrape", articleData);
+  },
+  saveRegister: function(registerData) {
+    return axios.post("https://powerful-beyond-98279.herokuapp.com/api/register", registerData);
+  },
+  getRegisters: function(id) {
+    return axios.get("https://powerful-beyond-98279.herokuapp.com/api/register/");
+
   },
   espnScrape: function() {
     return axios({
