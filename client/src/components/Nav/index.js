@@ -66,8 +66,6 @@ function Nav(props) {
               <a className="nav-item nav-link" href="/" onClick={() => {logout()}}>Sign Out</a>
               </div>
           }
-
-          
           
           </div>
         </div>

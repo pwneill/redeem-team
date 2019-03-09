@@ -7,7 +7,7 @@ class Auth {
         this.auth0 = new auth0.WebAuth({
             domain: 'rich-donovan.auth0.com',
             clientID: 'LHI8LEPW14lgTw6syHhIXfMhxMPPpRGU',
-            redirectUri: 'http://localhost:3000/callback' || 'https://powerful-beyond-98279.herokuapp.com/',
+            redirectUri: 'https://powerful-beyond-98279.herokuapp.com/callback' || 'http://localhost:3000/callback',
             audience: 'https://rich-donovan.auth0.com/userinfo',
             responseType: 'id_token',
             scope: 'openid profile'
@@ -91,5 +91,3 @@ const auth0Client = new Auth();
 export default auth0Client;
 
 
-// CLIENT ID: 650718966515-il0kvrbsjfjcvll6dsnpu1mn78jti9ob.apps.googleusercontent.com 
-//CLIENT SECRET: 3bbhcffNMNMe46XUAsaShjUB
