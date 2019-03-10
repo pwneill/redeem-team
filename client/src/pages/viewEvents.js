@@ -7,6 +7,8 @@ import { Col, Row, Container } from "../components/Grid";
 // import { Input, FormBtn } from "../components/Form";
 import { Card, CardHeader, CardBody } from "../components/Card";
 import Button from "react-bootstrap/Button";
+import {withRouter} from 'react-router-dom';
+
 
 
 class Events extends Component {
@@ -25,6 +27,20 @@ class Events extends Component {
             .catch(err => console.log(err));
     };
     render() {
+
+        const MoreDetails = withRouter(({ history }, event) => (
+            <Button href="" className="float-left btn btn-dark" onClick={(e) => {
+                e.preventDefault();
+                history.push(`/details/${event._id}`)
+            }}>See More Details</Button>
+          ))
+
+          const Register = withRouter(({ history }, event) => (
+            <Button href="" className="float-right btn btn-dark" onClick={(e) => {
+                e.preventDefault();
+                history.push(`/register/${event._id}`)
+            }}>Register Here</Button>
+          ))
         return (
             <Container fluid>
                 <Row>
@@ -35,7 +51,7 @@ class Events extends Component {
                                     <Col size={"md-12"}>
                                         <Card id={"viewWordsCard"}>
                                             <CardHeader>
-                                                <h1><strong>Gamers United</strong></h1>
+                                                <h1 id="viewEventsGamersUnited"><strong>Gamers United</strong></h1>
                                                 <h3 id="eventsbanner">Events in your Area</h3>
                                             </CardHeader>
                                         </Card>
@@ -87,8 +103,8 @@ class Events extends Component {
                                                                                 <br />
                                                                             </Col>
                                                                             <Col>
-                                                                                <Button href={`/details/${event._id}`} className="float-left btn btn-dark">See More Details</Button>
-                                                                                <Button href={`/register/${event._id}`} className="float-right btn btn-dark">Register Here</Button>
+                                                                                <MoreDetails></MoreDetails>
+                                                                                <Register></Register>
                                                                             </Col>
                                                                         </Row>
                                                                     </CardBody>

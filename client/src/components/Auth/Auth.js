@@ -7,11 +7,13 @@ class Auth {
         this.auth0 = new auth0.WebAuth({
             domain: 'rich-donovan.auth0.com',
             clientID: 'LHI8LEPW14lgTw6syHhIXfMhxMPPpRGU',
-            redirectUri: 'https://powerful-beyond-98279.herokuapp.com/callback' || 'http://localhost:3000/callback',
+            redirectUri: 'http://localhost:3000/callback',
             audience: 'https://rich-donovan.auth0.com/userinfo',
             responseType: 'id_token',
             scope: 'openid profile'
         });
+
+        // 'https://powerful-beyond-98279.herokuapp.com/callback' || 
 
         this.getProfile = this.getProfile.bind(this);
         this.handleAuthentication = this.handleAuthentication.bind(this);

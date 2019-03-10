@@ -27,7 +27,7 @@ class createEvent extends Component {
                                     <Col size={"md-12"}>
                                         <Card id={"createWordsCard"}>
                                             <CardHeader>
-                                                <h1><strong>Gamers United</strong></h1>
+                                                <h1 id="createEventsPageGamersUnited"><strong>Gamers United</strong></h1>
                                                 <h3 id="eventsbanner">Add a New Event</h3>
                                             </CardHeader>
                                         </Card>
@@ -48,7 +48,7 @@ class createEvent extends Component {
                                                                 {<div className="mb-5">
                                                                     <Row fluid>
                                                                         <Col size="md-6" offset="md-3">
-                                                                            <Form
+                                                                            <Form id={"createEventsForm"}
                                                                                 safeRenderCompletion={true}
                                                                                 schema={schema}
                                                                                 onSubmit={this.onSubmit}
