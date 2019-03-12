@@ -3,7 +3,7 @@ import axios from "axios";
 export default {
   // Gets all events
   getEvents: function() {
-    return axios.get("http://localhost:3001/api/events");
+    return axios.get("https://powerful-beyond-98279.herokuapp.com/api/events");
   },
   // Gets the book with the given id
   getEvent: function(id) {
