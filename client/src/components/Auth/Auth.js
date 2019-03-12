@@ -3,6 +3,13 @@ import auth0 from "auth0-js";
 
 
 class Auth {
+
+    state= {
+        name: "",
+        userName: "",
+        picture: ""
+    }
+
     constructor() {
         this.auth0 = new auth0.WebAuth({
             domain: 'rich-donovan.auth0.com',
@@ -12,6 +19,8 @@ class Auth {
             responseType: 'id_token',
             scope: 'openid profile'
         });
+
+        // 'https://powerful-beyond-98279.herokuapp.com/callback' || 
 
         this.getProfile = this.getProfile.bind(this);
         this.handleAuthentication = this.handleAuthentication.bind(this);
@@ -58,6 +67,9 @@ class Auth {
     setSession(authResult) {
         console.log("setSession is hit")
         console.log(authResult)
+        console.log(authResult.idTokenPayload.name)
+        console.log(authResult.idTokenPayload.picture)
+        console.log(authResult.idTokenPayload.nickname)
         this.idToken = authResult.idToken;
         this.profile = authResult.idTokenPayload;
         this.expiresAt = authResult.idTokenPayload.exp * 1000;

@@ -24,6 +24,13 @@ function Nav(props) {
     }}>Home</a>
   ))
 
+  const GamersUnited = withRouter(({ history }) => (
+    <a href="" onClick={(e) => {
+      e.preventDefault();
+      history.push('/');
+    }}><h3 className="navbar-brand">Gamers United</h3></a>
+  ))
+
   const Create_event = withRouter(({ history }) => (
     <a className="nav-item nav-link" href={"/create_event"} onClick={(e) => {
       e.preventDefault();
@@ -47,7 +54,7 @@ function Nav(props) {
   
   return (
     <nav className="navbar navbar-expand-lg navbar-dark">
-      <a href="/"><h3 className="navbar-brand" >Gamers United</h3></a>
+      <GamersUnited></GamersUnited>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
