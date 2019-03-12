@@ -11,8 +11,7 @@ import { withRouter } from 'react-router-dom';
 
 
 class Launch extends Component {
-
-
+    
     render() {
 
         const Events = withRouter(({ history }) => (
@@ -67,6 +66,7 @@ class Launch extends Component {
                     </Container>
                 </CardBody>
             </Card>
+            
 
         )
     }

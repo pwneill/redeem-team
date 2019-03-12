@@ -16,7 +16,6 @@ import Details from "./pages/details";
 import Callback from "./callback.js"
 // import Profile from "./pages/Profile/profile"
 import "./App.css"
-import auth0Client from "./components/Auth/Auth"
 
 
 class App extends Component {
