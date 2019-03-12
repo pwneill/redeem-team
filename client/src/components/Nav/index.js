@@ -11,31 +11,38 @@ function Nav(props) {
   }
 
   const Events = withRouter(({ history }) => (
-    <a className="nav-item nav-link" href="" onClick={(e) => {
+    <a className="nav-item nav-link" href={"/events"} onClick={(e) => {
       e.preventDefault();
       history.push('/events');
     }}>Events</a>
   ))
 
   const Home = withRouter(({ history }) => (
-    <a className="nav-item nav-link" href="" onClick={(e) => {
+    <a className="nav-item nav-link" href={"/"} onClick={(e) => {
       e.preventDefault();
       history.push('/');
     }}>Home</a>
   ))
 
   const Create_event = withRouter(({ history }) => (
-    <a className="nav-item nav-link" href="" onClick={(e) => {
+    <a className="nav-item nav-link" href={"/create_event"} onClick={(e) => {
       e.preventDefault();
       history.push('/create_event');
     }}>Create Event</a>
   ))
 
   const News = withRouter(({ history }) => (
-    <a className="nav-item nav-link" href="" onClick={(e) => {
+    <a className="nav-item nav-link" href={"/news"} onClick={(e) => {
       e.preventDefault();
       history.push('/news');
     }}>News</a>
+  ))
+
+  const User = withRouter(({ history }) => (
+    <a href={"/user/" + auth0Client.getProfile().name} onClick={(e) => {
+      e.preventDefault();
+      history.push("/user/" + auth0Client.getProfile().name)
+    }} className="nav-item nav-link">{auth0Client.getProfile().name}</a>
   ))
   
   return (
@@ -62,7 +69,7 @@ function Nav(props) {
           {
             auth0Client.isAuthenticated() && 
             <div>
-              <label className="mr-2 text-white">{auth0Client.getProfile().name}</label>
+              <User></User>
               <a className="nav-item nav-link" href="/" onClick={() => {logout()}}>Sign Out</a>
               </div>
           }

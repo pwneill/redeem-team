@@ -7,7 +7,9 @@ import { Col, Row, Container } from "../components/Grid";
 // import { Input, FormBtn } from "../components/Form";
 import { Card, CardHeader, CardBody } from "../components/Card";
 import Button from "react-bootstrap/Button";
+import auth0Client from "../components/Auth/Auth";
 
+let isUser = false;
 
 class Events extends Component {
     state = {
@@ -15,7 +17,9 @@ class Events extends Component {
     };
     componentDidMount() {
         this.loadEvents();
+        this.isUser();
     }
+
     loadEvents = () => {
         API.getEvents()
             .then(res => {
@@ -24,6 +28,24 @@ class Events extends Component {
             })
             .catch(err => console.log(err));
     };
+
+    isUser = () => {
+        console.log(auth0Client.expiresAt)
+
+        if(auth0Client.expiresAt) {
+            isUser = true
+            
+        } else {
+            isUser = false
+        }
+
+        console.log(isUser);
+    }
+
+    setID = (id) => {
+        
+    }
+
     render() {
         return (
             <Container fluid>

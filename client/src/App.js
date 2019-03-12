@@ -17,6 +17,7 @@ import Callback from "./callback.js"
 // import Profile from "./pages/Profile/profile"
 import "./App.css"
 import auth0Client from "./components/Auth/Auth"
+import User from "./pages/user";
 
 
 class App extends Component {
@@ -38,6 +39,7 @@ class App extends Component {
             <Route exact path="/artists" component={Artists} />
             <Route path="/register/:id" component={Register} />
             <Route path="/details/:id" component={Details} />
+            <Route path="/user/:id" component={User} />
             {/* <Route exact path component={signIn} lock={this.lock}/> */}
             {/* <Route exact path ="/profile" component={Profile}  /> */}
             <Route exact path="/callback" component={Callback} />
