@@ -16,7 +16,7 @@ class Register extends Component {
     onSubmit = ({ formData }, e) => {
         this.isUser();
         let eventID = window.location.href;
-        eventID = eventID.replace("http://localhost:3000/register/", "")
+        eventID = eventID.replace("https://powerful-beyond-98279.herokuapp.com/register/", "")
         console.log(formData);
         if (isUser === false) {
             alert("You need to be logged in to register for this event.")
