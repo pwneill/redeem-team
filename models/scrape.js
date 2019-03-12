@@ -7,6 +7,7 @@ const scrapeSchema = new Schema({
   img: String,
   link: String,
   origin: String,
+  user: String,
   date: { type: Date, default: Date.now }
 });
 

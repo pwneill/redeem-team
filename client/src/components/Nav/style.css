@@ -8,7 +8,15 @@
 }
 
 .signInLinks {
-    margin-left: 450px;
+    margin-left: 20vw;
+}
+
+#userBtn {
+    color: #eeeeee;
+}
+
+#userBtn:hover {
+    color: #000000;
 }
 
 

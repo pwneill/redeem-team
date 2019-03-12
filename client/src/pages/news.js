@@ -9,6 +9,9 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { SaveBtn } from "../components/Form";
 import { Card, CardHeader, CardBody } from "../components/Card";
+import auth0Client from "../components/Auth/Auth"
+
+let isUser = false
 
 class News extends Component {
 
@@ -20,7 +23,21 @@ class News extends Component {
 
     componentDidMount = () => {
         this.espnInitial();
+
+        this.isUser();
     };
+
+    isUser = () => {
+        console.log(auth0Client.expiresAt)
+
+        if(auth0Client.expiresAt) {
+            isUser = true
+        } else {
+            isUser = false
+        }
+
+        console.log(isUser);
+    }
 
     espnInitial = () => {
         let resultArr = [];
@@ -35,6 +52,11 @@ class News extends Component {
 
                     x++
 
+                    if(isUser) {
+                        result.user = auth0Client.getProfile().name;
+                    } else {
+                        result.user = "noUser"
+                    }
                     result.id = x;
                     result.origin = "news";
                     result.title = $(this)
@@ -104,6 +126,11 @@ class News extends Component {
 
                     x++
 
+                    if(isUser) {
+                        result.user = auth0Client.getProfile().name;
+                    } else {
+                        result.user = "noUser"
+                    }
                     result.id = x;
                     result.origin = "news";
                     result.title = $(this)
@@ -168,6 +195,11 @@ class News extends Component {
 
                     x++
 
+                    if(isUser) {
+                        result.user = auth0Client.getProfile().name;
+                    } else {
+                        result.user = "noUser"
+                    }
                     result.id = x;
                     result.origin = "vids";
                     result.title = $(this)
@@ -215,6 +247,11 @@ class News extends Component {
 
                     x++
 
+                    if(isUser) {
+                        result.user = auth0Client.getProfile().name;
+                    } else {
+                        result.user = "noUser"
+                    }
                     result.id = x;
                     result.origin = "vids";
                     result.title = $(this)
@@ -262,6 +299,11 @@ class News extends Component {
 
                     x++
 
+                    if(isUser) {
+                        result.user = auth0Client.getProfile().name;
+                    } else {
+                        result.user = "noUser"
+                    }
                     result.id = x;
                     result.origin = "vids";
                     result.title = $(this)
@@ -309,6 +351,11 @@ class News extends Component {
 
                     x++
 
+                    if(isUser) {
+                        result.user = auth0Client.getProfile().name;
+                    } else {
+                        result.user = "noUser"
+                    }
                     result.id = x;
                     result.origin = "vids";
                     result.title = $(this)
@@ -356,6 +403,11 @@ class News extends Component {
 
                     x++
 
+                    if(isUser) {
+                        result.user = auth0Client.getProfile().name;
+                    } else {
+                        result.user = "noUser"
+                    }
                     result.id = x;
                     result.origin = "vids";
                     result.title = $(this)
@@ -403,6 +455,11 @@ class News extends Component {
 
                     x++
 
+                    if(isUser) {
+                        result.user = auth0Client.getProfile().name;
+                    } else {
+                        result.user = "noUser"
+                    }
                     result.id = x;
                     result.origin = "vids";
                     result.title = $(this)
@@ -652,24 +709,32 @@ class News extends Component {
         let tempNews = this.state.news;
         let tempVids = this.state.vids;
 
-        if (incoming[1] === "news") {
-            for(let i = 0; i < tempNews.length; i++) {
-                if (tempNews[i].id === parseInt(incoming[0])) {
-                    API.saveArticle(tempNews[i]).then(function() {
-                        console.log("success");
-                    }).catch(function(err) {
-                        console.log(err);
-                    })
+        console.log(event.target);
+
+        if(incoming[2] === "noUser") {
+            alert("You need to log in to save articles.")
+        } else {
+            if (incoming[1] === "news") {
+                for(let i = 0; i < tempNews.length; i++) {
+                    if (tempNews[i].id === parseInt(incoming[0])) {
+                        API.saveArticle(tempNews[i]).then(function() {
+                            console.log("success");
+                            alert("Article has been saved. Visit the user account page to view your saved articles.")
+                        }).catch(function(err) {
+                            console.log(err);
+                        })
+                    }
                 }
-            }
-        } else if (incoming[1] === "vids") {
-            for(let i = 0; i < tempVids.length; i++) {
-                if (tempVids[i].id === parseInt(incoming[0])) {
-                    API.saveArticle(tempVids[i]).then(function() {
-                        console.log("success");
-                    }).catch(function(err) {
-                        console.log(err);
-                    })
+            } else if (incoming[1] === "vids") {
+                for(let i = 0; i < tempVids.length; i++) {
+                    if (tempVids[i].id === parseInt(incoming[0])) {
+                        API.saveArticle(tempVids[i]).then(function() {
+                            console.log("success");
+                            alert("Article has been saved. Visit the user account page to view your saved articles.")
+                        }).catch(function(err) {
+                            console.log(err);
+                        })
+                    }
                 }
             }
         }
@@ -692,7 +757,7 @@ class News extends Component {
                                             <Col size={"md-4"}>
                                                 <img className={"newsImg"} src={news.img} alt={news.img}></img>
                                                 <div className={"articleSave"}>
-                                                    <SaveBtn onClick={this.saveBtn} id={news.id + "-news"}>Save</SaveBtn>
+                                                    <SaveBtn onClick={this.saveBtn} id={news.id + "-news-" + news.user}>Save</SaveBtn>
                                                 </div>
                                             </Col>
                                             <Col size={"md-8"}>
@@ -721,7 +786,7 @@ class News extends Component {
                                             <Col size={"md-8"}>
                                                 <img className={"vidsImg"} src={vids.img} alt={vids.img}></img>
                                                 <div className={"articleSave"}>
-                                                    <SaveBtn onClick={this.saveBtn} id={vids.id + "-vids"}>Save</SaveBtn>
+                                                    <SaveBtn onClick={this.saveBtn} id={vids.id + "-vids-" + vids.user}>Save</SaveBtn>
                                                 </div>
                                             </Col>
                                             <Col size={"md-4"}>
