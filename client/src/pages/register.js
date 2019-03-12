@@ -5,24 +5,45 @@ import { Card, CardHeader, CardBody } from "../components/Card";
 import Form from "react-jsonschema-form";
 import API from "../utils/API";
 import { List, ListItem } from "../components/List";
+import auth0Client from "../components/Auth/Auth";
 
 let schema = fieldNames;
-let eventID = window.location.href;
-eventID = eventID.replace("http://localhost:3000/register/", "")
+let isUser = false;
 
 class Register extends Component {
     log = type => console.log.bind(console, type);
 
     onSubmit = ({ formData }, e) => {
-        formData.EventID = eventID;
+        this.isUser();
+        let eventID = window.location.href;
+        eventID = eventID.replace("http://localhost:3000/register/", "")
         console.log(formData);
-        API.saveRegister(formData).then(function() {
-            console.log("Data submitted: ", formData)
-        }).catch(function(err) {
-            console.log(err);
-        });
+        if (isUser === false) {
+            alert("You need to be logged in to register for this event.")
+        } else {
+            formData.EventID = eventID;
+            formData.user = auth0Client.getProfile().name;
+            API.saveRegister(formData).then(function () {
+                console.log("Data submitted: ", formData)
+                alert("Thank you for registering for this event on Gamers United. To view this registration go to the 'See more Details' page from the 'Events' page.")
+            }).catch(function (err) {
+                console.log(err);
+            });
+        }
 
     };
+
+    isUser = () => {
+        console.log(auth0Client.expiresAt)
+
+        if(auth0Client.expiresAt) {
+            isUser = true
+        } else {
+            isUser = false
+        }
+
+        console.log(isUser);
+    }
 
     render() {
         return (

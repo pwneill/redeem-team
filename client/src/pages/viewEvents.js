@@ -52,14 +52,16 @@ class Events extends Component {
         const MoreDetails = withRouter(({ history }, event) => (
             <Button href="" className="float-left btn btn-dark" onClick={(e) => {
                 e.preventDefault();
-                history.push(`/details/${event._id}`)
+                let destinationId = e.target.parentElement.parentElement.firstChild.firstChild.id
+                history.push(`/details/${destinationId}`)
             }}>See More Details</Button>
           ))
 
           const Register = withRouter(({ history }, event) => (
             <Button href="" className="float-right btn btn-dark" onClick={(e) => {
                 e.preventDefault();
-                history.push(`/register/${event._id}`)
+                let destinationId = e.target.parentElement.parentElement.firstChild.firstChild.id
+                history.push(`/register/${destinationId}`)
             }}>Register Here</Button>
           ))
         return (
@@ -118,10 +120,10 @@ class Events extends Component {
                                                                         </Row>
                                                                         <Row fluid>
                                                                             <Col>
-                                                                                <div className="text-center">
+                                                                                <div id={event._id} className="text-center">
                                                                                     {event.Description}
                                                                                 </div>
-                                                                                <br />
+                                                                                <br/>
                                                                             </Col>
                                                                             <Col>
                                                                                 <MoreDetails></MoreDetails>
