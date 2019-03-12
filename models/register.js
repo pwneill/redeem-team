@@ -10,6 +10,7 @@ const registerSchema = new Schema({
   HaveConsole: Boolean,
   HaveGame: Boolean,
   EventID: String,
+  user: String,
   date: { type: Date, default: Date.now }
 });
 

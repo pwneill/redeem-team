@@ -4,9 +4,7 @@ import { Card, CardHeader, CardBody } from "../components/Card";
 import API from "../utils/API"
 import { List, ListItem } from "../components/List";
 
-let eventID = window.location.href;
-eventID = eventID.replace("http://localhost:3000/details/", "");
-console.log(eventID);
+
 
 class Details extends Component {
 
@@ -21,6 +19,11 @@ class Details extends Component {
     log = type => console.log.bind(console, type);
 
     componentDidMount = () => {
+
+        let eventID = window.location.href;
+        eventID = eventID.replace("http://localhost:3000/details/", "");
+        console.log(eventID);
+        
         API.getRegisters().then(res => {
 
             let resultArr = [];
