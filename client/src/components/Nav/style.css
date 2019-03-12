@@ -7,14 +7,23 @@
     margin: 10px
 }
 
-.signInLinks {
-    margin-left: 450px;
+#userInfo{
+    float:left;
+    padding-left:150px;
+}
+#signIn{
+    float:right;
+    padding-left:150px;
+    
+}
+
+.navbarButtons{
+    float:right;
+}
+.navbarSignOut{
+    float:left;
 }
 
 
-@media only screen and (max-width: 892px) {
-    .signInLinks {
-        margin-left: 0px;
-    }
-}
+
 

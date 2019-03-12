@@ -55,15 +55,16 @@ function Nav(props) {
           <div className="navbar-nav signInLinks">
           {
             !auth0Client.isAuthenticated() &&
-            <div>
-            <button className="btn btn-dark" onClick={auth0Client.signIn}>Sign In</button>
+            <div id="signIn">
+            <button className="btn btn-dark navbarButtons" onClick={auth0Client.signIn}>Sign In</button>
             </div>
           }
           {
             auth0Client.isAuthenticated() && 
-            <div>
-              <label className="mr-2 text-white">{auth0Client.getProfile().name}</label>
-              <a className="nav-item nav-link" href="/" onClick={() => {logout()}}>Sign Out</a>
+            <div id="userInfo">
+              <label id="signinIdentity" className="mr-2 text-white">{auth0Client.getProfile().name}</label>
+              <br />
+              <button className="btn btn-dark navbarSignOut" href="/" onClick={() => {logout()}}>Sign Out</button>
               </div>
           }
           

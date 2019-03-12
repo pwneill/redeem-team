@@ -26,6 +26,19 @@ a:link {
   transition: all 0.5s ease-in-out; 
 }
 
+@media (max-width: 768px){
+  h1{
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 790px){
+  h1{
+    font-size:25px;
+  }
+}
+
+
 #eventsCard:hover {
   box-shadow: 5px 5px 30px #373538;
 }
@@ -508,4 +521,8 @@ input {
 #registerMainContainer {
   margin: 5px;
   background-color: #eeeeee54;
+}
+
+.nav-item .nav-link{
+  padding-top:-9px;
 }

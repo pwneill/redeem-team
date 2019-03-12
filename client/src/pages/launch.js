@@ -39,7 +39,7 @@ class Launch extends Component {
         ))
 
         const News = withRouter(({ history }) => (
-            <a className="nav-item nav-link" href="" onClick={(e) => {
+            <a href="" onClick={(e) => {
                 e.preventDefault();
                 history.push('/news');
             }}><Card id={"newsCard"}>
