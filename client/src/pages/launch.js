@@ -8,9 +8,23 @@ import { Col, Row, Container } from "../components/Grid";
 // import { Input, FormBtn } from "../components/Form";
 import { Card, CardBody } from "../components/Card";
 import { withRouter } from 'react-router-dom';
+import auth0Client from '../components/Auth/Auth';
+
 
 
 class Launch extends Component {
+
+    componentDidMount() {
+        let item = localStorage.getItem("loggedIn")
+        if (item) {
+            let authObj = {
+                idToken: localStorage.getItem("loggedIn"),
+                idTokenPayload: localStorage.getItem("loggedInPayload")
+            }
+            auth0Client.setSession(authObj)
+        } 
+        console.log(item.idToken)
+    }
 
 
     render() {
@@ -48,6 +62,7 @@ class Launch extends Component {
                     </CardBody>
                 </Card></a>
         ))
+
 
         return (
             <Card id={"launchCard"}>

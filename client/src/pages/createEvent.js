@@ -6,21 +6,45 @@ import Form from "react-jsonschema-form";
 import API from "../utils/API"
 import { List, ListItem } from "../components/List";
 import auth0Client from "../components/Auth/Auth";
+// import { Modal, ModalHeader, ModalBody, ModalFooter } from "../components/Modal/index"
+import Button from "react-bootstrap/Button"
+import Modal from "react-bootstrap/Modal"
 
 const schema = fieldNames;
 
 let isUser = false;
 
 class createEvent extends Component {
+
+    // constructor(props, context) {
+    //     super(props, context);
+
+    //     this.handleShow = this.handleShow.bind(this);
+    //     this.handleClose = this.handleClose.bind(this);
+
+    //     this.state = {
+    //         show: false,
+    //     };
+    // }
+
+    // handleClose() {
+    //     this.setState({ show: false });
+    // }
+
+    // handleShow() {
+    //     this.setState({ show: true });
+    // }
+
     log = type => console.log.bind(console, type);
 
     onSubmit = ({ formData }, e) => {
+        e.preventDefault();
         if (isUser === false) {
             alert("You must be logged in to submit an event.")
         } else {
             formData.user = auth0Client.getProfile().name;
-            API.saveEvent(formData).then(function() {
-                alert("Thank you for submitting this event to Gamers United. The event has been added to the 'View Events' page.")
+            API.saveEvent(formData).then(function () {
+                
             });
             console.log("Data submitted: ", formData)
         }
@@ -33,7 +57,7 @@ class createEvent extends Component {
     isUser = () => {
         console.log(auth0Client.expiresAt)
 
-        if(auth0Client.expiresAt) {
+        if (auth0Client.expiresAt) {
             isUser = true
         } else {
             isUser = false
@@ -44,7 +68,24 @@ class createEvent extends Component {
 
     render() {
         return (
+
             <Container fluid>
+                
+                {/* <Modal show={this.state.show} onHide={this.handleClose}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>Thank You!</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>Thank you for creating an event. To view it, click <a href="/events">here</a></Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="secondary" onClick={this.handleClose}>
+                            Close
+            </Button>
+                        <Button variant="primary" onClick={this.handleClose}>
+                            Save Changes
+            </Button>
+                    </Modal.Footer>
+                </Modal> */}
+
                 <Row>
                     <Col size={"md-12"}>
                         <Card id={"createHeaderCard"}>
@@ -78,6 +119,7 @@ class createEvent extends Component {
                                                                                 safeRenderCompletion={true}
                                                                                 schema={schema}
                                                                                 onSubmit={this.onSubmit}
+                                                                                onClick={this.handleShow}
                                                                             />
                                                                         </Col>
                                                                     </Row>
@@ -95,6 +137,8 @@ class createEvent extends Component {
                     </Col>
                 </Row>
             </Container>
+
+
         );
     }
 }

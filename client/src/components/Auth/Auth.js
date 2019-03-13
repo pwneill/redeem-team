@@ -14,7 +14,7 @@ class Auth {
         this.auth0 = new auth0.WebAuth({
             domain: 'rich-donovan.auth0.com',
             clientID: 'LHI8LEPW14lgTw6syHhIXfMhxMPPpRGU',
-            redirectUri: 'https://powerful-beyond-98279.herokuapp.com/callback',
+            redirectUri: 'http://localhost:3000/callback',
             audience: 'https://rich-donovan.auth0.com/userinfo',
             responseType: 'id_token',
             scope: 'openid profile'
@@ -45,6 +45,7 @@ class Auth {
         console.log(this.expiresAt);
         return response;
     }
+
     signIn() {
         console.log("sign in hit")
         this.auth0.authorize();
@@ -58,6 +59,8 @@ class Auth {
                 if (!authResult || !authResult.idToken) {
                     return reject(err);
                 }
+                localStorage.setItem("loggedIn", authResult.idToken)
+                localStorage.setItem("loggedInPayload", authResult.idTokenPayload)
                 this.setSession(authResult);
                 resolve();
             });
@@ -67,9 +70,6 @@ class Auth {
     setSession(authResult) {
         console.log("setSession is hit")
         console.log(authResult)
-        console.log(authResult.idTokenPayload.name)
-        console.log(authResult.idTokenPayload.picture)
-        console.log(authResult.idTokenPayload.nickname)
         this.idToken = authResult.idToken;
         this.profile = authResult.idTokenPayload;
         this.expiresAt = authResult.idTokenPayload.exp * 1000;
@@ -82,6 +82,9 @@ class Auth {
             returnTo: 'https://powerful-beyond-98279.herokuapp.com/',
             clientID: 'LHI8LEPW14lgTw6syHhIXfMhxMPPpRGU'
         })
+        localStorage.setItem("loggedIn", false)
+        console.log("Local storage has logged in set to false")
+
     }
 
     silentAuth() {
