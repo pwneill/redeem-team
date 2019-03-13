@@ -186,7 +186,6 @@ class User extends Component {
                                     <Card id={"detailsMainContainer"}>
                                         <CardBody>
                                             <Col size={"md-12"}>
-
                                                 {this.state.register.length ? (
                                                     <div>
                                                         {this.state.register.map(register => (
