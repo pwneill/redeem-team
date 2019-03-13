@@ -48,8 +48,9 @@ function Nav(props) {
         <div className="navbar-nav">
           <Home></Home>
           <Events></Events>
-          <Create_event></Create_event>
           <News></News>
+          <Create_event></Create_event>
+          
            
           
           <div className="navbar-nav signInLinks">
