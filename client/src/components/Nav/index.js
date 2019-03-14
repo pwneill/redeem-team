@@ -49,7 +49,7 @@ function Nav(props) {
     <a href={"/user/" + auth0Client.getProfile().name} onClick={(e) => {
       e.preventDefault();
       history.push("/user/" + auth0Client.getProfile().name)
-    }} className="nav-item nav-link">{auth0Client.getProfile().name}</a>
+    }} id="signinIdentity" className="nav-item nav-link">{auth0Client.getProfile().name}</a>
   ))
   
   return (
@@ -77,8 +77,7 @@ function Nav(props) {
           {
             auth0Client.isAuthenticated() && 
             <div id="userInfo">
-              <label id="signinIdentity" className="mr-2 text-white">{auth0Client.getProfile().name}</label>
-              <br />
+              <User></User>
               <button className="btn btn-dark navbarSignOut" href="/" onClick={() => {logout()}}>Sign Out</button>
 
               </div>
