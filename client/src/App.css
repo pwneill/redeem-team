@@ -296,7 +296,7 @@ i:hover {
 #createOverflow {
   background-image: url("https://i.imgur.com/YXPFhim.gif");
   background-size: cover;
-  background-position-y: -400px;
+  background-position-y: 0px;
   box-shadow: 5px 5px 30px #373538;
 }
 
@@ -526,3 +526,4 @@ input {
 .nav-item .nav-link{
   padding-top:-9px;
 }
+
