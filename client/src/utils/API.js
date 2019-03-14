@@ -25,7 +25,12 @@ export default {
   },
   getRegisters: function(id) {
     return axios.get("https://powerful-beyond-98279.herokuapp.com/api/register/");
-
+  },
+  saveUser: function(userData) {
+    return axios.post("https://powerful-beyond-98279.herokuapp.com/api/user", userData);
+  },
+  getUser: function() {
+    return axios.get("https://powerful-beyond-98279.herokuapp.com/api/user");
   },
   espnScrape: function() {
     return axios({

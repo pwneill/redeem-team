@@ -7,7 +7,10 @@ import { Col, Row, Container } from "../components/Grid";
 // import { Input, FormBtn } from "../components/Form";
 import { Card, CardHeader, CardBody } from "../components/Card";
 import Button from "react-bootstrap/Button";
+import auth0Client from "../components/Auth/Auth";
+import {withRouter} from 'react-router-dom';
 
+let isUser = false;
 
 class Events extends Component {
     state = {
@@ -15,7 +18,9 @@ class Events extends Component {
     };
     componentDidMount() {
         this.loadEvents();
+        this.isUser();
     }
+
     loadEvents = () => {
         API.getEvents()
             .then(res => {
@@ -24,7 +29,41 @@ class Events extends Component {
             })
             .catch(err => console.log(err));
     };
+
+    isUser = () => {
+        console.log(auth0Client.expiresAt)
+
+        if(auth0Client.expiresAt) {
+            isUser = true
+            
+        } else {
+            isUser = false
+        }
+
+        console.log(isUser);
+    }
+
+    setID = (id) => {
+        
+    }
+
     render() {
+
+        const MoreDetails = withRouter(({ history }, event) => (
+            <Button href="" className="float-left btn btn-dark" onClick={(e) => {
+                e.preventDefault();
+                let destinationId = e.target.parentElement.parentElement.firstChild.firstChild.id
+                history.push(`/details/${destinationId}`)
+            }}>See More Details</Button>
+          ))
+
+          const Register = withRouter(({ history }, event) => (
+            <Button href="" className="float-right btn btn-dark" onClick={(e) => {
+                e.preventDefault();
+                let destinationId = e.target.parentElement.parentElement.firstChild.firstChild.id
+                history.push(`/register/${destinationId}`)
+            }}>Register Here</Button>
+          ))
         return (
             <Container fluid>
                 <Row>
@@ -35,7 +74,7 @@ class Events extends Component {
                                     <Col size={"md-12"}>
                                         <Card id={"viewWordsCard"}>
                                             <CardHeader>
-                                                <h1><strong>Gamers United</strong></h1>
+                                                <h1 id="viewEventsGamersUnited"><strong>Gamers United</strong></h1>
                                                 <h3 id="eventsbanner">Events in your Area</h3>
                                             </CardHeader>
                                         </Card>
@@ -81,14 +120,14 @@ class Events extends Component {
                                                                         </Row>
                                                                         <Row fluid>
                                                                             <Col>
-                                                                                <div className="text-center">
+                                                                                <div id={event._id} className="text-center">
                                                                                     {event.Description}
                                                                                 </div>
-                                                                                <br />
+                                                                                <br/>
                                                                             </Col>
                                                                             <Col>
-                                                                                <Button href={`/details/${event._id}`} className="float-left btn btn-dark">See More Details</Button>
-                                                                                <Button href={`/register/${event._id}`} className="float-right btn btn-dark">Register Here</Button>
+                                                                                <MoreDetails></MoreDetails>
+                                                                                <Register></Register>
                                                                             </Col>
                                                                         </Row>
                                                                     </CardBody>

@@ -16,7 +16,7 @@ class Launch extends Component {
     render() {
 
         const Events = withRouter(({ history }) => (
-            <a href="" onClick={(e) => {
+            <a href="/events" onClick={(e) => {
                 e.preventDefault();
                 history.push('/events');
             }}><Card id={"eventsCard"}>
@@ -28,7 +28,7 @@ class Launch extends Component {
 
 
         const Create_event = withRouter(({ history }) => (
-            <a href="" onClick={(e) => {
+            <a href="/create_event" onClick={(e) => {
                 e.preventDefault();
                 history.push('/create_event');
             }}><Card id={"createCard"}>
@@ -39,7 +39,7 @@ class Launch extends Component {
         ))
 
         const News = withRouter(({ history }) => (
-            <a href="" onClick={(e) => {
+            <a href="/news" onClick={(e) => {
                 e.preventDefault();
                 history.push('/news');
             }}><Card id={"newsCard"}>

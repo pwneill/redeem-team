@@ -70,7 +70,11 @@ var EventSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: "Comment"
     }
-  ]
+  ],
+  user: {
+    type: String,
+    required: false
+  }
 });
 
 var Event = mongoose.model("Event", EventSchema);

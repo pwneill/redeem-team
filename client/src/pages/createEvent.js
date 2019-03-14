@@ -5,16 +5,42 @@ import { Card, CardHeader, CardBody } from "../components/Card";
 import Form from "react-jsonschema-form";
 import API from "../utils/API"
 import { List, ListItem } from "../components/List";
+import auth0Client from "../components/Auth/Auth";
 
 const schema = fieldNames;
+
+let isUser = false;
 
 class createEvent extends Component {
     log = type => console.log.bind(console, type);
 
     onSubmit = ({ formData }, e) => {
-        API.saveEvent(formData);
-        console.log("Data submitted: ", formData)
+        if (isUser === false) {
+            alert("You must be logged in to submit an event.")
+        } else {
+            formData.user = auth0Client.getProfile().name;
+            API.saveEvent(formData).then(function() {
+                alert("Thank you for submitting this event to Gamers United. The event has been added to the 'View Events' page.")
+            });
+            console.log("Data submitted: ", formData)
+        }
     };
+
+    componentDidMount = () => {
+        this.isUser();
+    }
+
+    isUser = () => {
+        console.log(auth0Client.expiresAt)
+
+        if(auth0Client.expiresAt) {
+            isUser = true
+        } else {
+            isUser = false
+        }
+
+        console.log(isUser);
+    }
 
     render() {
         return (
@@ -27,7 +53,7 @@ class createEvent extends Component {
                                     <Col size={"md-12"}>
                                         <Card id={"createWordsCard"}>
                                             <CardHeader>
-                                                <h1><strong>Gamers United</strong></h1>
+                                                <h1 id="createEventsPageGamersUnited"><strong>Gamers United</strong></h1>
                                                 <h3 id="eventsbanner">Add a New Event</h3>
                                             </CardHeader>
                                         </Card>
@@ -48,7 +74,7 @@ class createEvent extends Component {
                                                                 {<div className="mb-5">
                                                                     <Row fluid>
                                                                         <Col size="md-6" offset="md-3">
-                                                                            <Form
+                                                                            <Form id={"createEventsForm"}
                                                                                 safeRenderCompletion={true}
                                                                                 schema={schema}
                                                                                 onSubmit={this.onSubmit}

@@ -285,6 +285,8 @@ i:hover {
   color: #eeeeee;
 }
 
+
+
 #eventsbanner {
   color: #eeeeee;
 }
@@ -523,7 +525,26 @@ input {
   background-color: #eeeeee54;
 }
 
+
 .nav-item .nav-link{
   padding-top:-9px;
 }
 
+@media only screen and (max-width: 641px) {
+  #createEventsPageGamersUnited{
+    font-size: 100%
+  }
+
+  #viewEventsGamersUnited{
+    font-size: 100%
+  }
+
+  #eventsbanner{
+    font-size: 100%
+  }
+
+  .control-label{
+    font-size: 100%
+  }
+
+}
