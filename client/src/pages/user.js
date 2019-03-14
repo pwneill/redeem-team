@@ -8,6 +8,8 @@ import Button from "react-bootstrap/Button";
 import { withRouter } from 'react-router-dom';
 import { DeleteBtn } from "../components/Form";
 
+console.log("hello")
+
 class User extends Component {
 
     state = {
