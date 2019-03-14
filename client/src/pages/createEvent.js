@@ -16,25 +16,6 @@ let isUser = false;
 
 class createEvent extends Component {
 
-    // constructor(props, context) {
-    //     super(props, context);
-
-    //     this.handleShow = this.handleShow.bind(this);
-    //     this.handleClose = this.handleClose.bind(this);
-
-    //     this.state = {
-    //         show: false,
-    //     };
-    // }
-
-    // handleClose() {
-    //     this.setState({ show: false });
-    // }
-
-    // handleShow() {
-    //     this.setState({ show: true });
-    // }
-
     log = type => console.log.bind(console, type);
 
     onSubmit = ({ formData }, e) => {
@@ -44,7 +25,7 @@ class createEvent extends Component {
         } else {
             formData.user = auth0Client.getProfile().name;
             API.saveEvent(formData).then(function () {
-                
+
             });
             console.log("Data submitted: ", formData)
         }
@@ -70,22 +51,6 @@ class createEvent extends Component {
         return (
 
             <Container fluid>
-                
-                {/* <Modal show={this.state.show} onHide={this.handleClose}>
-                    <Modal.Header closeButton>
-                        <Modal.Title>Thank You!</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>Thank you for creating an event. To view it, click <a href="/events">here</a></Modal.Body>
-                    <Modal.Footer>
-                        <Button variant="secondary" onClick={this.handleClose}>
-                            Close
-            </Button>
-                        <Button variant="primary" onClick={this.handleClose}>
-                            Save Changes
-            </Button>
-                    </Modal.Footer>
-                </Modal> */}
-
                 <Row>
                     <Col size={"md-12"}>
                         <Card id={"createHeaderCard"}>
@@ -119,7 +84,6 @@ class createEvent extends Component {
                                                                                 safeRenderCompletion={true}
                                                                                 schema={schema}
                                                                                 onSubmit={this.onSubmit}
-                                                                                onClick={this.handleShow}
                                                                             />
                                                                         </Col>
                                                                     </Row>
