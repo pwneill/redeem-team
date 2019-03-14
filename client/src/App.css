@@ -512,6 +512,21 @@ input {
   background-color: #eeeeee54;
 }
 
+#userHeaderCard {
+  margin: 20px;
+  background-color: #eeeeee54;
+}
+
+#userWordsCard {
+  margin: 20px;
+  text-align: center;
+  background-image: url("https://66.media.tumblr.com/1e993c0a367c7a5e5c6ad26b3d8b202b/tumblr_onr5atYZZq1rrrxrho1_1280.gifv");
+  background-size: cover;
+  background-position-y: 220px;
+  box-shadow: 5px 5px 30px #373538;
+  color: #eeeeee;
+}
+
 @media only screen and (max-width: 641px) {
   #createEventsPageGamersUnited{
     font-size: 100%

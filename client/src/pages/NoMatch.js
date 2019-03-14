@@ -6,15 +6,15 @@ import React, { Component } from "react";
 // import { Col, Row, Container } from "../components/Grid";
 // import { List, ListItem } from "../components/List";
 // import { Input, FormBtn } from "../components/Form";
-// import { Card, CardHeader, CardBody } from "../components/Card";
+import { Card, CardHeader, CardBody } from "../components/Card";
 
 class NoMatch extends Component {
     render() {
         return (
-            <div>
+            <Card id="maineventsCard">
                 <h1>NoMatch Page</h1>
                 <h1>404 page not found</h1>
-            </div>
+            </Card>
         )
     }
 }

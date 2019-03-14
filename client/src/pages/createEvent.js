@@ -19,10 +19,15 @@ class createEvent extends Component {
             alert("You must be logged in to submit an event.")
         } else {
             formData.user = auth0Client.getProfile().name;
+            console.log(formData);
             API.saveEvent(formData).then(function() {
                 alert("Thank you for submitting this event to Gamers United. The event has been added to the 'View Events' page.")
+                console.log("Data submitted: ", formData)
+            })
+            .catch(function(err) {
+                console.log(err);
             });
-            console.log("Data submitted: ", formData)
+
         }
     };
 

@@ -20,8 +20,17 @@ export default {
   saveArticle: function(articleData) {
     return axios.post("http://localhost:3001/api/scrape", articleData);
   },
+  getArticles: function() {
+    return axios.get("http://localhost:3001/api/scrape");
+  },
+  deleteArticles: function(id) {
+    return axios.delete("http://localhost:3001/api/scrape/" + id);
+  },
   saveRegister: function(registerData) {
     return axios.post("http://localhost:3001/api/register", registerData);
+  },
+  deleteRegister: function(id) {
+    return axios.delete("http://localhost:3001/api/register/" + id);
   },
   getRegisters: function(id) {
     return axios.get("http://localhost:3001/api/register/");

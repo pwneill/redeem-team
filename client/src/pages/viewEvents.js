@@ -8,7 +8,7 @@ import { Col, Row, Container } from "../components/Grid";
 import { Card, CardHeader, CardBody } from "../components/Card";
 import Button from "react-bootstrap/Button";
 import auth0Client from "../components/Auth/Auth";
-import {withRouter} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 let isUser = false;
 
@@ -33,9 +33,9 @@ class Events extends Component {
     isUser = () => {
         console.log(auth0Client.expiresAt)
 
-        if(auth0Client.expiresAt) {
+        if (auth0Client.expiresAt) {
             isUser = true
-            
+
         } else {
             isUser = false
         }
@@ -44,7 +44,7 @@ class Events extends Component {
     }
 
     setID = (id) => {
-        
+
     }
 
     render() {
@@ -55,15 +55,15 @@ class Events extends Component {
                 let destinationId = e.target.parentElement.parentElement.firstChild.firstChild.id
                 history.push(`/details/${destinationId}`)
             }}>See More Details</Button>
-          ))
+        ))
 
-          const Register = withRouter(({ history }, event) => (
+        const Register = withRouter(({ history }, event) => (
             <Button href="" className="float-right btn btn-dark" onClick={(e) => {
                 e.preventDefault();
                 let destinationId = e.target.parentElement.parentElement.firstChild.firstChild.id
                 history.push(`/register/${destinationId}`)
             }}>Register Here</Button>
-          ))
+        ))
         return (
             <Container fluid>
                 <Row>
@@ -123,7 +123,7 @@ class Events extends Component {
                                                                                 <div id={event._id} className="text-center">
                                                                                     {event.Description}
                                                                                 </div>
-                                                                                <br/>
+                                                                                <br />
                                                                             </Col>
                                                                             <Col>
                                                                                 <MoreDetails></MoreDetails>
@@ -135,8 +135,10 @@ class Events extends Component {
                                                             </ListItem>))}
                                                     </List>
                                                 ) : (
-                                                        <Card>
-                                                            <h3 id="eventsbanner">No Results to Display</h3>
+                                                        <Card id="maineventsCard">
+                                                            <CardBody>
+                                                                <h3 id="eventsbanner">No Results to Display</h3>
+                                                            </CardBody>
                                                         </Card>
                                                     )}
                                             </Col>

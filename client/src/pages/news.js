@@ -30,7 +30,7 @@ class News extends Component {
     isUser = () => {
         console.log(auth0Client.expiresAt)
 
-        if(auth0Client.expiresAt) {
+        if (auth0Client.expiresAt) {
             isUser = true
         } else {
             isUser = false
@@ -52,7 +52,7 @@ class News extends Component {
 
                     x++
 
-                    if(isUser) {
+                    if (isUser) {
                         result.user = auth0Client.getProfile().name;
                     } else {
                         result.user = "noUser"
@@ -126,7 +126,7 @@ class News extends Component {
 
                     x++
 
-                    if(isUser) {
+                    if (isUser) {
                         result.user = auth0Client.getProfile().name;
                     } else {
                         result.user = "noUser"
@@ -195,7 +195,7 @@ class News extends Component {
 
                     x++
 
-                    if(isUser) {
+                    if (isUser) {
                         result.user = auth0Client.getProfile().name;
                     } else {
                         result.user = "noUser"
@@ -247,7 +247,7 @@ class News extends Component {
 
                     x++
 
-                    if(isUser) {
+                    if (isUser) {
                         result.user = auth0Client.getProfile().name;
                     } else {
                         result.user = "noUser"
@@ -299,7 +299,7 @@ class News extends Component {
 
                     x++
 
-                    if(isUser) {
+                    if (isUser) {
                         result.user = auth0Client.getProfile().name;
                     } else {
                         result.user = "noUser"
@@ -351,7 +351,7 @@ class News extends Component {
 
                     x++
 
-                    if(isUser) {
+                    if (isUser) {
                         result.user = auth0Client.getProfile().name;
                     } else {
                         result.user = "noUser"
@@ -403,7 +403,7 @@ class News extends Component {
 
                     x++
 
-                    if(isUser) {
+                    if (isUser) {
                         result.user = auth0Client.getProfile().name;
                     } else {
                         result.user = "noUser"
@@ -455,7 +455,7 @@ class News extends Component {
 
                     x++
 
-                    if(isUser) {
+                    if (isUser) {
                         result.user = auth0Client.getProfile().name;
                     } else {
                         result.user = "noUser"
@@ -692,9 +692,9 @@ class News extends Component {
         event.preventDefault()
 
         let resultArr = [{
-                title: "Just Kidding",
-                release: "April 1",
-                link: "https://www.ign.com/articles/2019/01/02/soulja-boy-stops-selling-souljagame-game-consoles"
+            title: "Just Kidding",
+            release: "April 1",
+            link: "https://www.ign.com/articles/2019/01/02/soulja-boy-stops-selling-souljagame-game-consoles"
         }]
 
         this.setState({ vids: [], news: [], upcoming: resultArr })
@@ -711,27 +711,27 @@ class News extends Component {
 
         console.log(event.target);
 
-        if(incoming[2] === "noUser") {
+        if (incoming[2] === "noUser") {
             alert("You need to log in to save articles.")
         } else {
             if (incoming[1] === "news") {
-                for(let i = 0; i < tempNews.length; i++) {
+                for (let i = 0; i < tempNews.length; i++) {
                     if (tempNews[i].id === parseInt(incoming[0])) {
-                        API.saveArticle(tempNews[i]).then(function() {
+                        API.saveArticle(tempNews[i]).then(function () {
                             console.log("success");
                             alert("Article has been saved. Visit the user account page to view your saved articles.")
-                        }).catch(function(err) {
+                        }).catch(function (err) {
                             console.log(err);
                         })
                     }
                 }
             } else if (incoming[1] === "vids") {
-                for(let i = 0; i < tempVids.length; i++) {
+                for (let i = 0; i < tempVids.length; i++) {
                     if (tempVids[i].id === parseInt(incoming[0])) {
-                        API.saveArticle(tempVids[i]).then(function() {
+                        API.saveArticle(tempVids[i]).then(function () {
                             console.log("success");
                             alert("Article has been saved. Visit the user account page to view your saved articles.")
-                        }).catch(function(err) {
+                        }).catch(function (err) {
                             console.log(err);
                         })
                     }
@@ -804,21 +804,25 @@ class News extends Component {
         } else if (this.state.upcoming.length) {
             return (
                 <List id={"newsOverflow"}>
-                {this.state.upcoming.map(upcoming => (
-                    <ListItem key={upcoming.id}>
-                        <Card className={"articleCards"}>
-                            <a href={upcoming.link} target={"_blank"}><CardHeader>
-                                <h4 className={"articleTitle"} style={{ float: "left" }}>{upcoming.title}</h4>
-                                <h4 className={"articleTitle"} style={{ float: "right" }}>{upcoming.release}</h4>
-                            </CardHeader></a>
-                        </Card>
-                    </ListItem>
-                ))}
-            </List>
+                    {this.state.upcoming.map(upcoming => (
+                        <ListItem key={upcoming.id}>
+                            <Card className={"articleCards"}>
+                                <a href={upcoming.link} target={"_blank"}><CardHeader>
+                                    <h4 className={"articleTitle"} style={{ float: "left" }}>{upcoming.title}</h4>
+                                    <h4 className={"articleTitle"} style={{ float: "right" }}>{upcoming.release}</h4>
+                                </CardHeader></a>
+                            </Card>
+                        </ListItem>
+                    ))}
+                </List>
             )
         } else {
             return (
-                <h3 style={{ textAlign: "center" }}>No Results to Display</h3>
+                <Card id="maineventsCard">
+                    <CardBody>
+                        <h3 id="eventsbanner">No Results to Display</h3>
+                    </CardBody>
+                </Card>
             )
         }
     }
