@@ -58,10 +58,10 @@ class Launch extends Component {
                                 <Events></Events>
                             </Col>
                             <Col size={"md-4"}>
-                                <Create_event></Create_event>
+                                <News></News>
                             </Col>
                             <Col size={"md-4"}>
-                                <News></News>
+                                <Create_event></Create_event>
                             </Col>
                         </Row>
                     </Container>

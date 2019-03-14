@@ -7,22 +7,28 @@
     margin: 10px
 }
 
-.signInLinks {
-    margin-left: 20vw;
+#userInfo{
+    float:left;
+    padding-left:150px;
+}
+#signIn{
+    float:right;
+    padding-left:150px;
 }
 
-#userBtn {
-    color: #eeeeee;
+.navbarButtons{
+    float:right;
+}
+.navbarSignOut{
+    float:left;
 }
 
-#userBtn:hover {
-    color: #000000;
-}
-
-
-@media only screen and (max-width: 892px) {
-    .signInLinks {
-        margin-left: 0px;
+@media (max-width: 991px){
+    #userInfo {
+      float:left;
+      padding-left:0px;
+      padding-top:50px;
     }
-}
+  }
+
 
