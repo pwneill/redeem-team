@@ -34,3 +34,11 @@ export function SaveBtn(props) {
     </button>
   );
 }
+
+export function DeleteBtn(props) {
+  return (
+    <button {...props} className="saveBtn btn btn-dark">
+      {props.children}
+    </button>
+  );
+}

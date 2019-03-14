@@ -21,9 +21,9 @@ class Details extends Component {
     componentDidMount = () => {
 
         let eventID = window.location.href;
-        eventID = eventID.replace("https://powerful-beyond-98279.herokuapp.com/details/", "");
+        eventID = eventID.replace("http://localhost:3000/details/", "");
         console.log(eventID);
-        
+
         API.getRegisters().then(res => {
 
             let resultArr = [];
@@ -317,8 +317,10 @@ class Details extends Component {
                                                                     ))}
                                                                 </div>
                                                             ) : (
-                                                                    <Card>
-                                                                        <h3 id="eventsbanner">No Results to Display</h3>
+                                                                    <Card id="maineventsCard">
+                                                                        <CardBody>
+                                                                            <h3 id="eventsbanner">No Results to Display</h3>
+                                                                        </CardBody>
                                                                     </Card>
                                                                 )}
                                                         </Card>

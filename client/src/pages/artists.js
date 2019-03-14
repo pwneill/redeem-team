@@ -127,6 +127,7 @@ class Artists extends Component {
                                                             <Row>
                                                                 <Col size={"md-2"}>
                                                                     <img className={"artistImages"} src={"https://i.imgur.com/PLPP7I8.gif"} alt={"https://i.imgur.com/PLPP7I8.gif"}></img>
+                                                                    <img className={"artistImages"} src={"https://66.media.tumblr.com/1e993c0a367c7a5e5c6ad26b3d8b202b/tumblr_onr5atYZZq1rrrxrho1_1280.gifv"} alt={"https://66.media.tumblr.com/1e993c0a367c7a5e5c6ad26b3d8b202b/tumblr_onr5atYZZq1rrrxrho1_1280.gifv"}></img>
                                                                 </Col>
                                                                 <Col size={"md-10"}>
                                                                     <a href={"http://jayknoxart.tumblr.com/"} target={"_blank"} alt={"http://jayknoxart.tumblr.com/"}><h3 className={"artistLink"}>Link to Website</h3></a>

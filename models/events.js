@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 var EventSchema = new Schema({
   Name: {
     type: String,
-    required: true,
+    required: true
   },
   Date: {
     type: String,
@@ -77,6 +77,6 @@ var EventSchema = new Schema({
   }
 });
 
-var Event = mongoose.model("Event", EventSchema);
+var Events = mongoose.model("Events", EventSchema);
 
-module.exports = Event;
+module.exports = Events;

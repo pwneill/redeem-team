@@ -14,7 +14,7 @@ class Auth {
         this.auth0 = new auth0.WebAuth({
             domain: 'rich-donovan.auth0.com',
             clientID: 'LHI8LEPW14lgTw6syHhIXfMhxMPPpRGU',
-            redirectUri: 'https://powerful-beyond-98279.herokuapp.com/callback',
+            redirectUri: 'http://localhost:3000/callback',
             audience: 'https://rich-donovan.auth0.com/userinfo',
             responseType: 'id_token',
             scope: 'openid profile'
@@ -79,7 +79,7 @@ class Auth {
         console.log("Sign Out was hit")
 
         this.auth0.logout({
-            returnTo: 'https://powerful-beyond-98279.herokuapp.com/',
+            returnTo: 'http://localhost:3000/',
             clientID: 'LHI8LEPW14lgTw6syHhIXfMhxMPPpRGU'
         })
     }
