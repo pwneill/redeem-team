@@ -13,7 +13,8 @@ class Details extends Component {
         BringController: "",
         HaveConsole: "",
         HaveController: "",
-        HaveGame: ""
+        HaveGame: "",
+        Host: ""
     }
 
     log = type => console.log.bind(console, type);
@@ -21,8 +22,19 @@ class Details extends Component {
     componentDidMount = () => {
 
         let eventID = window.location.href;
-        eventID = eventID.replace("https://powerful-beyond-98279.herokuapp.com/details/", "");
+        eventID = eventID.replace("https://powerful-beyond-98279.herokuapp.com/", "");
         console.log(eventID);
+
+        API.getEvents().then(res => {
+            let result = "";
+            for (let i = 0; i < res.data.length; i++) {
+                if (res.data[i]._id === eventID) {
+                    result = res.data[i].user
+                }
+            }
+
+            this.setState({Host: result});
+        })
 
         API.getRegisters().then(res => {
 
@@ -77,6 +89,8 @@ class Details extends Component {
             console.log(err);
         })
     };
+
+    
 
     render() {
         return (
@@ -182,7 +196,7 @@ class Details extends Component {
                                                                             </Card>
                                                                             <Card className={"statsHost"}>
                                                                                 <CardBody>
-                                                                                    <p className={"atendeeWords"}>PlaceHolder</p>
+                                                                                    <p className={"atendeeWords"}>{this.state.Host}</p>
                                                                                 </CardBody>
                                                                             </Card>
                                                                         </Col>

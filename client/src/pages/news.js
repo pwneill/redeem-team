@@ -761,7 +761,7 @@ class News extends Component {
                                                 </div>
                                             </Col>
                                             <Col size={"md-8"}>
-                                                <p>{news.body}</p>
+                                                <p id="articleBody">{news.body}</p>
                                             </Col>
                                         </Row>
                                     </Container>

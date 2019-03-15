@@ -25,7 +25,7 @@ function Nav(props) {
   ))
 
   const GamersUnited = withRouter(({ history }) => (
-    <a href="" onClick={(e) => {
+    <a href="/" onClick={(e) => {
       e.preventDefault();
       history.push('/');
     }}><h3 className="navbar-brand">Gamers United</h3></a>

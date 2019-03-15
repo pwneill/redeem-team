@@ -175,8 +175,6 @@ class User extends Component {
                                                     </CardHeader>
                                                 </Card>
                                                 <List id={"viewOverflow"}>
-                                                    <ListItem key={";alkjsdf"}>
-                                                        <Card id="maineventsCard">
                                                             {this.state.events.length ? (
                                                                 <div>
                                                                     {this.state.events.map(event => (
@@ -189,7 +187,7 @@ class User extends Component {
                                                                                         </Col>
                                                                                         <Col size="md-6">
                                                                                             <div className="text-center">
-                                                                                                <strong>
+                                                                                                <strong id="strong">
                                                                                                     {event.Name}<br />
                                                                                                     on {event.Date}<br />
                                                                                                     at {event.LocationName} <br />
@@ -231,8 +229,6 @@ class User extends Component {
                                                                         </CardBody>
                                                                     </Card>
                                                                 )}
-                                                        </Card>
-                                                    </ListItem>
                                                 </List>
                                             </Col>
                                         </CardBody>
@@ -406,7 +402,7 @@ class User extends Component {
                                                                                             <DeleteBtn id={event._id} onClick={this.deleteArticles}>Delete</DeleteBtn>
                                                                                         </Col>
                                                                                         <Col size={"md-8"}>
-                                                                                            <p>{event.body}</p>
+                                                                                            <p id="articleBody">{event.body}</p>
                                                                                         </Col>
                                                                                     </Row>
                                                                                 </Container>
