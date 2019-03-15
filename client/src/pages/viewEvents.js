@@ -100,7 +100,7 @@ class Events extends Component {
                                                                             </Col>
                                                                             <Col size="md-6">
                                                                                 <div className="text-center">
-                                                                                    <strong>
+                                                                                    <strong id="strong">
                                                                                         {event.Name}<br />
                                                                                         on {event.Date}<br />
                                                                                         at {event.LocationName} <br />
