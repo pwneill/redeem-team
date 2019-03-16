@@ -22,7 +22,7 @@ class Details extends Component {
     componentDidMount = () => {
 
         let eventID = window.location.href;
-        eventID = eventID.replace("https://powerful-beyond-98279.herokuapp.com/", "");
+        eventID = eventID.replace("https://powerful-beyond-98279.herokuapp.com/details/", "");
         console.log(eventID);
 
         API.getEvents().then(res => {
